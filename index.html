@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RevChill</title>
+<meta name="description" content="Comunidad de Revenue Management. Afterworks informales por toda España. Entrada gratuita, plazas limitadas.">
+<meta name="theme-color" content="#0E3334" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F2F4EA" media="(prefers-color-scheme: light)">
+<link rel="canonical" href="https://revchill.club/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="RevChill">
+<meta property="og:title" content="RevChill">
+<meta property="og:description" content="Afterworks de Revenue Management por toda España. Sin traje y sin que nadie te venda nada.">
+<meta property="og:image" content="assets/img/og.jpg">
+<meta property="og:url" content="https://revchill.club/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body>
+<a class="skip" href="#main" data-i18n="nav.skip"></a>
+
+<!-- logotipo como símbolo reutilizable: usa currentColor y var(--accent) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="rc-logo" viewBox="-4 -4 454.9 154.0"><g transform="translate(0,100.0)"><g transform="translate(0.000,0.000) scale(0.13514,-0.13514)" fill="currentColor"><path transform="translate(0.00,0)" d="M51 0V489H225V458Q273 499 349 499Q384 499 409.5 490.0Q435 481 453 462L352 327Q344 336 329.5 341.5Q315 347 297 347Q263 347 244.0 326.5Q225 306 225 266V0Z"/><path transform="translate(431.00,0)" d="M298 -11Q216 -11 153.0 21.5Q90 54 54.0 112.0Q18 170 18 245Q18 319 53.0 376.5Q88 434 148.5 467.5Q209 501 285 501Q359 501 416.5 469.5Q474 438 506.5 382.5Q539 327 539 256Q539 241 537.5 225.5Q536 210 531 190L188 188Q191 181 194 174Q208 144 234.0 129.0Q260 114 298 114Q334 114 361.5 126.0Q389 138 411 163L502 72Q466 31 414.5 10.0Q363 -11 298 -11ZM188 301 378 302Q376 313 372 322Q361 348 340.0 362.0Q319 376 287 376Q254 376 230.0 360.0Q206 344 193 315Q190 308 188 301Z"/><path transform="translate(963.00,0)" d="M198 0 -1 489H185L276 193L367 489H551L352 0Z"/><path transform="translate(1491.00,0)" d="M293 -11Q215 -11 152.5 22.0Q90 55 54.0 113.0Q18 171 18 244Q18 318 54.5 376.0Q91 434 153.5 467.5Q216 501 295 501Q352 501 399.0 482.0Q446 463 485 425L375 315Q360 330 340.5 337.5Q321 345 295 345Q267 345 244.5 332.5Q222 320 208.5 298.0Q195 276 195 245Q195 215 208.5 192.5Q222 170 244.5 157.0Q267 144 295 144Q323 144 343.0 153.0Q363 162 378 179L489 69Q448 29 400.5 9.0Q353 -11 293 -11Z"/><path transform="translate(1970.00,0)" d="M368 0V276Q368 310 348.0 329.5Q328 349 297 349Q276 349 259.5 340.0Q243 331 234.0 315.0Q225 299 225 276V0H51V729H225V460Q236 468 249 476Q292 499 349 499Q408 499 451.5 475.5Q495 452 518.5 411.0Q542 370 542 316V0Z"/><path transform="translate(2531.00,0)" d="M50 0V489H225V0ZM137 546Q98 546 72.0 572.5Q46 599 46 639Q46 678 72.0 705.0Q98 732 137 732Q178 732 203.5 705.0Q229 678 229 639Q229 599 203.5 572.5Q178 546 137 546Z"/><path transform="translate(2784.00,0)" d="M51 0V729H225V0Z"/><path transform="translate(3038.00,0)" d="M51 0V729H225V0Z"/></g></g><path d="M 6.7 20.0 C 97.9 24.5 177.9 22.5 249.1 15.5 C 329.2 8.0 391.5 -7.0 438.2 -30.0" fill="none" stroke="var(--accent)" stroke-width="10.50" stroke-linecap="round" transform="translate(0,114.0)"/></symbol></svg>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="nav__in">
+    <a class="nav__brand" href="#top" aria-label="RevChill"><svg viewBox="-4 -4 454.9 154.0"><use href="#rc-logo"/></svg></a>
+    <nav class="nav__links" id="navLinks" aria-label="Principal">
+      <a href="#manifiesto" data-i18n="nav.manifesto"></a>
+      <a href="#agenda" data-i18n="nav.agenda"></a>
+      <a href="#galeria" data-i18n="nav.gallery"></a>
+      <a href="#empresas" data-i18n="nav.companies"></a>
+      <a href="#faq" data-i18n="nav.faq"></a>
+    </nav>
+    <div class="nav__end">
+      <div class="lang" role="group" aria-label="Idioma / Language">
+        <button type="button" data-lang="es" aria-pressed="true">ES</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <a class="btn btn--sm" href="#comunidad" data-i18n="nav.join"></a>
+      <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="navLinks">
+        <i></i><span class="sr" data-i18n="nav.menu"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main"><span id="top"></span>
+
+<!-- ============ 1. HERO ============ -->
+<section class="hero">
+  <div class="hero__text">
+    <h1 class="h-display" data-i18n="hero.title"></h1>
+    <p class="hero__sub" data-i18n="hero.sub"></p>
+    <div class="hero__cta">
+      <a class="btn btn--lg" href="#agenda" data-i18n="hero.cta1"></a>
+      <a class="btn btn--lg btn--ghost" href="#comunidad" data-i18n="hero.cta2"></a>
+    </div>
+  </div>
+  <figure class="hero__shot ph" data-ph-key="hero.photo">
+    <!-- Sustituye por: <img src="assets/img/hero.jpg" alt="" fetchpriority="high"> -->
+  </figure>
+</section>
+
+<!-- ============ 2. PRÓXIMO ENCUENTRO ============ -->
+<section class="strip" aria-labelledby="strip-h">
+  <h2 class="sr" id="strip-h" data-i18n="strip.title"></h2>
+  <div class="strip__in" id="nextUp"></div>
+</section>
+
+<!-- ============ 3. MANIFIESTO ============ -->
+<section class="sec" id="manifiesto">
+  <div class="wrap">
+    <p class="eyebrow" data-i18n="man.eyebrow"></p>
+    <h2 class="h-sec" data-i18n="man.title"></h2>
+    <div class="bento">
+      <article class="cell cell--lead"><p data-i18n="man.lead"></p></article>
+      <figure class="cell cell--photo ph" data-ph-key="man.photo"></figure>
+      <article class="cell cell--ratio">
+        <div class="ratio" aria-hidden="true"><span class="ratio__fill" style="--w:95%"></span></div>
+        <p class="ratio__legend" data-i18n="man.ratio"></p>
+      </article>
+      <article class="cell"><h3 data-i18n="man.c1t"></h3><p data-i18n="man.c1d"></p></article>
+      <article class="cell"><h3 data-i18n="man.c2t"></h3><p data-i18n="man.c2d"></p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. AGENDA ============ -->
+<section class="sec sec--tint" id="agenda">
+  <div class="wrap">
+    <div class="agenda__head">
+      <h2 class="h-sec" data-i18n="ag.title"></h2>
+      <div class="tabs" role="tablist" aria-label="Eventos">
+        <button class="tab" role="tab" type="button" aria-selected="true" data-tab="next" data-i18n="ag.next"></button>
+        <button class="tab" role="tab" type="button" aria-selected="false" data-tab="past" data-i18n="ag.past"></button>
+      </div>
+    </div>
+    <div class="agenda" id="agendaList" role="tabpanel"></div>
+  </div>
+</section>
+
+<!-- ============ 5. GALERÍA ============ -->
+<section class="sec" id="galeria">
+  <div class="wrap">
+    <h2 class="h-sec" data-i18n="gal.title"></h2>
+    <div class="mason" id="mason"></div>
+  </div>
+</section>
+
+<!-- ============ 6. TESTIMONIOS ============ -->
+<section class="sec sec--tint" id="opiniones">
+  <div class="wrap">
+    <h2 class="h-sec" data-i18n="q.title"></h2>
+  </div>
+  <div class="rail" id="rail" tabindex="0" role="region" aria-label="Testimonios"></div>
+</section>
+
+<!-- ============ 7. EMPRESAS ============ -->
+<section class="sec" id="empresas">
+  <div class="wrap">
+    <p class="eyebrow" data-i18n="biz.eyebrow"></p>
+    <h2 class="h-sec h-sec--wide" data-i18n="biz.title"></h2>
+    <p class="lead" data-i18n="biz.lead"></p>
+
+    <dl class="stats" id="stats"></dl>
+
+    <div class="trio">
+      <article class="fmt">
+        <h3 data-i18n="biz.t1n"></h3>
+        <p data-i18n="biz.t1d"></p>
+        <a class="link" data-js="mailto-sponsors" data-i18n="biz.cta"></a>
+      </article>
+      <article class="fmt fmt--big">
+        <p class="fmt__flag" data-i18n="biz.t2flag"></p>
+        <h3 data-i18n="biz.t2n"></h3>
+        <p data-i18n="biz.t2d"></p>
+        <a class="link" data-js="mailto-sponsors" data-i18n="biz.cta"></a>
+      </article>
+      <article class="fmt">
+        <h3 data-i18n="biz.t3n"></h3>
+        <p data-i18n="biz.t3d"></p>
+        <a class="link" data-js="mailto-sponsors" data-i18n="biz.cta"></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 8. SPONSORS ============ -->
+<section class="sec sec--slim" id="sponsors">
+  <div class="wrap">
+    <h2 class="h-small" data-i18n="sp.title"></h2>
+    <div class="wall" id="wall"></div>
+  </div>
+</section>
+
+<!-- ============ 9. HOST ============ -->
+<section class="band" id="host">
+  <div class="wrap band__in">
+    <h2 class="h-sec" data-i18n="host.title"></h2>
+    <p data-i18n="host.lead"></p>
+    <a class="btn btn--lg" data-js="mailto-host" data-i18n="host.cta"></a>
+    <p class="band__label" data-i18n="host.cities"></p>
+    <ul class="chips" id="chips"></ul>
+  </div>
+</section>
+
+<!-- ============ 10. FAQ ============ -->
+<section class="sec" id="faq">
+  <div class="wrap faq__grid">
+    <h2 class="h-sec" data-i18n="faq.title"></h2>
+    <div class="faq">
+      <details><summary data-i18n="faq.q1"></summary><p data-i18n="faq.a1"></p></details>
+      <details><summary data-i18n="faq.q2"></summary><p data-i18n="faq.a2"></p></details>
+      <details><summary data-i18n="faq.q3"></summary><p data-i18n="faq.a3"></p></details>
+      <details><summary data-i18n="faq.q4"></summary><p data-i18n="faq.a4"></p></details>
+      <details><summary data-i18n="faq.q5"></summary><p data-i18n="faq.a5"></p></details>
+      <details><summary data-i18n="faq.q6"></summary><p data-i18n="faq.a6"></p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 11. COMUNIDAD ============ -->
+<section class="cta" id="comunidad">
+  <div class="wrap cta__in">
+    <div>
+      <h2 class="h-sec" data-i18n="comm.title"></h2>
+      <p data-i18n="comm.lead"></p>
+    </div>
+    <div class="cta__actions">
+      <a class="btn btn--lg" data-js="whatsapp" data-i18n="comm.cta1"></a>
+      <a class="btn btn--lg btn--ghost" data-js="linkedin" data-i18n="comm.cta2"></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="foot" id="contacto">
+  <div class="wrap foot__in">
+    <div class="foot__brand">
+      <svg viewBox="-4 -4 454.9 154.0" role="img" aria-label="RevChill"><use href="#rc-logo"/></svg>
+      <p data-i18n="ft.blurb"></p>
+      <div class="social">
+        <a data-js="linkedin" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-.95 1.83-1.95 3.75-1.95 4 0 4.4 2.5 4.4 5.8V21h-4v-5.6c0-1.35-.03-3.1-1.9-3.1s-2.2 1.47-2.2 3v5.7H9z"/></svg></a>
+        <a data-js="instagram" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4"/><circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"/></svg></a>
+        <a data-js="whatsapp" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.87 9.87 0 0 0 4.79 1.22c5.46 0 9.92-4.45 9.92-9.91C21.96 6.45 17.5 2 12.04 2zm0 18.15a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.11.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.24-8.23 4.53 0 8.23 3.69 8.23 8.24 0 4.54-3.69 8.23-8.24 8.23z"/></svg></a>
+      </div>
+    </div>
+    <nav class="foot__col">
+      <h3 data-i18n="ft.explore"></h3>
+      <a href="#manifiesto" data-i18n="nav.manifesto"></a>
+      <a href="#agenda" data-i18n="nav.agenda"></a>
+      <a href="#galeria" data-i18n="nav.gallery"></a>
+      <a href="#faq" data-i18n="nav.faq"></a>
+    </nav>
+    <nav class="foot__col">
+      <h3 data-i18n="ft.take"></h3>
+      <a data-js="whatsapp" data-i18n="ft.community"></a>
+      <a href="#host" data-i18n="ft.host"></a>
+      <a href="#empresas" data-i18n="ft.sponsor"></a>
+      <a data-js="mailto" data-i18n="ft.contact"></a>
+    </nav>
+    <nav class="foot__col">
+      <h3 data-i18n="ft.legal"></h3>
+      <a href="privacidad.html" data-i18n="ft.privacy"></a>
+      <a href="cookies.html" data-i18n="ft.cookies"></a>
+      <a href="aviso-legal.html" data-i18n="ft.terms"></a>
+    </nav>
+  </div>
+  <div class="wrap foot__end">
+    <span>© <span id="year"></span> RevChill</span>
+    <span data-i18n="ft.rights"></span>
+  </div>
+</footer>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

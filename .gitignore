@@ -18,3 +18,5 @@ Desktop.ini
 node_modules/
 dist/
 .cache/
+
+.vercel

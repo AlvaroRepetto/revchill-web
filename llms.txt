@@ -1,0 +1,62 @@
+# RevChill
+
+> Comunidad de Revenue Management hotelero en España. Organiza encuentros
+> informales (afterworks) gratuitos en distintas ciudades donde Revenue
+> Managers, directores de hotel, perfiles junior, estudiantes y proveedores
+> tecnológicos se juntan a hablar de precios, distribución y estrategia sin
+> el formato rígido de un congreso.
+
+RevChill nació de una idea simple: los mejores aprendizajes del sector no
+pasan en una sala de plenaria, pasan tomando algo después. Los encuentros
+son gratuitos, con aforo limitado, y el 95% del tiempo es networking. Los
+patrocinadores disponen de un espacio breve para presentarse y nada más.
+
+- **Qué es:** comunidad y red profesional de Revenue Management hotelero.
+- **Dónde:** España. Activa en Madrid y Sevilla; abierta a nuevas ciudades.
+- **Formato:** afterwork informal en terraza o bar, entre semana, al salir de trabajar.
+- **Precio para el asistente:** gratuito. Las plazas son limitadas y se reservan por Eventbrite.
+- **Quién organiza:** Alvaro Repetto.
+- **Web:** https://revchill.club/
+
+## Páginas
+
+- [Inicio](https://revchill.club/): manifiesto, agenda de encuentros, galería, sección para empresas patrocinadoras y preguntas frecuentes.
+- [RevChill Weekend Hack](https://revchill.club/weekend.html): formato en preparación. Un fin de semana fuera, en un alojamiento independiente en plena naturaleza, que combina workshops impartidos por los propios asistentes con rutas, convivencia y desconexión. Abierto a alojamientos anfitriones, asistentes y patrocinadores.
+
+## Formatos
+
+### RevChill (afterworks)
+Encuentros de tarde, gratuitos y con aforo limitado, en bares y terrazas.
+Sin ponencias, sin mesa redonda y sin agenda impresa. Un patrocinador por
+evento dispone de unos cinco minutos para presentarse; el resto del tiempo
+es conversación libre.
+
+### RevChill Weekend Hack (en preparación, sin fecha)
+Fin de semana fuera con un grupo reducido. La parte formativa son workshops
+cortos impartidos por los propios asistentes y por una herramienta invitada,
+más una sesión privada con el alojamiento anfitrión donde el grupo le da su
+criterio sobre el negocio. La parte no formativa son rutas por la naturaleza,
+cena larga y convivencia. Los asistentes se seleccionan buscando una mezcla
+equilibrada de perfiles y de tipos de alojamiento.
+
+## Para empresas
+
+RevChill se financia con patrocinios de empresas del sector (PMS, RMS,
+channel managers, herramientas de benchmarking y otras TravelTech). El
+patrocinador obtiene visibilidad de marca y acceso directo a decisores en un
+contexto de conversación, no de feria. Hay tres formatos: partner local
+(un evento), host de evento (marca principal del encuentro) y partner de
+temporada (presencia durante todo el año).
+
+## Temas que se tratan
+
+Revenue management hotelero, estrategia de precios, pricing dinámico, ADR,
+RevPAR, distribución, canales de venta, OTAs, venta directa, channel manager,
+RMS, PMS, forecasting de demanda, segmentación, paridad de tarifas, hoteles
+urbanos, hoteles independientes, modelos híbridos y de media estancia.
+
+## Contacto
+
+- Comunidad de WhatsApp: abierta, enlace en la web.
+- LinkedIn e Instagram: enlaces en el pie de la web.
+- Correo: en la web, sección de contacto.

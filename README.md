@@ -9,11 +9,15 @@ en `index.html` y se publica subiendo la carpeta tal cual.
 
 ```
 revchill/
-├── index.html                  ← la web entera (estructura)
+├── index.html                  ← la home. ⭐ LOS TEXTOS EN ESPAÑOL VAN AQUÍ
+├── weekend.html                ← landing del Weekend Hack (ídem)
+├── robots.txt                  ← permisos de rastreo (buscadores e IAs)
+├── sitemap.xml                 ← ⚠️ actualiza las fechas al publicar
+├── llms.txt                    ← resumen del proyecto para modelos de IA
 ├── assets/
 │   ├── css/app.css             ← todo el diseño
 │   ├── js/data.js              ← ⭐ EVENTOS, SPONSORS, FOTOS, TESTIMONIOS
-│   ├── js/i18n.js              ← ⭐ TODOS LOS TEXTOS (ES / EN)
+│   ├── js/i18n.js              ← ⭐ SOLO LA TRADUCCIÓN AL INGLÉS
 │   ├── js/app.js               ← lógica (no hace falta tocarlo)
 │   └── img/
 │       ├── logo/              ← logotipo (SVG + PNG en todas las versiones)
@@ -97,9 +101,29 @@ Comprime las fotos antes de subirlas (1600 px de ancho basta, <300 kB) o la web 
 
 ## 5. Cambiar textos
 
-Todo en `assets/js/i18n.js`. Cada texto tiene una clave (`"hero.title"`, `"faq.a1"`…) y
-dos versiones: `es` y `en`. Si cambias uno, cambia también el otro.
-Se admite HTML dentro del texto (`<b>`, `<em>`, `<br>`).
+Esto funciona distinto a lo normal, y es a propósito.
+
+**El español vive dentro del HTML.** En `index.html` y `weekend.html` verás elementos así:
+
+```html
+<h2 class="h-sec" data-i18n="man.title">Los congresos están bien.<br>Esto es otra cosa.</h2>
+```
+
+Para cambiar un texto en español, edítalo ahí directamente, como editarías cualquier web.
+
+**El inglés vive en `assets/js/i18n.js`**, con la misma clave que el atributo `data-i18n`:
+
+```js
+"man.title": "Conferences are fine.<br>This is something else.",
+```
+
+### Por qué así
+
+Si todos los textos se inyectaran con JavaScript, el HTML llegaría vacío a quien no
+ejecute JS. Y eso incluye a buena parte de los rastreadores de IA (los de ChatGPT,
+Claude, Perplexity), que leen el HTML crudo. Antes la web tenía 86 textos vacíos y
+era literalmente invisible para ellos. Ahora el HTML llega completo y el JavaScript
+solo se usa para traducir al inglés.
 
 El idioma se detecta por el navegador, se puede forzar con `?lang=en` y se recuerda
 en el navegador del visitante.
@@ -128,9 +152,29 @@ Tipografías: **Outfit** (titulares y logotipo) + **Hanken Grotesk** (texto). Am
 
 ---
 
-## 7. Pendientes antes de publicar
+## 7. SEO e indexación
 
-- [ ] `assets/img/og.jpg` — imagen 1200×630 para cuando se comparta el enlace.
+Ya está puesto todo lo que no depende de tener contenido:
+
+| Qué | Dónde | Para qué |
+|---|---|---|
+| Datos estructurados | `index.html`, `weekend.html` | `Organization`, `WebSite`, `FAQPage` con las seis preguntas y `BreadcrumbList`. Es lo que leen Google y las IAs para entender qué eres. |
+| `llms.txt` | raíz | Resumen del proyecto en texto plano para modelos de lenguaje. Convención nueva, barata de mantener. Actualízalo cuando cambie algo de fondo. |
+| `robots.txt` | raíz | Permite expresamente a GPTBot, ClaudeBot, PerplexityBot, Google-Extended y compañía. Si algún día quieres bloquear alguno, cambia su `Allow` por `Disallow`. |
+| `sitemap.xml` | raíz | Las dos páginas. **Acuérdate de actualizar `lastmod` cuando publiques.** |
+| Imágenes para compartir | `assets/img/og.jpg` y `og-weekend.jpg` | 1200×630. Lo que sale al pegar el enlace en LinkedIn o WhatsApp. |
+
+Los eventos generan su propio `Event` en datos estructurados automáticamente, a partir
+de `data.js`, en cuanto haya alguno con fecha futura.
+
+**Lo que no está y es una decisión tuya:** el inglés comparte URL con el español, así
+que Google solo indexa la versión española. Si alguna vez quieres posicionar en inglés,
+haría falta duplicar las páginas en `/en/` y añadir etiquetas `hreflang`.
+
+---
+
+## 8. Pendientes antes de publicar
+
 - [ ] Confirmar emails de contacto y patrocinios en `data.js` → `links`.
 - [ ] Confirmar las URLs de LinkedIn e Instagram en `data.js` → `links` (las he puesto
       a partir del nombre de la marca; verifícalas).
@@ -143,7 +187,7 @@ Tipografías: **Outfit** (titulares y logotipo) + **Hanken Grotesk** (texto). Am
 
 ---
 
-## 8. Publicar
+## 9. Publicar
 
 **Opción rápida:** arrastra la carpeta a [app.netlify.com/drop](https://app.netlify.com/drop).
 Online en 20 segundos, gratis, HTTPS incluido. Luego apuntas el dominio `revchill.club`.
@@ -156,7 +200,7 @@ Cada `git push` despliega solo. No hay comando de build: el directorio raíz es 
 
 ---
 
-## 9. Nota sobre inscripciones
+## 10. Nota sobre inscripciones
 
 La reserva se hace en **Eventbrite**: el botón abre el evento en pestaña nueva.
 Aforo, entradas con QR, emails de confirmación y check-in ya resueltos, sin mantenimiento
@@ -167,32 +211,7 @@ Si algún día queréis inscripción propia, el punto de cambio es una sola func
 
 ---
 
-## 11. Los huecos de foto y los testimonios
-
-La web tiene ocho huecos marcados con rayas diagonales y el texto de lo que va dentro.
-No son un error: están esperando tus fotos.
-
-- **Hero**, vertical 4:5 (1200×1500). Es la más importante: es lo primero que se ve.
-- **Manifiesto**, horizontal 4:3 (1200×900). Gente hablando, no un plano general vacío.
-- **Galería**, seis huecos. Se rellenan desde el array `gallery` de `data.js` (punto 4).
-
-Para el hero y el manifiesto, sustituye el comentario de `index.html` por un `<img>`:
-
-```html
-<figure class="hero__shot ph" data-ph-key="hero.photo">
-  <img src="assets/img/hero.jpg" alt="" fetchpriority="high">
-</figure>
-```
-
-Los **testimonios** funcionan igual. En `data.js`, cada entrada de `quotes` lleva
-`pending: true` y se dibuja como una tarjeta de trazo discontinuo que dice "Reseña pendiente".
-Cuando tengas la reseña real, borra esa línea y rellena `name`, `role` y `text`.
-Así es imposible publicar una reseña inventada por descuido.
-
-
----
-
-## 10. El logotipo
+## 11. El logotipo
 
 Los archivos están en `assets/img/logo/`. Vectoriales (SVG) y PNG con fondo transparente.
 
@@ -217,3 +236,32 @@ ordenador sin instalar la fuente.
 **Reglas:** deja a los lados, como mínimo, la altura de la palabra. Por debajo de 64 px no
 encojas el logotipo: usa el trazo solo. No lo estires, no lo rotes, no separes el trazo de la
 palabra y no le añadas nada debajo.
+
+---
+
+## 12. Los huecos de foto y los testimonios
+
+La web tiene ocho huecos marcados con rayas diagonales y el texto de lo que va dentro.
+No son un error: están esperando tus fotos.
+
+- **Hero**, vertical 4:5 (1200×1500). Es la más importante: es lo primero que se ve.
+- **Manifiesto**, horizontal 4:3 (1200×900). Gente hablando, no un plano general vacío.
+- **Galería**, seis huecos. Se rellenan desde el array `gallery` de `data.js` (punto 4).
+
+Para el hero y el manifiesto, sustituye el comentario de `index.html` por un `<img>`:
+
+```html
+<figure class="hero__shot ph" data-ph-key="hero.photo">
+  <img src="assets/img/hero.jpg" alt="" fetchpriority="high">
+</figure>
+```
+
+Los **testimonios** funcionan igual. En `data.js`, cada entrada de `quotes` lleva
+`pending: true`. Mientras **todas** estén pendientes, la sección entera no se muestra:
+mejor no tener testimonios que enseñar tres huecos vacíos a un patrocinador. En cuanto
+quites el `pending: true` de una y rellenes `name`, `role` y `text`, la sección aparece
+sola. Así es imposible publicar una reseña inventada por descuido.
+
+
+---
+

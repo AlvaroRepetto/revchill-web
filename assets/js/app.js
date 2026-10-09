@@ -9,14 +9,18 @@
   "use strict";
 
   var D = window.REVCHILL || {};
-  var I = window.I18N || {};
+  var EN = window.I18N_EN || {};
   var L = D.links || {};
   var LANGS = ["es", "en"];
   var lang = "es";
+  var ES = Object.assign({}, window.I18N_ES || {});  // + lo que se lee del HTML al cargar
 
   var $  = function (s, c) { return (c || document).querySelector(s); };
   var $$ = function (s, c) { return [].slice.call((c || document).querySelectorAll(s)); };
-  var t  = function (k) { var d = I[lang] || {}; return (k in d) ? d[k] : ((I.es && I.es[k]) || ""); };
+  var t  = function (k) {
+    if (lang === "en" && (k in EN)) return EN[k];
+    return (k in ES) ? ES[k] : (EN[k] || "");
+  };
   var pick = function (v) {
     if (v == null) return "";
     if (typeof v === "string") return v;
@@ -32,6 +36,19 @@
     try { var s = localStorage.getItem("revchill-lang"); if (s && LANGS.indexOf(s) > -1) return s; } catch (e) {}
     try { var q = new URLSearchParams(location.search).get("lang"); if (q && LANGS.indexOf(q) > -1) return q; } catch (e) {}
     return (navigator.language || "es").toLowerCase().indexOf("es") === 0 ? "es" : "en";
+  }
+
+  /* El HTML viene en español. Lo guardamos antes de tocar nada para poder
+     volver a él, y así el idioma por defecto no depende de JavaScript. */
+  function snapshotES() {
+    $$("[data-i18n]").forEach(function (el) {
+      var k = el.getAttribute("data-i18n");
+      if (!(k in ES)) ES[k] = el.innerHTML;
+    });
+    $$("[data-ph-key]").forEach(function (el) {
+      var k = el.getAttribute("data-ph-key");
+      if (!(k in ES) && el.getAttribute("data-ph")) ES[k] = el.getAttribute("data-ph");
+    });
   }
 
   function applyLang(next) {
@@ -60,10 +77,22 @@
       var k = el.dataset.js;
       if (map[k]) { el.href = map[k]; el.target = "_blank"; el.rel = "noopener"; }
       else if (k === "mailto" && L.email) el.href = "mailto:" + L.email;
-      else if (k === "mailto-sponsors" && (L.emailSponsors || L.email))
-        el.href = "mailto:" + (L.emailSponsors || L.email) + "?subject=" + encodeURIComponent("Patrocinio RevChill");
+      else if (k.indexOf("sponsor-") === 0 && (L.emailSponsors || L.email)) {
+        var tier = { "sponsor-local":  "Patrocinio RevChill · Partner local",
+                     "sponsor-host":   "Patrocinio RevChill · Host de evento",
+                     "sponsor-season": "Patrocinio RevChill · Partner de temporada" }[k]
+                   || "Patrocinio RevChill";
+        el.href = "mailto:" + (L.emailSponsors || L.email) + "?subject=" + encodeURIComponent(tier);
+      }
       else if (k === "mailto-host" && L.email)
         el.href = "mailto:" + L.email + "?subject=" + encodeURIComponent("Quiero ser host de RevChill");
+      else if (k.indexOf("wk-") === 0 && L.email) {
+        var subj = { "wk-general": "RevChill Weekend Hack",
+                     "wk-venue":   "RevChill Weekend Hack · Alojamiento anfitrión",
+                     "wk-attend":  "RevChill Weekend Hack · Quiero venir",
+                     "wk-sponsor": "RevChill Weekend Hack · Patrocinio" }[k];
+        el.href = "mailto:" + L.email + "?subject=" + encodeURIComponent(subj);
+      }
     });
   })();
 
@@ -190,7 +219,13 @@
   /* ------------------------------------------------------------------ */
   function renderQuotes() {
     var box = $("#rail"); if (!box) return;
-    box.innerHTML = (D.quotes || []).map(function (q) {
+    var all = D.quotes || [];
+    var real = all.filter(function (q) { return !q.pending; });
+    var sec = document.getElementById("opiniones");
+    /* Si no hay ni una reseña real, la sección entera no se muestra.
+       Mejor nada que tres huecos vacíos delante de un patrocinador. */
+    if (sec) sec.hidden = real.length === 0;
+    box.innerHTML = all.map(function (q) {
       var pend = !!q.pending;
       var name = pend ? t("q.pending") : (q.name || "");
       var ini = pend ? "?" : name.trim().split(/\s+/).slice(0, 2)
@@ -324,6 +359,7 @@
     });
     var s = document.createElement("script");
     s.type = "application/ld+json";
+    s.id = "ld-events";
     s.textContent = JSON.stringify(json);
     document.head.appendChild(s);
   })();
@@ -333,5 +369,6 @@
   $$(".lang button").forEach(function (b) {
     b.addEventListener("click", function () { applyLang(b.dataset.lang); });
   });
+  snapshotES();
   applyLang(detect());
 })();

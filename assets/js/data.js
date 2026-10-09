@@ -105,7 +105,7 @@ window.REVCHILL = {
      Formato ideal: PNG o SVG con fondo transparente, alto ~200px.
      Deja el array vacío [] y saldrán huecos "Tu logo aquí".
      --------------------------------------------------------------------- */
-  sponsorSlots: 8, // nº de huecos que se muestran si faltan sponsors
+  sponsorSlots: 4, // nº de huecos que se muestran si faltan sponsors
   sponsors: [
     // { id: "sponsor-1", name: "Nombre S.L.", logo: "assets/img/sponsors/ejemplo.svg", url: "https://ejemplo.com" }
   ],

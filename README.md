@@ -10,7 +10,9 @@ en `index.html` y se publica subiendo la carpeta tal cual.
 ```
 revchill/
 ├── index.html                  ← la home. ⭐ LOS TEXTOS EN ESPAÑOL VAN AQUÍ
-├── weekend.html                ← landing del Weekend Hack (ídem)
+├── weekend.html                ← landing del Weekend Hack. DESPUBLICADA: existe
+│                                  pero no se enlaza ni se indexa. Ver sección 13.
+├── partners.html               ← ⭐ DOSSIER COMERCIAL. Privado, no se indexa.
 ├── robots.txt                  ← permisos de rastreo (buscadores e IAs)
 ├── sitemap.xml                 ← ⚠️ actualiza las fechas al publicar
 ├── llms.txt                    ← resumen del proyecto para modelos de IA
@@ -63,20 +65,74 @@ Cuando `registered` llega a `capacity`, el botón pasa a rojo y dice "Aforo comp
 
 ---
 
-## 3. Cómo añadir sponsors
+## 3. Cómo añadir partners
 
 1. Guarda el logo en `assets/img/sponsors/` (PNG o SVG con fondo transparente, ~200 px de alto).
-2. Añádelo al array `sponsors` de `data.js`:
+2. Añádelo al array `sponsors` de `data.js`, con su `tier`:
 
 ```js
 sponsors: [
-  { id: "acme", name: "ACME Revenue", logo: "assets/img/sponsors/acme.svg", url: "https://acme.com" }
+  { id: "acme", name: "ACME Revenue", tier: "temporada",
+    logo: "assets/img/sponsors/acme.svg", url: "https://acme.com" }
 ]
 ```
+
+### Qué hace cada `tier`
+
+| `tier` | Dónde sale |
+|---|---|
+| `"temporada"` | Muro de la home **al doble de tamaño y el primero**, línea de agradecimiento en el pie de todas las páginas, y conviene nombrarlo también en `llms.txt`. |
+| `"anfitrion"` | Muro de la home a tamaño normal. |
+| `"partner"` | Muro de la home a tamaño normal. |
+| `"weekend"` | Banda propia en `weekend.html`. Si *solo* tiene este tier, no sale en la home. |
+
+Se pueden combinar: `tier: ["temporada", "weekend"]`.
+
+### Para que salga en un encuentro concreto
+
+Añade su `id` al array `sponsors` de ese evento, arriba en el mismo archivo:
+
+```js
+sponsors: ["acme"]
+```
+
+Entonces aparece en la ficha de la agenda y en la barra de "próximo encuentro"
+como *"con ACME Revenue"*, con el logo al lado.
 
 Los huecos que sobren hasta `sponsorSlots` se rellenan con "Tu logo aquí" —
 que también funciona como reclamo para que alguien pregunte.
 Los logos salen en gris y se colorean al pasar el ratón.
+
+### La sección de Empresas es deliberadamente corta
+
+En `index.html` no aparece ni un importe, ni una lista de niveles. La sección
+`#empresas` es un párrafo que explica para qué sirve el patrocinio y qué se
+lleva una marca, las cuatro cifras, el muro de partners y un botón de
+**"Pedir el dossier"**. Nada más. El muro antes era una sección aparte
+(`#sponsors`) y ahora vive dentro de Empresas, para no decir dos veces lo
+mismo seguido.
+
+El título del muro cambia solo: mientras `sponsors` esté vacío pone *"Aquí
+van las marcas que lo hacen posible"*, y en cuanto haya una pasa a *"Ya han
+formado parte"*. Así no queda una frase presumiendo de partners encima de
+cuatro huecos vacíos.
+
+Las tarifas y los niveles viven solo en `partners.html` y en el PDF, que se
+mandan a quien los pide.
+
+Dos motivos: un precio público ancla la conversación antes de que la marca
+sepa lo que recibe, y además te impide ajustar la propuesta a cada caso. Si
+algún día quieres volver a enseñarlos, se tocan los textos de la sección
+`#empresas` y la clave `biz.*` correspondiente en `i18n.js`.
+
+`llms.txt` tampoco lleva importes, por lo mismo: lo leen ChatGPT y Perplexity.
+
+### Las nueve zonas que se venden en el dossier
+
+Están todas implementadas y todas se ocultan solas mientras no haya partners:
+muro de la home, barra de próximo encuentro, ficha del encuentro, galería,
+banda del Weekend, pie de página, `llms.txt`, enlace saliente a su web y
+mención en las notas de prensa. Si prometes una, existe.
 
 ---
 
@@ -132,6 +188,18 @@ en el navegador del visitante.
 
 ## 6. Cambiar colores
 
+### La web va siempre en verde oscuro
+
+No hay modo claro. Se quitó a propósito el bloque
+`@media (prefers-color-scheme: light)` de `app.css`, y `:root` lleva
+`color-scheme: dark` para que los controles del navegador (barra de scroll,
+desplegables, autocompletado) salgan oscuros y no desentonen. Da igual que el
+móvil o el portátil estén en modo claro: la web se ve igual para todo el mundo.
+
+El único documento claro del proyecto es `partners.html`, y es a propósito:
+es un dossier pensado para leerse seguido y para imprimirse en PDF.
+
+
 Todo el sistema visual está en las primeras 40 líneas de `assets/css/app.css`,
 en el bloque `:root`. Cambias ahí y cambia la web entera.
 
@@ -179,8 +247,9 @@ haría falta duplicar las páginas en `/en/` y añadir etiquetas `hreflang`.
 - [ ] Confirmar las URLs de LinkedIn e Instagram en `data.js` → `links` (las he puesto
       a partir del nombre de la marca; verifícalas).
 - [ ] Crear `privacidad.html`, `cookies.html` y `aviso-legal.html` (enlazados en el footer).
-- [ ] El botón "Descargar dossier" apunta a `assets/revchill-dossier.pdf`. Sube el PDF o
-      quita el botón en `index.html`.
+- [ ] Decidir si subes `partners.html` al servidor. Lleva `noindex` y está excluida
+      en `robots.txt` para todos los rastreadores, así que es seguro tenerla online
+      y mandar el enlace. Si prefieres no subirla, manda solo el PDF.
 - [ ] Sustituir los tres testimonios de ejemplo por reseñas reales (`data.js` → `quotes`).
 - [ ] Añadir las próximas fechas en `data.js` (ahora solo están los dos eventos de
       noviembre de 2025, que salen en la pestaña "Pasados").
@@ -265,3 +334,40 @@ sola. Así es imposible publicar una reseña inventada por descuido.
 
 ---
 
+
+
+---
+
+## 13. El Weekend Hack está despublicado
+
+`weekend.html` sigue en el proyecto, entera y funcionando, pero ahora mismo
+no se puede llegar a ella: no está en el menú, ni en el pie, ni en el
+sitemap, lleva `noindex` y está bloqueada en `robots.txt` para todos los
+rastreadores. En la home queda solo el bloque de la sección `#weekend`, que
+adelanta el formato y manda a la comunidad de WhatsApp.
+
+**Para publicarla cuando llegue el momento:**
+
+1. Quita `<meta name="robots" content="noindex, nofollow">` de `weekend.html`.
+2. Borra las dos líneas `Disallow: /weekend.html` de `robots.txt` (están
+   repetidas en cada bloque de rastreador: son 14 en total).
+3. Vuelve a añadir la URL en `sitemap.xml`.
+4. En `index.html`, recupera el enlace del menú y el del pie, y cambia el
+   botón de la sección `#weekend` por uno que apunte a `weekend.html`.
+
+---
+
+## 14. La agenda: pasados y próximos
+
+Los dos listados se construyen solos a partir de la fecha de cada evento en
+`data.js`. No hay que marcar nada como pasado.
+
+**En los eventos pasados no se muestra** ni la hora, ni "entrada gratuita",
+ni el número de asistentes. Solo fecha, ciudad y local. Es una decisión
+deliberada: el historial se lee mejor como una lista limpia de sitios donde
+ha habido RevChill, y el aforo de un evento que ya pasó no le dice nada a
+nadie. Por eso los eventos pasados de `data.js` no llevan `capacity` ni
+`registered`: si los pones, se ignoran.
+
+**En los próximos sí** se muestra la hora, "entrada gratuita" y, si rellenas
+`capacity` y `registered`, la barra de plazas que queda.

@@ -21,7 +21,7 @@ patrocinadores disponen de un espacio breve para presentarse y nada más.
 ## Páginas
 
 - [Inicio](https://revchill.club/): manifiesto, agenda de encuentros, galería, sección para empresas patrocinadoras y preguntas frecuentes.
-- [RevChill Weekend Hack](https://revchill.club/weekend.html): formato en preparación. Un fin de semana fuera, en un alojamiento independiente en plena naturaleza, que combina workshops impartidos por los propios asistentes con rutas, convivencia y desconexión. Abierto a alojamientos anfitriones, asistentes y patrocinadores.
+- RevChill Weekend Hack: formato todavía sin anunciar. Un fin de semana fuera, en un alojamiento independiente en plena naturaleza, que combina aprendizaje entre los propios asistentes con rutas, convivencia y desconexión. Los detalles y la fecha se anunciarán primero en la comunidad de WhatsApp.
 
 ## Formatos
 
@@ -41,12 +41,35 @@ equilibrada de perfiles y de tipos de alojamiento.
 
 ## Para empresas
 
-RevChill se financia con patrocinios de empresas del sector (PMS, RMS,
-channel managers, herramientas de benchmarking y otras TravelTech). El
-patrocinador obtiene visibilidad de marca y acceso directo a decisores en un
-contexto de conversación, no de feria. Hay tres formatos: partner local
-(un evento), host de evento (marca principal del encuentro) y partner de
-temporada (presencia durante todo el año).
+RevChill se financia con el apoyo de empresas. La mayoría son tecnológicas
+del sector hotelero (PMS, RMS, channel managers, motores de reserva,
+herramientas de benchmarking y otras TravelTech), porque es a lo que se
+dedica la comunidad, pero no es un requisito: está abierto a cualquier marca
+cuyo producto o servicio encaje en un encuentro de profesionales del sector.
+
+Las fórmulas son flexibles y se adaptan a cada marca: se puede acompañar un
+encuentro suelto, varios o la temporada completa, y el RevChill Weekend Hack
+tiene sus propias opciones. Se puede aportar presupuesto o producto —bebida,
+muestras, un servicio, el espacio—, y también se estudian formas de
+colaboración distintas a las anteriores.
+
+Lo que recibe una marca: visibilidad en un contexto de conversación y no de
+feria, acceso directo a decisores, y todo el material que se produce en cada
+encuentro (fotografías y vídeo con derecho de uso propio), además de
+presencia permanente en revchill.club.
+
+Las condiciones e importes se explican en un dossier que se envía a quien lo
+pide. Contacto para empresas: sponsors@revchill.club
+
+## Partners
+
+<!-- Añade aquí cada partner confirmado: una línea por marca, con lo que es y
+     el nivel. Es lo que leen ChatGPT, Claude y Perplexity cuando alguien
+     pregunta por el ecosistema de revenue management en España, y por eso
+     forma parte de lo que se vende en el dossier. Borra este comentario
+     cuando haya el primero. -->
+
+Todavía no hay partners confirmados para la temporada 2027.
 
 ## Temas que se tratan
 

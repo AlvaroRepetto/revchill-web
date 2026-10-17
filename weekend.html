@@ -5,8 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>RevChill Weekend Hack</title>
 <meta name="description" content="Un fin de semana fuera con gente del sector del Revenue Management. Workshops de verdad y desconexión de verdad. En preparación.">
-<meta name="theme-color" content="#0E3334" media="(prefers-color-scheme: dark)">
-<meta name="theme-color" content="#F2F4EA" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0E3334">
+<!-- Despublicada: no se enlaza desde ningún sitio ni se indexa, hasta que
+     se anuncie el formato. Para publicarla: quita esta etiqueta, saca las
+     dos líneas de weekend.html de robots.txt, vuelve a meterla en
+     sitemap.xml y recupera el enlace en el menú y en el pie de index.html. -->
+<meta name="robots" content="noindex, nofollow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_ES">
 <meta property="og:site_name" content="RevChill">
@@ -155,6 +159,14 @@
       <div><dt data-i18n="wk.o3">Cuánto</dt><dd data-i18n="wk.o3d">Lo justo para cubrir gastos. El patrocinio cubre el resto.</dd></div>
       <div><dt data-i18n="wk.o4">Cuánta gente</dt><dd data-i18n="wk.o4d">Grupo pequeño: suficiente para que haya mezcla, poco para que nadie se quede fuera de la conversación.</dd></div>
     </dl>
+  </div>
+</section>
+
+<!-- PARTNERS DEL WEEKEND · oculto mientras no haya ninguno -->
+<section class="sec sec--slim" id="wkPartners" hidden>
+  <div class="wrap">
+    <h2 class="h-small" data-i18n="wk.partners">Hacen posible este fin de semana</h2>
+    <div class="wall" id="wkWall"></div>
   </div>
 </section>
 

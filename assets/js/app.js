@@ -65,6 +65,8 @@
     renderQuotes();
     renderStats();
     renderWall();
+    renderFootPartners();
+    renderWeekendPartners();
     renderChips();
   }
 
@@ -78,9 +80,10 @@
       if (map[k]) { el.href = map[k]; el.target = "_blank"; el.rel = "noopener"; }
       else if (k === "mailto" && L.email) el.href = "mailto:" + L.email;
       else if (k.indexOf("sponsor-") === 0 && (L.emailSponsors || L.email)) {
-        var tier = { "sponsor-local":  "Patrocinio RevChill · Partner local",
-                     "sponsor-host":   "Patrocinio RevChill · Host de evento",
-                     "sponsor-season": "Patrocinio RevChill · Partner de temporada" }[k]
+        var tier = { "sponsor-local":   "Patrocinio RevChill · Partner del encuentro",
+                     "sponsor-host":    "Patrocinio RevChill · Anfitrión del encuentro",
+                     "sponsor-season":  "Patrocinio RevChill · Partner de temporada",
+                     "sponsor-dossier": "Patrocinio RevChill · Dossier 2027" }[k]
                    || "Patrocinio RevChill";
         el.href = "mailto:" + (L.emailSponsors || L.email) + "?subject=" + encodeURIComponent(tier);
       }
@@ -142,7 +145,8 @@
     box.innerHTML =
       '<p class="strip__when"><span class="strip__city">' + esc(e.city) + "</span> " +
         e._d.getDate() + " " + mon(e._d) + "</p>" +
-      '<p class="strip__where">' + esc(e.venue) + " · " + hour(e._d) + "h</p>" +
+      '<p class="strip__where">' + esc(e.venue) + " · " + hour(e._d) + "h" +
+        (sponsorsOf(e).length ? " · " + withLine(sponsorsOf(e)) : "") + "</p>" +
       (s ? '<p class="strip__seats"><span>' + s.left + " " + t("strip.left") + "</span>" +
            '<span class="strip__bar"><span data-pct="' + s.pct + '"></span></span></p>' : "") +
       (e.eventbrite
@@ -165,13 +169,26 @@
           ? '<a class="btn btn--sm btn--ghost" href="' + esc(e.eventbrite) + '" target="_blank" rel="noopener">' +
             (e.status === "waitlist" ? t("ag.wait") : t("ag.full")) + "</a>"
           : '<a class="btn btn--sm" href="' + esc(e.eventbrite) + '" target="_blank" rel="noopener">' + t("ag.book") + "</a>";
-    var seats = s
-      ? '<span class="ev__seats">' + (past ? s.reg + " " + t("ag.attendees") : s.reg + "/" + s.cap + " " + t("ag.seats")) + "</span>"
+    /* En los pasados no se enseña aforo ni asistencia: solo dónde fue. */
+    var seats = (s && !past)
+      ? '<span class="ev__seats">' + s.reg + "/" + s.cap + " " + t("ag.seats") + "</span>"
+      : "";
+    var sp = sponsorsOf(e);
+    /* Si la marca tiene logo se enseña el logo, y si no, el nombre: poner
+       los dos seguidos repite la misma información dos veces. */
+    var spLine = sp.length
+      ? '<div class="ev__sponsors"><span class="ev__with">' + t("sp.with") + "</span>" +
+        sp.map(function (s) {
+          return s.logo ? logoHTML(s, "ev__logo")
+                        : '<span class="ev__with"><b>' + esc(s.name) + "</b></span>";
+        }).join("") + "</div>"
       : "";
     return '<article class="ev' + (past ? " ev--past" : "") + '">' +
       '<p class="ev__d">' + d.getDate() + '<span class="ev__m">' + mon(d) + " " + d.getFullYear() + "</span></p>" +
       '<div><h3 class="ev__city">' + esc(e.city) + '</h3>' +
-      '<p class="ev__meta">' + esc(e.venue) + " · " + hour(d) + "h · " + t("ag.free") + "</p></div>" +
+      '<p class="ev__meta">' + esc(e.venue) +
+        (past ? "" : " · " + hour(d) + "h · " + t("ag.free")) + "</p>" +
+      spLine + "</div>" +
       '<div class="ev__side">' + seats + btn + "</div></article>";
   }
   function renderAgenda() {
@@ -249,19 +266,82 @@
     }).join("");
   }
 
+  /* ------------------------------------------------------------------ */
+  /* PARTNERS                                                            */
+  /* ------------------------------------------------------------------ */
+  /* tier puede ser un string o un array. hasTier() acepta los dos. */
+  function hasTier(s, name) {
+    var tr = s && s.tier;
+    if (!tr) return false;
+    return (typeof tr === "string") ? tr === name : tr.indexOf(name) !== -1;
+  }
+  function sponsorsOf(e) {
+    var ids = e && e.sponsors; if (!ids || !ids.length) return [];
+    return (D.sponsors || []).filter(function (s) { return ids.indexOf(s.id) !== -1; });
+  }
+  /* Logo enlazado, reutilizable en el muro, en las fichas y en el weekend. */
+  function logoHTML(s, cls) {
+    var img = '<img src="' + esc(s.logo) + '" alt="' + esc(s.name) + '" loading="lazy">';
+    /* <span> y no <div>: estos logos van dentro de párrafos y un div los
+       rompería (el navegador cierra el <p> al encontrarlo). */
+    return s.url
+      ? '<a class="' + cls + '" href="' + esc(s.url) + '" target="_blank" rel="noopener">' + img + "</a>"
+      : '<span class="' + cls + '">' + img + "</span>";
+  }
+  /* "con Marca" / "con Marca y Marca" — se usa en la franja y en la agenda. */
+  function withLine(list) {
+    if (!list.length) return "";
+    var names = list.map(function (s) { return esc(s.name); });
+    var join = names.length > 1
+      ? names.slice(0, -1).join(", ") + " " + t("sp.and") + " " + names[names.length - 1]
+      : names[0];
+    return '<span class="ev__with">' + t("sp.with") + " <b>" + join + "</b></span>";
+  }
+
   function renderWall() {
     var box = $("#wall"); if (!box) return;
-    var list = D.sponsors || [];
-    var slots = Math.max((D.sponsorSlots || 8) - list.length, 0);
+    /* Quien solo patrocina el Weekend sale en su landing, no en esta home. */
+    var list = (D.sponsors || []).filter(function (s) {
+      var only = (typeof s.tier === "string") ? [s.tier] : (s.tier || []);
+      return !(only.length === 1 && only[0] === "weekend");
+    });
+    /* Los de temporada van primero y ocupan el doble: es lo que se vende. */
+    list = list.slice().sort(function (a, b) {
+      return (hasTier(b, "temporada") ? 1 : 0) - (hasTier(a, "temporada") ? 1 : 0);
+    });
+    /* Los de temporada van en su propia fila, así que no gastan hueco
+       de la rejilla: solo cuentan los normales para los "Tu logo aquí". */
+    var normales = list.filter(function (s) { return !hasTier(s, "temporada"); }).length;
+    var slots = Math.max((D.sponsorSlots || 8) - normales, 0);
     var h = list.map(function (s) {
-      var img = '<img src="' + esc(s.logo) + '" alt="' + esc(s.name) + '" loading="lazy">';
-      return s.url
-        ? '<a class="wall__c" href="' + esc(s.url) + '" target="_blank" rel="noopener">' + img + "</a>"
-        : '<div class="wall__c">' + img + "</div>";
+      return logoHTML(s, "wall__c" + (hasTier(s, "temporada") ? " wall__c--big" : ""));
     }).join("");
     for (var i = 0; i < slots; i++)
       h += '<div class="wall__c"><p class="wall__slot"><b>' + t("sp.slotT") + "</b>" + t("sp.slotD") + "</p></div>";
     box.innerHTML = h;
+  }
+
+  /* Pie: "La temporada es posible gracias a ..." Solo partners de temporada. */
+  function renderFootPartners() {
+    var box = $("#footPartners"); if (!box) return;
+    var list = (D.sponsors || []).filter(function (s) { return hasTier(s, "temporada"); });
+    if (!list.length) { box.hidden = true; return; }
+    box.hidden = false;
+    box.innerHTML = t("sp.thanks") + " " +
+      list.map(function (s) {
+        return s.url
+          ? '<a href="' + esc(s.url) + '" target="_blank" rel="noopener">' + esc(s.name) + "</a>"
+          : esc(s.name);
+      }).join(" · ");
+  }
+
+  /* Banda de partners del Weekend Hack (weekend.html). */
+  function renderWeekendPartners() {
+    var box = $("#wkWall"); if (!box) return;
+    var sec = document.getElementById("wkPartners");
+    var list = (D.sponsors || []).filter(function (s) { return hasTier(s, "weekend"); });
+    if (sec) sec.hidden = list.length === 0;
+    box.innerHTML = list.map(function (s) { return logoHTML(s, "wall__c"); }).join("");
   }
 
   function renderChips() {

@@ -5,8 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>RevChill</title>
 <meta name="description" content="Comunidad de Revenue Management. Afterworks informales por toda España. Entrada gratuita, plazas limitadas.">
-<meta name="theme-color" content="#0E3334" media="(prefers-color-scheme: dark)">
-<meta name="theme-color" content="#F2F4EA" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0E3334">
 <link rel="canonical" href="https://revchill.club/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_ES">
@@ -140,7 +139,6 @@
       <a href="#agenda" data-i18n="nav.agenda">Agenda</a>
       <a href="#galeria" data-i18n="nav.gallery">Galería</a>
       <a href="#empresas" data-i18n="nav.companies">Empresas</a>
-      <a href="weekend.html" data-i18n="nav.weekend">Weekend Hack</a>
       <a href="#faq" data-i18n="nav.faq">FAQ</a>
     </nav>
     <div class="nav__end">
@@ -214,19 +212,19 @@
 <!-- ============ 4b. WEEKEND HACK (teaser) ============ -->
 <section class="sec sec--slim" id="weekend">
   <div class="wrap">
-    <a class="promo" href="weekend.html">
+    <div class="promo">
       <div class="promo__body">
-        <p class="promo__badge" data-i18n="wk.badge">En preparación</p>
+        <p class="promo__badge" data-i18n="wk.badge">Muy pronto</p>
         <h2 class="promo__name" data-i18n="wk.name">RevChill Weekend Hack</h2>
-        <p class="promo__line" data-i18n="wk.teaser">Un fin de semana fuera, con gente del sector. Se aprende de verdad y se desconecta de verdad.</p>
+        <p class="promo__line" data-i18n="wk.teaser">Un fin de semana fuera con gente del sector. Desconectar, sí, pero también volver con cosas aprendidas. Y con alguna sorpresa que todavía no vamos a contar.</p>
         <div class="promo__duo">
-          <div><b data-i18n="wk.d1t">Vuelves sabiendo más</b><span data-i18n="wk.d1d">Workshops cortos que dais vosotros mismos.</span></div>
+          <div><b data-i18n="wk.d1t">Vuelves sabiendo más</b><span data-i18n="wk.d1d">Sin ponencias y sin agenda impresa.</span></div>
           <div><b data-i18n="wk.d2t">Vuelves con gente</b><span data-i18n="wk.d2d">Monte, cena larga y sobremesa.</span></div>
         </div>
-        <span class="promo__cta"><span data-i18n="wk.more">Saber más</span> <span aria-hidden="true">&rarr;</span></span>
+        <a class="btn promo__btn" data-js="whatsapp" data-i18n="wk.more">Estate atento al lanzamiento</a>
       </div>
       <figure class="promo__shot ph" data-ph-key="wk.photo" data-ph="Grupo en el monte · vertical 3:4 · 900×1200"></figure>
-    </a>
+    </div>
   </div>
 </section>
 
@@ -251,36 +249,17 @@
   <div class="wrap">
     <p class="eyebrow" data-i18n="biz.eyebrow">Para empresas</p>
     <h2 class="h-sec h-sec--wide" data-i18n="biz.title">Patrocinar RevChill no es poner un roll-up.</h2>
-    <p class="lead" data-i18n="biz.lead">Es estar en la conversación cuando la gente baja la guardia. Sin stand, sin pitch de cuarenta minutos y sin lista de leads fría.</p>
+    <p class="lead" data-i18n="biz.lead">Los encuentros son gratuitos para quien viene, y lo son porque hay marcas que los hacen posibles. A cambio no damos un stand ni una lista de leads fría: damos cuarenta profesionales del sector sin prisa y con ganas de hablar, y todo el material de la noche para que lo uses donde quieras. Cada acuerdo ha sido distinto, porque no hay dos marcas iguales: hay quien pone presupuesto, quien pone su espacio y quien pone lo que fabrica.</p>
 
     <dl class="stats" id="stats"></dl>
 
-    <div class="trio">
-      <article class="fmt">
-        <h3 data-i18n="biz.t1n">Partner local</h3>
-        <p data-i18n="biz.t1d">Un evento, una ciudad. Logo en cartelería y web, mención en la apertura y las fotos del encuentro.</p>
-        <a class="link" data-js="sponsor-local" data-i18n="biz.cta">Hablemos</a>
-      </article>
-      <article class="fmt fmt--big">
-        <p class="fmt__flag" data-i18n="biz.t2flag">El más elegido</p>
-        <h3 data-i18n="biz.t2n">Host de evento</h3>
-        <p data-i18n="biz.t2d">Eres la marca del encuentro. Cinco minutos de micro, logo en todos los materiales y en la entrada, y un vídeo resumen con tu marca. El espacio o las consumiciones, si quieres, corren de tu cuenta.</p>
-        <a class="link" data-js="sponsor-host" data-i18n="biz.cta">Hablemos</a>
-      </article>
-      <article class="fmt">
-        <h3 data-i18n="biz.t3n">Partner de temporada</h3>
-        <p data-i18n="biz.t3d">Presencia en todos los encuentros del año, logo permanente en la web y micro en los que elijas.</p>
-        <a class="link" data-js="sponsor-season" data-i18n="biz.cta">Hablemos</a>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 8. SPONSORS ============ -->
-<section class="sec sec--slim" id="sponsors">
-  <div class="wrap">
-    <h2 class="h-small" data-i18n="sp.title">Han hecho posible RevChill</h2>
+    <h3 class="h-small" data-i18n="sp.title">Estas empresas ya han formado parte de RevChill</h3>
     <div class="wall" id="wall"></div>
+
+    <p class="biz__cta">
+      <span data-i18n="biz.askD">Dime a qué te dedicas y te mando el dossier con las opciones.</span>
+      <a class="btn btn--lg" data-js="sponsor-dossier" data-i18n="biz.askB">Pedir el dossier</a>
+    </p>
   </div>
 </section>
 
@@ -343,7 +322,7 @@
       <a href="#manifiesto" data-i18n="nav.manifesto">Manifiesto</a>
       <a href="#agenda" data-i18n="nav.agenda">Agenda</a>
       <a href="#galeria" data-i18n="nav.gallery">Galería</a>
-      <a href="weekend.html" data-i18n="wk.name">RevChill Weekend Hack</a>
+      <a href="#weekend" data-i18n="wk.name">RevChill Weekend Hack</a>
       <a href="#faq" data-i18n="nav.faq">FAQ</a>
     </nav>
     <nav class="foot__col">
@@ -361,6 +340,7 @@
     </nav>
   </div>
   <div class="wrap foot__end">
+    <p class="foot__partners" id="footPartners" hidden></p>
     <span>© <span id="year"></span> RevChill</span>
     <span data-i18n="ft.rights">Hecho con cariño, y alguna caña, en España.</span>
   </div>

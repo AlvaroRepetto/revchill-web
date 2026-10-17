@@ -26,59 +26,133 @@ window.REVCHILL = {
      --------------------------------------------------------------------- */
   events: [
     {
-      id: "sevilla-2025-11",
-      date: "2025-11-19T18:30",
+      id: "sevilla-2025-09",
+      date: "2025-09-10T19:00",
+      city: "SEVILLA",
+      venue: "Terraza Pura Vida",
+      address: "Sevilla",
+      eventbrite: "",
+      sponsors: [],
+      tags: { es: ["Afterwork", "Terraza"], en: ["Afterwork", "Rooftop"] },
+      title: { es: "RevChill Sevilla", en: "RevChill Sevilla" },
+      blurb: { es: "El primero de todos.", en: "The very first one." }
+    },
+    {
+      id: "sevilla-2025-10",
+      date: "2025-10-15T19:00",
       city: "SEVILLA",
       venue: "Terraza Chile",
       address: "Sevilla",
-      capacity: 40,
-      registered: 30,
-      eventbrite: "https://www.eventbrite.com/e/entradas-revchill-social-meet-sevilla-revenue-canas-y-conexiones-que-suman-1961219072039",
-      status: "open",
+      eventbrite: "",
       sponsors: [],
-      tags: { es: ["Afterwork", "Terraza", "Gratis"], en: ["Afterwork", "Rooftop", "Free"] },
+      tags: { es: ["Afterwork", "Terraza"], en: ["Afterwork", "Rooftop"] },
+      title: { es: "RevChill Sevilla", en: "RevChill Sevilla" },
+      blurb: { es: "Revenue, cañas y conexiones que suman.", en: "Revenue, beers and connections that add up." }
+    },
+    {
+      id: "sevilla-2025-11",
+      date: "2025-11-19T19:00",
+      city: "SEVILLA",
+      venue: "Terraza Chile",
+      address: "Sevilla",
+      eventbrite: "https://www.eventbrite.com/e/entradas-revchill-social-meet-sevilla-revenue-canas-y-conexiones-que-suman-1961219072039",
+      sponsors: [],
+      tags: { es: ["Afterwork", "Terraza"], en: ["Afterwork", "Rooftop"] },
       title: { es: "RevChill Social Meet Sevilla", en: "RevChill Social Meet Sevilla" },
-      blurb: {
-        es: "Revenue, cañas y conexiones que suman.",
-        en: "Revenue, beers and connections that add up."
-      }
+      blurb: { es: "Revenue, cañas y conexiones que suman.", en: "Revenue, beers and connections that add up." }
     },
     {
       id: "madrid-2025-11",
-      date: "2025-11-26T18:30",
+      date: "2025-11-26T19:00",
       city: "MADRID",
       venue: "Terraza Martini · Radisson RED",
       address: "Madrid",
-      capacity: 50,
-      registered: 21,
       eventbrite: "https://www.eventbrite.com/e/entradas-revchill-social-meet-madrid-revenue-beers-and-meaningful-connections-1963620643203",
-      status: "open",
       sponsors: [],
-      tags: { es: ["Afterwork", "Rooftop", "Gratis"], en: ["Afterwork", "Rooftop", "Free"] },
+      tags: { es: ["Afterwork", "Rooftop"], en: ["Afterwork", "Rooftop"] },
       title: { es: "RevChill Social Meet Madrid", en: "RevChill Social Meet Madrid" },
-      blurb: {
-        es: "Revenue, beers and meaningful connections.",
-        en: "Revenue, beers and meaningful connections."
-      }
+      blurb: { es: "Revenue, beers and meaningful connections.", en: "Revenue, beers and meaningful connections." }
+    },
+    {
+      id: "sevilla-2026-02",
+      date: "2026-02-19T19:00",
+      city: "SEVILLA",
+      venue: "California Dreams Bar",
+      address: "Sevilla",
+      eventbrite: "",
+      sponsors: [],
+      tags: { es: ["Afterwork"], en: ["Afterwork"] },
+      title: { es: "RevChill Sevilla", en: "RevChill Sevilla" },
+      blurb: { es: "Primera parada del año.", en: "First stop of the year." }
+    },
+    {
+      id: "benidorm-2026-03",
+      date: "2026-03-11T19:00",
+      city: "BENIDORM",
+      venue: "Hotel Brasil",
+      address: "Benidorm",
+      eventbrite: "",
+      sponsors: [],
+      tags: { es: ["Afterwork", "Levante"], en: ["Afterwork", "Levante"] },
+      title: { es: "RevChill Benidorm", en: "RevChill Benidorm" },
+      blurb: { es: "Estreno en el Levante.", en: "First one on the east coast." }
+    },
+    {
+      id: "malaga-2026-04",
+      date: "2026-04-15T19:00",
+      city: "MÁLAGA",
+      venue: "La Terraza de San Juan · Hotel Málaga Premium",
+      address: "Málaga",
+      eventbrite: "",
+      sponsors: [],
+      tags: { es: ["Afterwork", "Rooftop"], en: ["Afterwork", "Rooftop"] },
+      title: { es: "RevChill Málaga", en: "RevChill Málaga" },
+      blurb: { es: "Estreno en la Costa del Sol.", en: "First one on the Costa del Sol." }
+    },
+    {
+      id: "barcelona-2026-05",
+      date: "2026-05-20T19:00",
+      city: "BARCELONA",
+      venue: "Rooftop Yurbban Passage Hotel",
+      address: "Barcelona",
+      eventbrite: "",
+      sponsors: [],
+      tags: { es: ["Afterwork", "Rooftop"], en: ["Afterwork", "Rooftop"] },
+      title: { es: "RevChill Barcelona", en: "RevChill Barcelona" },
+      blurb: { es: "Estreno en Barcelona.", en: "First one in Barcelona." }
+    },
+    {
+      id: "madrid-2026-06",
+      date: "2026-06-10T19:00",
+      city: "MADRID",
+      venue: "Hotel Atípico",
+      address: "Madrid",
+      eventbrite: "",
+      sponsors: [],
+      tags: { es: ["Afterwork"], en: ["Afterwork"] },
+      title: { es: "RevChill Madrid", en: "RevChill Madrid" },
+      blurb: { es: "Cierre antes del verano.", en: "Last one before summer." }
     }
 
     /* --- PLANTILLA PARA UN EVENTO NUEVO ---------------------------------
-       Descomenta este bloque (quita las marcas de comentario de alrededor)
-       y edita los valores.
+       Descomenta este bloque y edita los valores. Para un evento futuro
+       añade capacity y registered si quieres que salga la barra de plazas,
+       y el enlace de Eventbrite. En los pasados no hace falta ninguna de
+       las tres cosas: no se muestran.
 
     ,{
-      id: "barcelona-2026-03",
-      date: "2026-03-12T18:30",
-      city: "BARCELONA",
+      id: "valencia-2027-04",
+      date: "2027-04-15T19:00",
+      city: "VALENCIA",
       venue: "Nombre del local",
-      address: "Barcelona",
+      address: "Valencia",
       capacity: 45,
       registered: 0,
       eventbrite: "",
       status: "open",
-      sponsors: ["sponsor-1"],
-      tags: { es: ["Afterwork", "Gratis"], en: ["Afterwork", "Free"] },
-      title: { es: "RevChill Social Meet Barcelona", en: "RevChill Social Meet Barcelona" },
+      sponsors: ["id-del-partner"],
+      tags: { es: ["Afterwork"], en: ["Afterwork"] },
+      title: { es: "RevChill Valencia", en: "RevChill Valencia" },
       blurb: { es: "Texto corto.", en: "Short text." }
     }
     --------------------------------------------------------------------- */
@@ -89,25 +163,40 @@ window.REVCHILL = {
      soon: true  -> se muestra en gris (“próximamente”)
      --------------------------------------------------------------------- */
   cities: [
-    { name: "MADRID" },
     { name: "SEVILLA" },
-    { name: "BARCELONA", soon: true },
+    { name: "MADRID" },
+    { name: "BARCELONA" },
+    { name: "MÁLAGA" },
+    { name: "BENIDORM" },
     { name: "VALENCIA", soon: true },
-    { name: "MÁLAGA", soon: true },
     { name: "PALMA", soon: true },
     { name: "BILBAO", soon: true },
-    { name: "CANARIAS", soon: true }
+    { name: "CANARIAS", soon: true },
+    { name: "LISBOA", soon: true }
   ],
 
   /* ---------------------------------------------------------------------
-     3) SPONSORS
+     3) PARTNERS
+     ---------------------------------------------------------------------
      Pon el logo en assets/img/sponsors/ y referencia el archivo.
      Formato ideal: PNG o SVG con fondo transparente, alto ~200px.
      Deja el array vacío [] y saldrán huecos "Tu logo aquí".
+
+     tier -> decide dónde y cómo de grande aparece la marca:
+       "temporada"  Partner de temporada. Logo al doble de tamaño, el primero
+                    del muro, y sale nombrado en el pie y en llms.txt.
+       "anfitrion"  Anfitrión de uno o varios encuentros. Logo normal.
+       "partner"    Partner de encuentro. Logo normal.
+       "weekend"    Patrocinador del Weekend Hack. Sale en weekend.html.
+                    (Puedes poner varios: tier: ["temporada", "weekend"])
+
+     Para que una marca salga en la ficha de un encuentro concreto, añade su
+     id al array "sponsors" de ese evento, arriba.
      --------------------------------------------------------------------- */
-  sponsorSlots: 4, // nº de huecos que se muestran si faltan sponsors
+  sponsorSlots: 12, // nº de huecos del muro (3 filas de 4 en escritorio)
   sponsors: [
-    // { id: "sponsor-1", name: "Nombre S.L.", logo: "assets/img/sponsors/ejemplo.svg", url: "https://ejemplo.com" }
+    // { id: "sponsor-1", name: "Nombre S.L.", tier: "anfitrion",
+    //   logo: "assets/img/sponsors/ejemplo.svg", url: "https://ejemplo.com" }
   ],
 
   /* ---------------------------------------------------------------------
@@ -174,9 +263,9 @@ window.REVCHILL = {
      7) CIFRAS (sección empresas). Actualízalas cuando crezcáis.
      --------------------------------------------------------------------- */
   figures: [
-    { value: "2", label: { es: "ciudades activas", en: "active cities" } },
-    { value: "50+", label: { es: "profesionales inscritos", en: "professionals signed up" } },
-    { value: "95%", label: { es: "del tiempo, networking", en: "of the time, networking" } },
+    { value: "5", label: { es: "comunidades activas", en: "active communities" } },
+    { value: "~40", label: { es: "asistentes por encuentro", en: "attendees per meet-up" } },
+    { value: "700+", label: { es: "siguiendo en LinkedIn", en: "following on LinkedIn" } },
     { value: "0 €", label: { es: "para el asistente", en: "for attendees" } }
   ]
 };

@@ -1,8 +1,13 @@
 # RevChill — https://revchill.club/
 
 # Buscadores
+# partners.html es el dossier comercial: documento privado, no se indexa.
+# weekend.html está despublicada hasta que se anuncie el formato.
+# (Lleva además <meta name="robots" content="noindex, nofollow"> en la página.)
 User-agent: *
 Allow: /
+Disallow: /partners.html
+Disallow: /weekend.html
 
 # Rastreadores de IA. Se permiten a propósito: queremos que ChatGPT,
 # Claude, Perplexity y Gemini sepan qué es RevChill y puedan recomendarlo
@@ -10,41 +15,67 @@ Allow: /
 # Para bloquear alguno, cambia su Allow por Disallow.
 User-agent: GPTBot
 Allow: /
+Disallow: /partners.html
+Disallow: /weekend.html
 
 User-agent: OAI-SearchBot
 Allow: /
+Disallow: /partners.html
+Disallow: /weekend.html
 
 User-agent: ChatGPT-User
 Allow: /
+Disallow: /partners.html
+Disallow: /weekend.html
 
 User-agent: ClaudeBot
 Allow: /
+Disallow: /partners.html
+Disallow: /weekend.html
 
 User-agent: Claude-SearchBot
 Allow: /
+Disallow: /partners.html
+Disallow: /weekend.html
 
 User-agent: Claude-User
 Allow: /
+Disallow: /partners.html
+Disallow: /weekend.html
 
 User-agent: PerplexityBot
 Allow: /
+Disallow: /partners.html
+Disallow: /weekend.html
 
 User-agent: Perplexity-User
 Allow: /
+Disallow: /partners.html
+Disallow: /weekend.html
 
 User-agent: Google-Extended
 Allow: /
+Disallow: /partners.html
+Disallow: /weekend.html
 
 User-agent: Applebot-Extended
 Allow: /
+Disallow: /partners.html
+Disallow: /weekend.html
 
 User-agent: Bingbot
 Allow: /
+Disallow: /partners.html
+Disallow: /weekend.html
 
 User-agent: Amazonbot
 Allow: /
+Disallow: /partners.html
+Disallow: /weekend.html
 
 User-agent: meta-externalagent
 Allow: /
+Disallow: /partners.html
+Disallow: /weekend.html
 
 Sitemap: https://revchill.club/sitemap.xml

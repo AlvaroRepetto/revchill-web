@@ -1,0 +1,573 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RevChill · Dossier de partners 2027</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Documento privado. Opciones de colaboración con RevChill para la temporada 2027.">
+<meta name="theme-color" content="#F2F4EA">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0E3334; --ink-2:#15403E; --dim:#55706C; --faint:#7B918D;
+  --paper:#FDFDF8; --paper-2:#F2F4EA; --paper-3:#E7EBDC;
+  --rule:rgba(14,51,52,.14); --rule-2:rgba(14,51,52,.28);
+  --accent:#C0441A; --accent-soft:#FBEDE6; --lima:#5F6F17;
+  --display:"Outfit",system-ui,sans-serif; --body:"Hanken Grotesk",system-ui,sans-serif;
+  --maxw:980px; --gut:clamp(1.25rem,5vw,3rem);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);
+  font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--gut)}
+h1,h2,h3,h4{font-family:var(--display);margin:0;line-height:1.08;letter-spacing:-.02em}
+p{margin:0 0 1em}
+a{color:var(--accent)}
+strong,b{font-weight:600}
+small{font-size:.82rem}
+
+/* ---------- portada ---------- */
+.cover{background:var(--ink);color:var(--paper-2);padding:clamp(3rem,9vw,6.5rem) 0 clamp(2.5rem,7vw,4.5rem)}
+.cover .wrap{display:grid;gap:clamp(1.6rem,4vw,2.6rem)}
+.cover__mark{width:clamp(170px,26vw,250px);color:var(--paper-2)}
+.cover__mark svg{width:100%;height:auto;display:block}
+.cover h1{font-size:clamp(2.1rem,6vw,3.6rem);font-weight:800;max-width:17ch}
+.cover h1 em{font-style:normal;color:#FF7A4D}
+.cover__lede{font-size:clamp(1.02rem,1.9vw,1.2rem);color:#B9CCC7;max-width:56ch;margin:0}
+.cover__meta{display:flex;flex-wrap:wrap;gap:.6rem 1.6rem;font-size:.76rem;letter-spacing:.14em;
+  text-transform:uppercase;color:#8FA9A4;border-top:1px solid rgba(242,244,234,.2);padding-top:1.3rem}
+
+/* ---------- estructura ---------- */
+.sec{padding:clamp(3rem,7vw,5rem) 0;border-bottom:1px solid var(--rule)}
+.sec:last-of-type{border-bottom:0}
+.sec--tint{background:var(--paper-2)}
+.sec--ink{background:var(--ink);color:var(--paper-2);border-bottom:0}
+.sec--ink h2,.sec--ink h3{color:var(--paper-2)}
+.sec--ink .eyebrow{color:#8FA9A4}
+.sec--ink a{color:#FF9D78}
+.eyebrow{font-family:var(--display);font-size:.72rem;font-weight:700;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--accent);margin:0 0 1rem}
+h2{font-size:clamp(1.55rem,3.6vw,2.3rem);font-weight:800;max-width:22ch}
+h2+.lede{margin-top:1rem}
+.lede{font-size:clamp(1rem,1.7vw,1.1rem);color:var(--dim);max-width:62ch}
+h3{font-size:1.06rem;font-weight:700;margin:0 0 .35rem}
+.note{font-size:.86rem;color:var(--faint);max-width:62ch}
+
+/* ---------- cifras ---------- */
+.figs{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--rule);
+  border:1px solid var(--rule);margin:2rem 0 0}
+@media(min-width:720px){.figs{grid-template-columns:repeat(4,1fr)}}
+.figs div{background:var(--paper);padding:1.35rem 1.2rem}
+.sec--tint .figs div{background:var(--paper-2)}
+.figs b{display:block;font-family:var(--display);font-size:clamp(1.7rem,4vw,2.3rem);
+  font-weight:800;line-height:1;letter-spacing:-.03em}
+.figs span{display:block;font-size:.8rem;color:var(--dim);margin-top:.4rem}
+
+/* ---------- dos columnas ---------- */
+.two{display:grid;gap:2rem;margin-top:2.2rem}
+@media(min-width:760px){.two{grid-template-columns:1fr 1fr;gap:2.6rem}}
+.card{border:1px solid var(--rule);padding:1.5rem;background:var(--paper)}
+.sec--tint .card{background:var(--paper)}
+.card__tag{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);
+  font-weight:600;margin:0 0 .5rem}
+
+/* ---------- listas ---------- */
+ul.ticks{list-style:none;padding:0;margin:1rem 0 0}
+ul.ticks li{position:relative;padding:0 0 0 1.5rem;margin:0 0 .5rem;font-size:.95rem}
+ul.ticks li::before{content:"";position:absolute;left:0;top:.62em;width:.5rem;height:.5rem;
+  background:var(--accent);border-radius:50%}
+ul.plain{list-style:none;padding:0;margin:1rem 0 0}
+ul.plain li{padding:.65rem 0;border-bottom:1px solid var(--rule);font-size:.95rem}
+ul.plain li:last-child{border-bottom:0}
+ul.plain b{font-family:var(--display)}
+
+/* ---------- precios ---------- */
+.tiers{display:grid;gap:1px;background:var(--rule);border:1px solid var(--rule);margin-top:2.2rem}
+@media(min-width:780px){.tiers--3{grid-template-columns:repeat(3,1fr)}.tiers--2{grid-template-columns:repeat(2,1fr)}}
+.tier{background:var(--paper);padding:1.6rem 1.4rem;display:flex;flex-direction:column}
+.sec--tint .tier{background:var(--paper-2)}
+.tier--hero{background:var(--accent-soft)}
+.sec--tint .tier--hero{background:var(--accent-soft)}
+.tier__flag{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;
+  color:var(--accent);margin:0 0 .5rem}
+.tier__name{font-size:1.12rem;font-weight:800;margin:0 0 .15rem}
+.tier__slots{font-size:.78rem;color:var(--faint);margin:0 0 .9rem}
+.tier__price{font-family:var(--display);font-size:clamp(1.8rem,4.2vw,2.35rem);font-weight:800;
+  letter-spacing:-.03em;line-height:1;margin:0 0 .2rem}
+.tier__unit{font-size:.78rem;color:var(--dim);margin:0 0 1rem}
+.tier__for{font-size:.9rem;color:var(--dim);margin:0}
+
+/* ---------- tabla matriz ---------- */
+.tablewrap{margin-top:2.2rem;overflow-x:auto;border:1px solid var(--rule)}
+table{border-collapse:collapse;width:100%;min-width:620px;font-size:.88rem;background:var(--paper)}
+.sec--tint table{background:var(--paper-2)}
+th,td{text-align:left;padding:.72rem .9rem;border-bottom:1px solid var(--rule);vertical-align:top}
+thead th{font-family:var(--display);font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;
+  background:var(--ink);color:var(--paper-2);border-bottom:0;position:sticky;top:0}
+thead th:first-child{width:38%}
+tbody tr:last-child td{border-bottom:0}
+td.c,th.c{text-align:center;width:17%}
+tbody tr:hover td{background:rgba(192,68,26,.04)}
+.y{color:var(--accent);font-weight:700}
+.n{color:#B5C0BD}
+.num{font-family:var(--display);font-weight:700}
+caption{caption-side:top;text-align:left;padding:.9rem;font-size:.8rem;color:var(--faint);
+  background:var(--paper-3)}
+
+/* ---------- packs ---------- */
+.packs{display:grid;gap:1px;background:var(--rule);border:1px solid var(--rule);margin-top:2.2rem}
+.pack{background:var(--paper);display:grid;gap:.3rem 1.2rem;padding:1.2rem 1.4rem;align-items:baseline}
+.sec--tint .pack{background:var(--paper-2)}
+@media(min-width:720px){.pack{grid-template-columns:minmax(0,13rem) minmax(0,1fr) auto}}
+.pack b{font-family:var(--display);font-size:1.02rem;font-weight:700}
+.pack span{font-size:.9rem;color:var(--dim)}
+.pack i{font-style:normal;font-family:var(--display);font-size:1.3rem;font-weight:800;
+  letter-spacing:-.02em;white-space:nowrap}
+.pack em{font-style:normal;display:block;font-size:.74rem;color:var(--faint);font-family:var(--body);
+  font-weight:400;letter-spacing:0}
+
+/* ---------- zonas web ---------- */
+.zones{counter-reset:z;margin-top:2.2rem;border-top:1px solid var(--rule)}
+.zone{display:grid;gap:.2rem 1.4rem;padding:1.25rem 0;border-bottom:1px solid var(--rule)}
+@media(min-width:720px){.zone{grid-template-columns:2.5rem minmax(0,15rem) minmax(0,1fr)}}
+.zone::before{counter-increment:z;content:counter(z,decimal-leading-zero);
+  font-family:var(--display);font-weight:800;color:var(--accent);font-size:.92rem;padding-top:.15rem}
+.zone b{font-family:var(--display);font-size:1rem}
+.zone span{font-size:.92rem;color:var(--dim)}
+
+/* ---------- no vendemos ---------- */
+.nots{display:grid;gap:1px;background:rgba(242,244,234,.18);border:1px solid rgba(242,244,234,.18);margin-top:2.2rem}
+@media(min-width:720px){.nots{grid-template-columns:repeat(2,1fr)}}
+.nots div{background:var(--ink);padding:1.3rem 1.4rem}
+.nots b{display:block;font-family:var(--display);font-size:.98rem;margin-bottom:.25rem}
+.nots span{font-size:.9rem;color:#9FB5B1}
+
+/* ---------- calendario ---------- */
+.cal{margin-top:2.2rem;border-top:1px solid var(--rule)}
+.cal__row{display:grid;gap:.2rem 1.4rem;padding:1.05rem 0;border-bottom:1px solid var(--rule)}
+@media(min-width:720px){.cal__row{grid-template-columns:minmax(0,9rem) minmax(0,1fr)}}
+.cal__when{font-family:var(--display);font-weight:700;font-size:.88rem;letter-spacing:.04em;
+  text-transform:uppercase;color:var(--accent)}
+.cal__what{font-size:.95rem}
+.cal__what b{font-family:var(--display)}
+
+/* ---------- cierre ---------- */
+.end{padding:clamp(3rem,8vw,5.5rem) 0;background:var(--ink);color:var(--paper-2)}
+.end h2{color:var(--paper-2);max-width:20ch}
+.end p{color:#B9CCC7;max-width:54ch}
+.btn{display:inline-block;background:#FF7A4D;color:#07211F;text-decoration:none;
+  font-family:var(--display);font-weight:700;font-size:.95rem;padding:.85rem 1.5rem;border-radius:999px;
+  margin-top:1.4rem}
+.end__foot{margin-top:2.6rem;padding-top:1.4rem;border-top:1px solid rgba(242,244,234,.2);
+  font-size:.78rem;color:#8FA9A4;display:flex;flex-wrap:wrap;gap:.5rem 1.6rem}
+
+/* ---------- impresión / PDF ---------- */
+@page{size:A4;margin:0}
+@media print{
+  body{font-size:10.5pt;line-height:1.5}
+  .cover{padding:0;min-height:297mm;display:flex;align-items:center;break-after:page}
+  .cover .wrap{width:100%;gap:1.6rem}
+  .sec{padding:11mm 0;break-inside:auto}
+  .end{padding:16mm 0}
+  .wrap{max-width:none;padding:0 15mm}
+  h2{font-size:17pt}
+  .cover h1{font-size:26pt}
+  .cover__mark{width:150px}
+  .tablewrap{overflow:visible}
+  table{min-width:0;font-size:8.6pt}
+  th,td{padding:.3rem .45rem}
+  thead th{position:static;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .sec,.cover,.end,.sec--ink,.sec--tint,.tier--hero,.nots div,.figs div,.thead{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .tier,.card,.pack,.zone,.cal__row,.nots div,.figs,tr{break-inside:avoid}
+  .tiers,.packs,.two,.nots{break-inside:auto}
+  h2,h3{break-after:avoid}
+  .pagebreak{break-before:page}
+  .noprint{display:none}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="rc-logo" viewBox="-4 -4 454.9 154.0"><g transform="translate(0,100.0)"><g transform="translate(0.000,0.000) scale(0.13514,-0.13514)" fill="currentColor"><path transform="translate(0.00,0)" d="M51 0V489H225V458Q273 499 349 499Q384 499 409.5 490.0Q435 481 453 462L352 327Q344 336 329.5 341.5Q315 347 297 347Q263 347 244.0 326.5Q225 306 225 266V0Z"/><path transform="translate(431.00,0)" d="M298 -11Q216 -11 153.0 21.5Q90 54 54.0 112.0Q18 170 18 245Q18 319 53.0 376.5Q88 434 148.5 467.5Q209 501 285 501Q359 501 416.5 469.5Q474 438 506.5 382.5Q539 327 539 256Q539 241 537.5 225.5Q536 210 531 190L188 188Q191 181 194 174Q208 144 234.0 129.0Q260 114 298 114Q334 114 361.5 126.0Q389 138 411 163L502 72Q466 31 414.5 10.0Q363 -11 298 -11ZM188 301 378 302Q376 313 372 322Q361 348 340.0 362.0Q319 376 287 376Q254 376 230.0 360.0Q206 344 193 315Q190 308 188 301Z"/><path transform="translate(963.00,0)" d="M198 0 -1 489H185L276 193L367 489H551L352 0Z"/><path transform="translate(1491.00,0)" d="M293 -11Q215 -11 152.5 22.0Q90 55 54.0 113.0Q18 171 18 244Q18 318 54.5 376.0Q91 434 153.5 467.5Q216 501 295 501Q352 501 399.0 482.0Q446 463 485 425L375 315Q360 330 340.5 337.5Q321 345 295 345Q267 345 244.5 332.5Q222 320 208.5 298.0Q195 276 195 245Q195 215 208.5 192.5Q222 170 244.5 157.0Q267 144 295 144Q323 144 343.0 153.0Q363 162 378 179L489 69Q448 29 400.5 9.0Q353 -11 293 -11Z"/><path transform="translate(1970.00,0)" d="M368 0V276Q368 310 348.0 329.5Q328 349 297 349Q276 349 259.5 340.0Q243 331 234.0 315.0Q225 299 225 276V0H51V729H225V460Q236 468 249 476Q292 499 349 499Q408 499 451.5 475.5Q495 452 518.5 411.0Q542 370 542 316V0Z"/><path transform="translate(2531.00,0)" d="M50 0V489H225V0ZM137 546Q98 546 72.0 572.5Q46 599 46 639Q46 678 72.0 705.0Q98 732 137 732Q178 732 203.5 705.0Q229 678 229 639Q229 599 203.5 572.5Q178 546 137 546Z"/><path transform="translate(2784.00,0)" d="M51 0V729H225V0Z"/><path transform="translate(3038.00,0)" d="M51 0V729H225V0Z"/></g></g><path d="M 6.7 20.0 C 97.9 24.5 177.9 22.5 249.1 15.5 C 329.2 8.0 391.5 -7.0 438.2 -30.0" fill="none" stroke="var(--accent)" stroke-width="10.50" stroke-linecap="round" transform="translate(0,114.0)"/></symbol></svg>
+
+<!-- ================= PORTADA ================= -->
+<header class="cover">
+  <div class="wrap">
+    <div class="cover__mark"><svg viewBox="-4 -4 454.9 154.0"><use href="#rc-logo"/></svg></div>
+    <h1>Doce noches y un fin de semana con <em>las personas que ponen los precios</em> de los hoteles de España.</h1>
+    <p class="cover__lede">Esto no es un patrocinio de feria. Es estar dentro de la conversación de un grupo pequeño, muy específico y difícil de reunir, y llevarte el contenido que sale de ahí.</p>
+    <div class="cover__meta">
+      <span>Dossier de partners · Temporada 2027</span>
+      <span>Documento privado</span>
+      <span>Octubre 2026</span>
+    </div>
+  </div>
+</header>
+
+<!-- ================= QUÉ ES ================= -->
+<section class="sec">
+  <div class="wrap">
+    <p class="eyebrow">Qué es RevChill</p>
+    <h2>Una comunidad de revenue managers que se ve en persona.</h2>
+    <p class="lede">Nació en 2025 en Sevilla con una idea simple: el sector tiene congresos de sobra y conversaciones de verdad muy pocas. Así que montamos encuentros informales, gratuitos para quien viene, donde el 95&nbsp;% del tiempo es gente hablando y el 5&nbsp;% restante es una marca contando algo útil en cinco minutos.</p>
+    <p class="lede">Funcionó. Dos encuentros, dos ciudades llenas, y comunidades de WhatsApp que siguieron vivas después. En 2027 lo convertimos en una temporada: doce encuentros en cinco ciudades y un formato largo de fin de semana.</p>
+
+    <div class="figs">
+      <div><b>~40</b><span>asistentes por encuentro, todos del sector</span></div>
+      <div><b>5</b><span>comunidades activas: Sevilla, Madrid, Barcelona, Málaga y Levante</span></div>
+      <div><b>700+</b><span>seguidores en LinkedIn, creciendo cada semana</span></div>
+      <div><b>0 €</b><span>para el asistente. Lo pagan los partners</span></div>
+    </div>
+    <p class="note" style="margin-top:1.1rem">Somos jóvenes y lo decimos de frente: esto empezó hace menos de un año. Lo que ofrecemos no es alcance, es densidad. Cuarenta revenue managers en una terraza valen más que cuarenta mil impresiones a nadie en particular.</p>
+  </div>
+</section>
+
+<!-- ================= A QUIÉN LLEGAS ================= -->
+<section class="sec sec--tint">
+  <div class="wrap">
+    <p class="eyebrow">A quién llegas</p>
+    <h2>Gente que decide o que influye en quién se contrata.</h2>
+    <div class="two">
+      <div>
+        <h3>En la sala</h3>
+        <ul class="ticks">
+          <li>Revenue managers de cadena y de hotel independiente</li>
+          <li>Directores de hotel y propietarios de alojamientos pequeños</li>
+          <li>Responsables de distribución, e&#8209;commerce y venta directa</li>
+          <li>Consultores de revenue y formadores del sector</li>
+          <li>Equipos de producto y comerciales de proveedores tecnológicos</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Por qué importa</h3>
+        <p>En revenue management la compra casi nunca empieza en una demo. Empieza cuando alguien le pregunta a otro con quién trabaja y si está contento. Ese momento pasa en una terraza, no en un stand.</p>
+        <p>Lo que compras aquí es estar presente cuando esa pregunta se hace, y que la respuesta tenga tu nombre dentro.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LOS DOS FORMATOS ================= -->
+<section class="sec">
+  <div class="wrap">
+    <p class="eyebrow">Los dos formatos</p>
+    <h2>Uno corto y frecuente. Otro largo y profundo.</h2>
+    <div class="two">
+      <article class="card">
+        <p class="card__tag">Formato base</p>
+        <h3>RevChill Afterwork</h3>
+        <p>Dos o tres horas al final del día en una terraza o un espacio con carácter. Entre 35 y 50 personas. Una marca anfitriona que habla cinco minutos y luego se mezcla como todo el mundo.</p>
+        <ul class="plain">
+          <li><b>12 encuentros</b> previstos en 2027</li>
+          <li><b>5 ciudades:</b> Madrid, Barcelona, Sevilla, Valencia y Málaga</li>
+          <li><b>3 de ellos</b> coinciden con FITUR, HIP y TIS</li>
+          <li><b>Gratuito</b> para el asistente, plazas limitadas</li>
+        </ul>
+      </article>
+      <article class="card">
+        <p class="card__tag">Formato largo · estreno 2027</p>
+        <h3>RevChill Weekend Hack</h3>
+        <p>Un fin de semana en un alojamiento con encanto. Mañanas de monte y deporte, tardes de trabajo en equipo sobre un reto real del hotel que nos acoge, noches de sobremesa larga. Entre 15 y 20 personas seleccionadas.</p>
+        <ul class="plain">
+          <li><b>Piloto en Andalucía</b>, 2027</li>
+          <li><b>15&#8209;20 asistentes</b> seleccionados entre los candidatos</li>
+          <li><b>48 horas</b> de convivencia continua</li>
+          <li><b>Tu equipo viene dentro</b>, no fuera</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EL CONTENIDO ================= -->
+<section class="sec sec--ink">
+  <div class="wrap">
+    <p class="eyebrow">Lo que de verdad compras</p>
+    <h2>El evento dura una noche. El contenido dura todo el año.</h2>
+    <p class="lede" style="color:#B9CCC7">De cada encuentro sale un paquete de material que tú puedes usar en tus propios canales sin pedir permiso. Esa es la parte que más rinde y la que casi nadie te ofrece en un patrocinio de este tamaño.</p>
+    <div class="nots">
+      <div><b>Reportaje fotográfico</b><span>Entre 30 y 50 fotos del encuentro, editadas, con tu marca visible en el espacio. Uso libre para tu web, tus redes y tus comerciales.</span></div>
+      <div><b>Vídeo resumen</b><span>De 30 a 60 segundos, el formato que de verdad circula en LinkedIn. Con tu marca dentro.</span></div>
+      <div><b>Publicaciones con mención</b><span>Anuncio, directo y recap. Tu marca etiquetada, no escondida en una esquina.</span></div>
+      <div><b>Presencia permanente en revchill.club</b><span>Muro de partners, ficha del encuentro, galería y un enlace real a tu web desde un dominio del sector.</span></div>
+      <div><b>Visibilidad en IA</b><span>La web publica un archivo que leen ChatGPT, Claude y Perplexity para entender qué es RevChill. Nuestros partners aparecen nombrados ahí. Cuando alguien pregunta por el ecosistema de revenue en España, tu marca está en la respuesta.</span></div>
+      <div><b>Los grupos de WhatsApp</b><span>Cinco comunidades por ciudad. No son un canal de anuncios, pero el anuncio de cada encuentro lleva tu nombre y lo leen todos.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= AFTERWORK PRECIOS ================= -->
+<section class="sec pagebreak">
+  <div class="wrap">
+    <p class="eyebrow">Afterworks · opciones por encuentro</p>
+    <h2>Tres niveles. Nunca más de tres marcas en la misma sala.</h2>
+    <p class="lede">La escasez es parte del producto. Un encuentro con ocho logos deja de ser un encuentro y pasa a ser una feria pequeña, y entonces ya no vale lo que vale.</p>
+
+    <div class="tiers tiers--3">
+      <div class="tier">
+        <p class="tier__name">Partner del encuentro</p>
+        <p class="tier__slots">Hasta 2 por encuentro</p>
+        <p class="tier__price">1.000 €</p>
+        <p class="tier__unit">por encuentro</p>
+        <p class="tier__for">Para marcas que quieren estar y llevarse el contenido, sin necesidad de hablar.</p>
+      </div>
+      <div class="tier tier--hero">
+        <p class="tier__flag">El que recomendamos</p>
+        <p class="tier__name">Anfitrión del encuentro</p>
+        <p class="tier__slots">1 solo por encuentro · exclusividad de categoría esa noche</p>
+        <p class="tier__price">1.500 €</p>
+        <p class="tier__unit">por encuentro</p>
+        <p class="tier__for">Eres la marca de la noche. Cinco minutos de micro y el resto del tiempo, conversaciones.</p>
+      </div>
+      <div class="tier">
+        <p class="tier__name">Anfitrión de feria</p>
+        <p class="tier__slots">1 por feria · FITUR, HIP y TIS</p>
+        <p class="tier__price">2.500 €</p>
+        <p class="tier__unit">por encuentro</p>
+        <p class="tier__for">Las noches de feria el sector entero está en la ciudad. Aforo de 70&#8209;90 y gente que no verías el resto del año.</p>
+      </div>
+    </div>
+
+    <div class="tablewrap">
+      <table>
+        <caption>Qué recibe cada nivel en un encuentro</caption>
+        <thead><tr><th>Contraprestación</th><th class="c">Partner</th><th class="c">Anfitrión</th><th class="c">Feria</th></tr></thead>
+        <tbody>
+          <tr><td>Logo en cartelería y materiales del encuentro</td><td class="c y">Sí</td><td class="c y">Sí</td><td class="c y">Sí</td></tr>
+          <tr><td>Naming del encuentro: «RevChill Madrid, con tu marca»</td><td class="c n">—</td><td class="c y">Sí</td><td class="c y">Sí</td></tr>
+          <tr><td>Turno de palabra en la apertura</td><td class="c n">—</td><td class="c y">5&#8209;7 min</td><td class="c y">7&#8209;10 min</td></tr>
+          <tr><td>Mención del organizador en apertura y cierre</td><td class="c y">Sí</td><td class="c y">Sí</td><td class="c y">Sí</td></tr>
+          <tr><td>Córner o mesa de marca en el espacio</td><td class="c n">—</td><td class="c y">Sí</td><td class="c y">Sí</td></tr>
+          <tr><td>Producto, muestras o regalo en el encuentro</td><td class="c y">Sí</td><td class="c y">Sí</td><td class="c y">Sí</td></tr>
+          <tr><td>Invitaciones para tu equipo</td><td class="c num">2</td><td class="c num">4</td><td class="c num">6</td></tr>
+          <tr><td>Reportaje fotográfico con uso libre</td><td class="c y">Sí</td><td class="c y">Sí</td><td class="c y">Sí</td></tr>
+          <tr><td>Vídeo resumen con tu marca</td><td class="c n">—</td><td class="c y">Sí</td><td class="c y">Sí</td></tr>
+          <tr><td>Mención en el post de anuncio en LinkedIn</td><td class="c n">—</td><td class="c y">Sí</td><td class="c y">Sí</td></tr>
+          <tr><td>Mención y etiquetado en el post de recap</td><td class="c y">Sí</td><td class="c y">Sí</td><td class="c y">Sí</td></tr>
+          <tr><td>Anuncio a los grupos de WhatsApp</td><td class="c">mención</td><td class="c y">destacado</td><td class="c y">destacado</td></tr>
+          <tr><td>Logo en el muro de partners de revchill.club</td><td class="c">3 meses</td><td class="c">6 meses</td><td class="c">6 meses</td></tr>
+          <tr><td>Enlace a tu web desde revchill.club</td><td class="c y">Sí</td><td class="c y">Sí</td><td class="c y">Sí</td></tr>
+          <tr><td>Mención en el archivo que leen las IA</td><td class="c n">—</td><td class="c y">Sí</td><td class="c y">Sí</td></tr>
+          <tr><td>Contacto de los asistentes que lo autorizan</td><td class="c n">—</td><td class="c y">Sí</td><td class="c y">Sí</td></tr>
+          <tr><td>Decides conmigo el tema de la noche</td><td class="c n">—</td><td class="c y">Sí</td><td class="c y">Sí</td></tr>
+          <tr><td>Informe posterior con asistencia y contenido publicado</td><td class="c n">—</td><td class="c y">Sí</td><td class="c y">Sí</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note" style="margin-top:1rem">Si además pones el espacio o la barra, el coste de lo que aportas se descuenta del importe. Un hotel que cede su terraza y las consumiciones puede ser anfitrión sin poner dinero.</p>
+  </div>
+</section>
+
+<!-- ================= PACKS ================= -->
+<section class="sec sec--tint">
+  <div class="wrap">
+    <p class="eyebrow">Afterworks · temporada completa</p>
+    <h2>Lo interesante no es una noche. Es el año entero.</h2>
+    <p class="lede">Una aparición se olvida. Doce hacen que cuando alguien piense en tu categoría, piense en ti. Estos packs son el motivo por el que abrimos la conversación ahora y no en marzo: los presupuestos de 2027 se cierran entre octubre y diciembre.</p>
+
+    <div class="packs">
+      <div class="pack">
+        <b>Pack Ciudad</b>
+        <span>Anfitrión de los dos encuentros de una ciudad. Ideal si tu mercado está concentrado en Madrid, Barcelona o la costa.</span>
+        <i>2.600 €<em>1.300 € por encuentro</em></i>
+      </div>
+      <div class="pack">
+        <b>Media temporada</b>
+        <span>Anfitrión en seis encuentros que eliges tú del calendario, ferias incluidas si quedan libres.</span>
+        <i>7.200 €<em>1.200 € por encuentro</em></i>
+      </div>
+      <div class="pack">
+        <b>Partner de temporada</b>
+        <span>Anfitrión de los doce encuentros, exclusividad de categoría todo el año, logo grande y permanente en la home, un contenido útil tuyo al trimestre en los grupos de WhatsApp y una plaza en el Weekend Hack.</span>
+        <i>13.200 €<em>1.100 € por encuentro</em></i>
+      </div>
+      <div class="pack">
+        <b>Partner fundador</b>
+        <span>Cualquiera de los packs anteriores firmado antes del 31 de diciembre de 2026. Congelas el precio para 2028 y apareces como fundador en toda la comunicación del año.</span>
+        <i>&minus;10 %<em>sobre el pack elegido</em></i>
+      </div>
+    </div>
+    <p class="note" style="margin-top:1.3rem">Comparación útil: un stand pequeño en una feria del sector cuesta más que el pack de media temporada y te da tres días de pasillo. Esto te da seis noches y conversaciones con nombre y apellido.</p>
+  </div>
+</section>
+
+<!-- ================= WEEKEND ================= -->
+<section class="sec pagebreak">
+  <div class="wrap">
+    <p class="eyebrow">RevChill Weekend Hack</p>
+    <h2>Cuarenta y ocho horas conviviendo con quince clientes potenciales.</h2>
+    <p class="lede">Un fin de semana fuera, en un alojamiento con encanto. Por la mañana se sale al monte. Por la tarde se trabaja en equipo sobre un reto real del hotel que nos acoge. Por la noche se cena largo. No hay stands, no hay badge y nadie se va a las seis.</p>
+
+    <div class="two">
+      <div>
+        <h3>Tu gente viene dentro</h3>
+        <p>La persona que elijas, comercial o no, pasa el fin de semana completo con el grupo. No da una charla y se va: desayuna, camina, trabaja en un equipo y cena con ellos. Es la diferencia entre una tarjeta y una relación.</p>
+      </div>
+      <div>
+        <h3>El grupo está elegido</h3>
+        <p>Los asistentes se seleccionan entre todos los que se apuntan, buscando el mejor equilibrio de perfiles, tipos de alojamiento y seniority. Quien queda fuera tiene prioridad en la siguiente edición. No vendemos aforo, montamos la sala que queremos.</p>
+      </div>
+    </div>
+
+    <div class="tiers tiers--3">
+      <div class="tier">
+        <p class="tier__name">Partner de momento</p>
+        <p class="tier__slots">Hasta 3</p>
+        <p class="tier__price">750 €</p>
+        <p class="tier__unit">por edición</p>
+        <p class="tier__for">Patrocinas un momento con nombre: la ruta de la mañana, la cena del sábado o el kit de bienvenida.</p>
+      </div>
+      <div class="tier">
+        <p class="tier__name">Co&#8209;patrocinador</p>
+        <p class="tier__slots">Hasta 2 · categorías distintas</p>
+        <p class="tier__price">1.500 €</p>
+        <p class="tier__unit">por edición</p>
+        <p class="tier__for">Una plaza para tu equipo todo el fin de semana y una sesión de media hora donde encaje.</p>
+      </div>
+      <div class="tier tier--hero">
+        <p class="tier__flag">Solo uno por edición</p>
+        <p class="tier__name">Patrocinador principal</p>
+        <p class="tier__slots">Exclusividad total de categoría</p>
+        <p class="tier__price">3.000 €</p>
+        <p class="tier__unit">por edición</p>
+        <p class="tier__for">Tu marca en el nombre, dos plazas para tu equipo y protagonismo en el vídeo documental.</p>
+      </div>
+    </div>
+
+    <div class="tablewrap">
+      <table>
+        <caption>Qué recibe cada nivel en el Weekend Hack</caption>
+        <thead><tr><th>Contraprestación</th><th class="c">Momento</th><th class="c">Co&#8209;patroc.</th><th class="c">Principal</th></tr></thead>
+        <tbody>
+          <tr><td>Logo en todos los materiales del fin de semana</td><td class="c y">Sí</td><td class="c y">Sí</td><td class="c y">Sí</td></tr>
+          <tr><td>Naming: «RevChill Weekend Hack, con tu marca»</td><td class="c n">—</td><td class="c n">—</td><td class="c y">Sí</td></tr>
+          <tr><td>Plazas para tu equipo el fin de semana completo</td><td class="c num">1 jornada</td><td class="c num">1</td><td class="c num">2</td></tr>
+          <tr><td>Sesión o taller con el grupo</td><td class="c n">—</td><td class="c y">20&#8209;30 min</td><td class="c y">45 min</td></tr>
+          <tr><td>Tu herramienta dentro del caso práctico, si encaja</td><td class="c n">—</td><td class="c n">—</td><td class="c y">Sí</td></tr>
+          <tr><td>Un momento del programa con tu nombre</td><td class="c y">Sí</td><td class="c y">Sí</td><td class="c y">Sí</td></tr>
+          <tr><td>Presencia en la presentación final a la propiedad</td><td class="c n">—</td><td class="c y">Sí</td><td class="c y">Sí</td></tr>
+          <tr><td>Vídeo documental del fin de semana</td><td class="c">logo final</td><td class="c">mención</td><td class="c y">protagonismo</td></tr>
+          <tr><td>Reportaje fotográfico con uso libre</td><td class="c y">Sí</td><td class="c y">Sí</td><td class="c y">Sí</td></tr>
+          <tr><td>Publicaciones en LinkedIn</td><td class="c">recap</td><td class="c">anuncio y recap</td><td class="c y">toda la campaña</td></tr>
+          <tr><td>Mención en la nota de prensa al sector</td><td class="c">citado</td><td class="c">citado</td><td class="c y">con declaración</td></tr>
+          <tr><td>Logo permanente en la landing del Weekend</td><td class="c y">Sí</td><td class="c y">Sí</td><td class="c y">Sí</td></tr>
+          <tr><td>Informe posterior con el resultado del hack</td><td class="c n">—</td><td class="c y">Sí</td><td class="c y">Sí</td></tr>
+          <tr><td>Contacto de los asistentes que lo autorizan</td><td class="c n">—</td><td class="c y">Sí</td><td class="c y">Sí</td></tr>
+          <tr><td>Exclusividad de categoría</td><td class="c n">—</td><td class="c n">—</td><td class="c y">Sí</td></tr>
+          <tr><td>Primera opción en la siguiente edición</td><td class="c n">—</td><td class="c y">Sí</td><td class="c y">Sí</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note" style="margin-top:1rem">El alojamiento que nos acoge es una categoría aparte: aporta estancia y espacio, y recibe a cambio el trabajo del grupo sobre su propio negocio, el contenido del fin de semana y la visibilidad de toda la campaña.</p>
+  </div>
+</section>
+
+<!-- ================= EN ESPECIE ================= -->
+<section class="sec sec--tint">
+  <div class="wrap">
+    <p class="eyebrow">Sin poner dinero</p>
+    <h2>También se entra aportando lo que fabricas.</h2>
+    <p class="lede">Muchas marcas tienen producto antes que presupuesto de marketing. Nos interesa igual, siempre que lo que aportes resuelva algo real del encuentro.</p>
+
+    <div class="two">
+      <div>
+        <h3>Qué aceptamos</h3>
+        <ul class="ticks">
+          <li><b>Bebida y comida.</b> Cerveza, vino, vermut, café, refrescos, aperitivo. Es la mayor partida de cada encuentro.</li>
+          <li><b>Producto para llevar.</b> Muestras, kit de bienvenida, material de marca que la gente se lleva a casa.</li>
+          <li><b>Servicios.</b> Fotografía, vídeo, diseño, transporte, seguro del evento.</li>
+          <li><b>Espacio.</b> Terraza, azotea, sala o, para el Weekend, el alojamiento completo.</li>
+          <li><b>Licencias y descuentos</b> para la comunidad, con la condición de la nota de abajo.</li>
+          <li><b>Difusión.</b> Medios y newsletters del sector, a cambio de contenido y visibilidad.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Cómo se valora</h3>
+        <ul class="plain">
+          <li><b>Producto, servicios y espacio</b><br><span style="color:var(--dim);font-size:.92rem">Se valoran a precio de mercado y acceden al nivel equivalente aportando 1,4 veces su importe. Para el nivel de 1.000 €, unos 1.400 € de producto.</span></li>
+          <li><b>Licencias y códigos de descuento</b><br><span style="color:var(--dim);font-size:.92rem">Cuentan al 30 % de su valor nominal, porque su valor real depende de que alguien los use. Si se redimen de verdad, la diferencia se abona como crédito para la edición siguiente.</span></li>
+          <li><b>Mixto</b><br><span style="color:var(--dim);font-size:.92rem">Lo habitual y lo que mejor funciona: una parte en dinero y otra en producto.</span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="note" style="margin-top:1.4rem">Una marca que aporta en especie recibe exactamente las mismas contraprestaciones que la que paga el nivel equivalente. No hay partners de primera y de segunda.</p>
+  </div>
+</section>
+
+<!-- ================= ZONAS WEB ================= -->
+<section class="sec pagebreak">
+  <div class="wrap">
+    <p class="eyebrow">Dónde aparece tu marca</p>
+    <h2>Nueve sitios concretos, no «presencia en la web».</h2>
+    <div class="zones">
+      <div class="zone"><b>Muro de partners</b><span>En la portada de revchill.club, con dos tamaños según el nivel. Los de temporada ocupan el doble y van primero.</span></div>
+      <div class="zone"><b>Barra de próximo encuentro</b><span>Lo primero que se ve al entrar en la web: fecha, ciudad y «con tu marca».</span></div>
+      <div class="zone"><b>Ficha del encuentro</b><span>En la agenda, cada encuentro lleva su anfitrión y sus partners con logo y enlace.</span></div>
+      <div class="zone"><b>Galería</b><span>Las fotos de cada noche quedan publicadas y atribuidas al encuentro y a quien lo hizo posible.</span></div>
+      <div class="zone"><b>Landing del Weekend Hack</b><span>Banda de partners propia, separada de la de los afterworks.</span></div>
+      <div class="zone"><b>Pie de página</b><span>«La temporada 2027 es posible gracias a…», en todas las páginas del sitio.</span></div>
+      <div class="zone"><b>Archivo para IA</b><span>El sitio publica un resumen que leen ChatGPT, Claude y Perplexity para entender qué es RevChill. Los partners de nivel anfitrión y superior aparecen nombrados ahí.</span></div>
+      <div class="zone"><b>Enlace saliente real</b><span>Un enlace desde un dominio del sector a tu web. Pequeño pero medible, y a tu equipo de marketing le va a interesar.</span></div>
+      <div class="zone"><b>Notas de prensa</b><span>Cuatro al año a los medios del sector. Los partners aparecen citados y, en el caso del principal, con declaración propia.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LO QUE NO VENDEMOS ================= -->
+<section class="sec sec--ink">
+  <div class="wrap">
+    <p class="eyebrow">Para que esto siga funcionando</p>
+    <h2>Lo que no vendemos, a ningún precio.</h2>
+    <p class="lede" style="color:#B9CCC7">Si esto se convierte en un sitio donde la gente va a que le vendan, deja de venir, y entonces no le sirve a nadie. Así que hay cosas que están fuera del catálogo.</p>
+    <div class="nots">
+      <div><b>Más de tres marcas por encuentro</b><span>Un anfitrión y hasta dos partners. Nunca más.</span></div>
+      <div><b>Presentaciones largas</b><span>Siete minutos como máximo, y siempre al principio. Después, nadie tiene micro.</span></div>
+      <div><b>Datos de nadie sin permiso</b><span>Solo compartimos el contacto de quienes marcan la casilla de forma explícita. No hay listas completas.</span></div>
+      <div><b>Captación agresiva en sala</b><span>Si tu comercial va con el cuaderno a cerrar en la barra, el formato se rompe. Lo hablamos antes.</span></div>
+      <div><b>Exclusividad por noche suelta</b><span>La exclusividad de categoría durante todo el año solo va con el pack de temporada.</span></div>
+      <div><b>Palabra sobre el contenido editorial</b><span>El tema se decide contigo, pero quien habla y qué se dice no se compra.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CALENDARIO ================= -->
+<section class="sec">
+  <div class="wrap">
+    <p class="eyebrow">Calendario</p>
+    <h2>Cómo se reparte la temporada 2027.</h2>
+    <p class="lede">Las fechas exactas se cierran con los partners ya confirmados, para que cada marca pueda elegir las ciudades que le interesan antes de que se publiquen.</p>
+    <div class="cal">
+      <div class="cal__row"><div class="cal__when">Enero</div><div class="cal__what"><b>Madrid, noche de FITUR.</b> El sector entero está en la ciudad. Aforo ampliado.</div></div>
+      <div class="cal__row"><div class="cal__when">Febrero</div><div class="cal__what"><b>Sevilla</b> y apertura de candidaturas del Weekend Hack.</div></div>
+      <div class="cal__row"><div class="cal__when">Marzo</div><div class="cal__what"><b>Madrid, noche de HIP.</b> Segundo encuentro de feria del año.</div></div>
+      <div class="cal__row"><div class="cal__when">Abril</div><div class="cal__what"><b>Barcelona</b> y <b>Valencia.</b></div></div>
+      <div class="cal__row"><div class="cal__when">Mayo</div><div class="cal__what"><b>RevChill Weekend Hack · piloto</b>, en Andalucía. Fin de semana completo.</div></div>
+      <div class="cal__row"><div class="cal__when">Junio</div><div class="cal__what"><b>Málaga</b> y <b>Sevilla</b>, cierre antes del verano.</div></div>
+      <div class="cal__row"><div class="cal__when">Septiembre</div><div class="cal__what"><b>Madrid</b> y <b>Barcelona</b>, arranque de temporada alta de negocio.</div></div>
+      <div class="cal__row"><div class="cal__when">Octubre</div><div class="cal__what"><b>Sevilla, noche de TIS.</b> La feria de innovación turística se celebra aquí.</div></div>
+      <div class="cal__row"><div class="cal__when">Noviembre</div><div class="cal__what"><b>Valencia</b> y <b>Málaga.</b> Posible segunda edición del Weekend Hack si el piloto funciona.</div></div>
+    </div>
+    <p class="note" style="margin-top:1.2rem">Estamos estudiando además abrir Bilbao, Palma, Canarias y una primera salida a Portugal. Si tu mercado está en alguno de esos sitios, dilo: un partner interesado es la razón por la que una ciudad entra en el calendario.</p>
+  </div>
+</section>
+
+<!-- ================= CIERRE ================= -->
+<section class="end">
+  <div class="wrap">
+    <h2>Hablemos antes de que se cierren los presupuestos.</h2>
+    <p>Las ciudades y las noches se asignan por orden de confirmación, y las de feria son tres en todo el año. Escríbeme y vemos qué encaja: media hora de conversación basta para saber si tiene sentido.</p>
+    <p style="color:var(--paper-2);font-family:var(--display);font-weight:700;font-size:1.05rem;margin-top:1.6rem">Álvaro Repetto<br><span style="font-family:var(--body);font-weight:400;font-size:.92rem;color:#B9CCC7">Fundador de RevChill</span></p>
+    <a class="btn" href="mailto:sponsors@revchill.club?subject=Partners%20RevChill%202027">sponsors@revchill.club</a>
+    <div class="end__foot">
+      <span>revchill.club</span>
+      <span>linkedin.com/company/revchill</span>
+      <span>Dossier privado · Temporada 2027 · Octubre 2026</span>
+    </div>
+  </div>
+</section>
+</body>
+</html>

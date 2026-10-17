@@ -16,6 +16,8 @@ revchill/
 ├── robots.txt                  ← permisos de rastreo (buscadores e IAs)
 ├── sitemap.xml                 ← ⚠️ actualiza las fechas al publicar
 ├── llms.txt                    ← resumen del proyecto para modelos de IA
+├── tools/
+│   └── fotos.py                ← script para preparar las fotos de un evento
 ├── assets/
 │   ├── css/app.css             ← todo el diseño
 │   ├── js/data.js              ← ⭐ EVENTOS, SPONSORS, FOTOS, TESTIMONIOS
@@ -138,22 +140,73 @@ mención en las notas de prensa. Si prometes una, existe.
 
 ## 4. Cómo añadir fotos y vídeos
 
-Mete los archivos en `assets/img/gallery/` y añádelos al array `gallery`:
+### Lo hace el script, no tú a mano
 
-```js
-gallery: [
-  { type: "image", src: "assets/img/gallery/madrid-01.jpg", size: "wide",
-    caption: { es: "RevChill Madrid · Nov 25", en: "RevChill Madrid · Nov 25" } },
-  { type: "video", src: "assets/img/gallery/sevilla.mp4",
-    poster: "assets/img/gallery/sevilla.jpg", size: "",
-    caption: { es: "RevChill Sevilla", en: "RevChill Sevilla" } }
-]
+Cuando tengas las fotos de un encuentro, una sola orden:
+
+```
+python3 tools/fotos.py ~/Downloads/fotos-valencia valencia-2027-04 "Valencia" "abr 2027"
 ```
 
-`size` puede ser `"wide"` (doble ancho), `"tall"` (vertical) o `""` (normal).
-Comprime las fotos antes de subirlas (1600 px de ancho basta, <300 kB) o la web irá lenta.
+De cada foto saca dos archivos en `assets/img/gallery/`:
 
----
+- **`<slug>-NN-t.jpg`** — la miniatura de la rejilla, 760 px de lado mayor.
+- **`<slug>-NN.jpg`** — la grande que se abre al pulsar, 1600 px.
+
+Y te imprime en pantalla el bloque de código listo para pegar dentro de
+`gallery: [ ... ]` en `data.js`. Necesita Pillow: `pip install pillow`.
+
+### Quédate con pocas
+
+El script procesa todo lo que le eches, pero la web no es un archivo
+fotográfico. **Seis o nueve fotos buenas por encuentro** cuentan la historia
+mejor que sesenta regulares, y la página carga el doble de rápido. Pega en
+`data.js` solo las que elijas y borra de la carpeta los archivos que no uses.
+
+### Por qué dos tamaños y no uno
+
+La rejilla carga las doce miniaturas, que suman unos 750 KB entre todas. La
+versión grande de una foto solo se descarga cuando alguien la amplía. Si
+pusieras la grande en la rejilla, la galería pesaría cuatro megas y en móvil
+tardaría una eternidad.
+
+**Nunca subas el archivo original del fotógrafo.** Pesa entre cinco y veinte
+megas, lleva dentro la ubicación GPS y el modelo de cámara, y en pantalla no
+se ve mejor que la versión de 1600 px.
+
+### Vídeos
+
+No los metas en el proyecto: un resumen de un minuto pesa entre veinte y
+cincuenta megas y hunde la web. Súbelo a YouTube o Vimeo (sin listar si no
+quieres que se encuentre) y empotra el reproductor.
+
+Si aun así quieres uno pequeño dentro de la galería, el renderizador lo
+admite:
+
+```js
+{ type: "video", src: "assets/img/gallery/sevilla.mp4",
+  poster: "assets/img/gallery/sevilla.jpg", size: "",
+  caption: { es: "RevChill Sevilla", en: "RevChill Sevilla" } }
+```
+
+### Los cuatro huecos fijos
+
+Aparte de la galería, hay cuatro imágenes sueltas en `assets/img/`. Para
+cambiarlas, sustituye el archivo respetando la proporción:
+
+| Archivo | Tamaño | Dónde sale |
+|---|---|---|
+| `hero.jpg` | 1200×1500 (4:5) | La foto grande de la portada |
+| `manifiesto.jpg` | 1200×900 (4:3) | Dentro del bloque del manifiesto |
+| `weekend.jpg` | 900×1200 (3:4) | El bloque del Weekend Hack |
+| `og.jpg` | 1200×630 | La miniatura al compartir en WhatsApp y LinkedIn |
+
+### Antes de publicar fotos de gente
+
+Las fotos tienen caras identificables. Conviene una línea en la inscripción
+de Eventbrite y otra en la página de privacidad avisando de que se hacen y
+se publican fotos, y una dirección donde pedir que se retire una. Es de las
+cosas que no cuestan nada antes y son un lío después.
 
 ## 5. Cambiar textos
 
@@ -251,6 +304,7 @@ haría falta duplicar las páginas en `/en/` y añadir etiquetas `hreflang`.
       en `robots.txt` para todos los rastreadores, así que es seguro tenerla online
       y mandar el enlace. Si prefieres no subirla, manda solo el PDF.
 - [ ] Sustituir los tres testimonios de ejemplo por reseñas reales (`data.js` → `quotes`).
+- [ ] Añadir el aviso de fotografías a la privacidad y a la inscripción de Eventbrite.
 - [ ] Añadir las próximas fechas en `data.js` (ahora solo están los dos eventos de
       noviembre de 2025, que salen en la pestaña "Pasados").
 
@@ -308,35 +362,16 @@ palabra y no le añadas nada debajo.
 
 ---
 
-## 12. Los huecos de foto y los testimonios
+## 12. Los testimonios
 
-La web tiene ocho huecos marcados con rayas diagonales y el texto de lo que va dentro.
-No son un error: están esperando tus fotos.
+Las tres reseñas de `data.js` -> `quotes` están marcadas con `pending: true`
+y hacen que **la sección entera se oculte**. En cuanto quites esa línea de
+una y pongas `name`, `role` y `text` reales, la sección aparece sola.
 
-- **Hero**, vertical 4:5 (1200×1500). Es la más importante: es lo primero que se ve.
-- **Manifiesto**, horizontal 4:3 (1200×900). Gente hablando, no un plano general vacío.
-- **Galería**, seis huecos. Se rellenan desde el array `gallery` de `data.js` (punto 4).
+Mejor nada que tres huecos vacíos delante de un patrocinador.
 
-Para el hero y el manifiesto, sustituye el comentario de `index.html` por un `<img>`:
-
-```html
-<figure class="hero__shot ph" data-ph-key="hero.photo">
-  <img src="assets/img/hero.jpg" alt="" fetchpriority="high">
-</figure>
-```
-
-Los **testimonios** funcionan igual. En `data.js`, cada entrada de `quotes` lleva
-`pending: true`. Mientras **todas** estén pendientes, la sección entera no se muestra:
-mejor no tener testimonios que enseñar tres huecos vacíos a un patrocinador. En cuanto
-quites el `pending: true` de una y rellenes `name`, `role` y `text`, la sección aparece
-sola. Así es imposible publicar una reseña inventada por descuido.
-
-
----
-
-
-
----
+Pídelas en caliente, al día siguiente del encuentro. Pasada una semana ya no
+te contestan.
 
 ## 13. El Weekend Hack está despublicado
 

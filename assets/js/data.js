@@ -201,16 +201,64 @@ window.REVCHILL = {
 
   /* ---------------------------------------------------------------------
      4) GALERÍA
-     type: "image" | "video"
-     src : ruta al archivo (assets/img/gallery/...) o URL
-     size: "wide" | "tall" | "" (normal)
-     Deja el array vacío y salen placeholders.
+     ---------------------------------------------------------------------
+     Cada foto necesita dos archivos:
+       src  -> la miniatura de la rejilla   (-t.jpg, 760 px de lado mayor)
+       full -> la grande que se abre al pulsar (1600 px de lado mayor)
+     size -> "tall" para las verticales, "wide" para las horizontales.
+             Solo afecta al orden de lectura; el alto lo pone la propia foto.
+     Las dos versiones las genera el script de fotos; no subas aquí el
+     archivo original del fotógrafo, que pesa veinte veces más.
      --------------------------------------------------------------------- */
   gallery: [
-    // { type: "image", src: "assets/img/gallery/madrid-01.jpg", size: "wide",
-    //   caption: { es: "RevChill Madrid · Nov 25", en: "RevChill Madrid · Nov 25" } },
-    // { type: "video", src: "assets/img/gallery/sevilla.mp4", poster: "assets/img/gallery/sevilla.jpg", size: "",
-    //   caption: { es: "RevChill Sevilla", en: "RevChill Sevilla" } }
+    { src: "assets/img/gallery/madrid-2025-11-grupo-t.jpg",
+      full: "assets/img/gallery/madrid-2025-11-grupo.jpg",
+      size: "wide",
+      caption: { es: "RevChill Madrid · nov 2025", en: "RevChill Madrid · nov 2025" } },
+    { src: "assets/img/gallery/barcelona-2026-05-charla-t.jpg",
+      full: "assets/img/gallery/barcelona-2026-05-charla.jpg",
+      size: "tall",
+      caption: { es: "RevChill Barcelona · may 2026", en: "RevChill Barcelona · may 2026" } },
+    { src: "assets/img/gallery/sevilla-2025-grupo-t.jpg",
+      full: "assets/img/gallery/sevilla-2025-grupo.jpg",
+      size: "wide",
+      caption: { es: "RevChill Sevilla · 2025", en: "RevChill Sevilla · 2025" } },
+    { src: "assets/img/gallery/madrid-2026-06-risas-t.jpg",
+      full: "assets/img/gallery/madrid-2026-06-risas.jpg",
+      size: "tall",
+      caption: { es: "RevChill Madrid · jun 2026", en: "RevChill Madrid · jun 2026" } },
+    { src: "assets/img/gallery/madrid-2025-11-azotea-t.jpg",
+      full: "assets/img/gallery/madrid-2025-11-azotea.jpg",
+      size: "wide",
+      caption: { es: "RevChill Madrid · nov 2025", en: "RevChill Madrid · nov 2025" } },
+    { src: "assets/img/gallery/barcelona-2026-05-azotea-t.jpg",
+      full: "assets/img/gallery/barcelona-2026-05-azotea.jpg",
+      size: "tall",
+      caption: { es: "RevChill Barcelona · may 2026", en: "RevChill Barcelona · may 2026" } },
+    { src: "assets/img/gallery/malaga-2026-04-terraza-t.jpg",
+      full: "assets/img/gallery/malaga-2026-04-terraza.jpg",
+      size: "wide",
+      caption: { es: "RevChill Málaga · abr 2026", en: "RevChill Málaga · abr 2026" } },
+    { src: "assets/img/gallery/madrid-2025-11-charla-t.jpg",
+      full: "assets/img/gallery/madrid-2025-11-charla.jpg",
+      size: "tall",
+      caption: { es: "RevChill Madrid · nov 2025", en: "RevChill Madrid · nov 2025" } },
+    { src: "assets/img/gallery/barcelona-2026-05-vista-t.jpg",
+      full: "assets/img/gallery/barcelona-2026-05-vista.jpg",
+      size: "wide",
+      caption: { es: "RevChill Barcelona · may 2026", en: "RevChill Barcelona · may 2026" } },
+    { src: "assets/img/gallery/madrid-2026-06-patio-t.jpg",
+      full: "assets/img/gallery/madrid-2026-06-patio.jpg",
+      size: "tall",
+      caption: { es: "RevChill Madrid · jun 2026", en: "RevChill Madrid · jun 2026" } },
+    { src: "assets/img/gallery/malaga-2026-04-partner-t.jpg",
+      full: "assets/img/gallery/malaga-2026-04-partner.jpg",
+      size: "wide",
+      caption: { es: "RevChill Málaga · abr 2026", en: "RevChill Málaga · abr 2026" } },
+    { src: "assets/img/gallery/madrid-2025-11-movil-t.jpg",
+      full: "assets/img/gallery/madrid-2025-11-movil.jpg",
+      size: "tall",
+      caption: { es: "RevChill Madrid · nov 2025", en: "RevChill Madrid · nov 2025" } },
   ],
 
   /* ---------------------------------------------------------------------

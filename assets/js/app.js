@@ -222,14 +222,70 @@
       }).join("");
       return;
     }
-    box.innerHTML = items.map(function (it) {
+    box.innerHTML = items.map(function (it, i) {
       var cap = pick(it.caption);
-      return it.type === "video"
-        ? '<figure><video src="' + esc(it.src) + '"' + (it.poster ? ' poster="' + esc(it.poster) + '"' : "") +
-          ' controls playsinline preload="metadata"></video></figure>'
-        : '<figure><img src="' + esc(it.src) + '" alt="' + esc(cap) + '" loading="lazy"></figure>';
+      if (it.type === "video")
+        return '<figure><video src="' + esc(it.src) + '"' +
+          (it.poster ? ' poster="' + esc(it.poster) + '"' : "") +
+          ' controls playsinline preload="metadata"></video>' +
+          (cap ? '<figcaption>' + esc(cap) + "</figcaption>" : "") + "</figure>";
+      /* La rejilla carga la miniatura; la grande solo al ampliar. */
+      var open = it.full
+        ? ' data-full="' + esc(it.full) + '" data-i="' + i + '"'
+        : "";
+      return '<figure' + (it.full ? ' class="mason__item"' : "") + '>' +
+        (it.full ? '<button type="button" class="mason__btn"' + open +
+                   ' aria-label="' + esc(cap) + '">' : "") +
+        '<img src="' + esc(it.src) + '" alt="' + esc(cap) + '" loading="lazy" decoding="async">' +
+        (it.full ? "</button>" : "") +
+        (cap ? '<figcaption>' + esc(cap) + "</figcaption>" : "") + "</figure>";
     }).join("");
   }
+
+  /* ------------------------------------------------------------------ */
+  /* AMPLIAR UNA FOTO                                                    */
+  /* ------------------------------------------------------------------ */
+  /* Sin librerías: un <dialog> nativo, que ya trae el foco atrapado,
+     el cierre con Esc y el fondo inerte hechos por el navegador. */
+  (function lightbox() {
+    var dlg = $("#lb"); if (!dlg || !dlg.showModal) return;
+    var img = $("#lbImg"), cap = $("#lbCap"), idx = -1;
+
+    function fotos() { return (D.gallery || []).filter(function (g) { return g.full; }); }
+    function pon(i) {
+      var list = fotos(); if (!list.length) return;
+      idx = (i + list.length) % list.length;
+      var it = list[idx];
+      img.src = it.full;
+      img.alt = pick(it.caption) || "";
+      cap.textContent = pick(it.caption) || "";
+    }
+    function abrir(i) { pon(i); if (!dlg.open) dlg.showModal(); }
+
+    document.addEventListener("click", function (e) {
+      var b = e.target.closest ? e.target.closest(".mason__btn") : null;
+      if (b) {
+        /* El índice del botón es sobre la lista completa; lo recalculamos
+           contra la lista de ampliables por si alguna no tiene grande. */
+        var todos = D.gallery || [], n = +b.dataset.i;
+        abrir(fotos().indexOf(todos[n]));
+      }
+    });
+    $$("[data-lb]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var a = b.dataset.lb;
+        if (a === "close") dlg.close();
+        else pon(idx + (a === "next" ? 1 : -1));
+      });
+    });
+    dlg.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowRight") { e.preventDefault(); pon(idx + 1); }
+      if (e.key === "ArrowLeft") { e.preventDefault(); pon(idx - 1); }
+    });
+    /* Pulsar en el fondo cierra. */
+    dlg.addEventListener("click", function (e) { if (e.target === dlg) dlg.close(); });
+    dlg.addEventListener("close", function () { img.removeAttribute("src"); });
+  })();
 
   /* ------------------------------------------------------------------ */
   /* TESTIMONIOS                                                         */

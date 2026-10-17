@@ -310,6 +310,52 @@ p{text-wrap:pretty}
 .mason > *{break-inside:avoid;margin-bottom:12px;border-radius:var(--r);overflow:hidden}
 @media (max-width:860px){.mason{columns:2}}
 /* en móvil se queda a 2 columnas: la mitad de scroll */
+.mason img{display:block;width:100%;height:auto}
+.mason__btn{display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in;
+  color:inherit;font:inherit}
+.mason__item{position:relative;background:var(--surface-2)}
+.mason__item img{transition:transform .5s var(--ease),opacity .3s}
+.mason__btn:hover img,.mason__btn:focus-visible img{transform:scale(1.03)}
+.mason__btn:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.mason figcaption{position:absolute;inset:auto 0 0 0;padding:1.6rem .9rem .7rem;
+  font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;color:#F2F4EA;
+  background:linear-gradient(transparent,rgba(7,33,31,.82));
+  opacity:0;transition:opacity .3s var(--ease);pointer-events:none}
+.mason__item:hover figcaption,.mason__btn:focus-visible + figcaption{opacity:1}
+@media (hover:none){.mason figcaption{opacity:1}}
+
+/* ---------- foto ampliada ---------- */
+.lb{border:0;background:transparent;max-width:min(92vw,1400px);max-height:100dvh;
+  width:100%;color:var(--fg);overflow:visible;
+  padding:clamp(1.2rem,5vh,3rem) clamp(3.6rem,7vw,5.5rem)}
+.lb::backdrop{background:rgba(4,18,17,.96)}
+.lb__img{display:block;max-width:100%;max-height:76dvh;width:auto;height:auto;
+  margin:0 auto;border-radius:var(--r);background:var(--surface-2)}
+.lb__cap{text-align:center;margin:.9rem 0 0;font-size:.8rem;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--sage,#9BB3AD)}
+.lb__x,.lb__nav{position:fixed;z-index:2;display:grid;place-items:center;
+  background:rgba(242,244,234,.1);color:#F2F4EA;border:1px solid rgba(242,244,234,.22);
+  border-radius:999px;cursor:pointer;line-height:1;
+  transition:background-color .25s var(--ease),border-color .25s var(--ease)}
+.lb__x:hover,.lb__nav:hover{background:var(--accent);border-color:var(--accent);color:var(--accent-fg)}
+.lb__x:focus-visible,.lb__nav:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.lb__x{top:1rem;right:1rem;width:48px;height:48px;font-size:1.7rem}
+.lb__nav{top:50%;transform:translateY(-50%);width:52px;height:52px;font-size:2.2rem;
+  padding-bottom:.18em}
+.lb__nav--prev{left:1rem}
+.lb__nav--next{right:1rem}
+@media (max-width:620px){
+  /* Las flechas bajan al pie, así que el hueco lateral ya no hace falta
+     y la foto puede ocupar casi todo el ancho. */
+  .lb{padding:1rem 1rem 0;max-width:100vw}
+  .lb__img{max-height:72dvh}
+  .lb__nav{top:auto;bottom:1.1rem;transform:none;width:46px;height:46px}
+  .lb__cap{margin-bottom:5rem}
+}
+@media (prefers-reduced-motion:reduce){
+  .mason__item img,.lb__x,.lb__nav{transition:none}
+  .mason__btn:hover img{transform:none}
+}
 
 /* =========================================================================
    6. EMPRESAS · cifras, muro de partners y petición del dossier

@@ -166,8 +166,9 @@
       <a class="btn btn--lg btn--ghost" href="#comunidad" data-i18n="hero.cta2">Entrar en la comunidad</a>
     </div>
   </div>
-  <figure class="hero__shot ph" data-ph-key="hero.photo" data-ph="Foto del último encuentro · vertical 4:5 · 1200×1500">
-    <!-- Sustituye por: <img src="assets/img/hero.jpg" alt="" fetchpriority="high"> -->
+  <figure class="hero__shot ph">
+    <img src="assets/img/hero.jpg" width="1200" height="1500" fetchpriority="high"
+         alt="Asistentes a un RevChill en una azotea de Sevilla, con la Giralda al fondo">
   </figure>
 </section>
 
@@ -184,7 +185,8 @@
     <h2 class="h-sec" data-i18n="man.title">Los congresos están bien.<br>Esto es otra cosa.</h2>
     <div class="bento">
       <article class="cell cell--lead"><p data-i18n="man.lead">Los mejores aprendizajes del sector no pasan en una sala de plenaria. Pasan tomando algo después. Así que quitamos la sala.</p></article>
-      <figure class="cell cell--photo ph" data-ph-key="man.photo" data-ph="Gente hablando en la terraza · 4:3 · 1200×900"></figure>
+      <figure class="cell cell--photo ph"><img src="assets/img/manifiesto.jpg" width="1200" height="900"
+        loading="lazy" alt="Grupo de profesionales del sector hablando durante un encuentro de RevChill"></figure>
       <article class="cell cell--ratio">
         <div class="ratio" aria-hidden="true"><span class="ratio__fill" style="--w:95%"></span></div>
         <p class="ratio__legend" data-i18n="man.ratio"><b>95%</b> networking y afterwork. El 5% restante es el momento del patrocinador. Breve, y ya está.</p>
@@ -223,7 +225,8 @@
         </div>
         <a class="btn promo__btn" data-js="whatsapp" data-i18n="wk.more">Estate atento al lanzamiento</a>
       </div>
-      <figure class="promo__shot ph" data-ph-key="wk.photo" data-ph="Grupo en el monte · vertical 3:4 · 900×1200"></figure>
+      <figure class="promo__shot ph"><img src="assets/img/weekend.jpg" width="900" height="1200"
+        loading="lazy" alt="Asistentes de RevChill sentados en corro al aire libre al atardecer"></figure>
     </div>
   </div>
 </section>
@@ -235,6 +238,16 @@
     <div class="mason" id="mason"></div>
   </div>
 </section>
+
+<!-- Ampliación de una foto. <dialog> nativo: el navegador ya se encarga
+     del foco, de Esc y de dejar inerte lo que hay detrás. -->
+<dialog class="lb" id="lb" aria-label="Foto ampliada">
+  <button class="lb__x" type="button" data-lb="close" aria-label="Cerrar">&times;</button>
+  <button class="lb__nav lb__nav--prev" type="button" data-lb="prev" aria-label="Anterior">&lsaquo;</button>
+  <img class="lb__img" id="lbImg" alt="">
+  <button class="lb__nav lb__nav--next" type="button" data-lb="next" aria-label="Siguiente">&rsaquo;</button>
+  <p class="lb__cap" id="lbCap"></p>
+</dialog>
 
 <!-- ============ 6. TESTIMONIOS ============ -->
 <section class="sec sec--tint" id="opiniones">

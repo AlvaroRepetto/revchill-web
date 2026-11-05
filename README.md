@@ -10,14 +10,16 @@ en `index.html` y se publica subiendo la carpeta tal cual.
 ```
 revchill/
 ├── index.html                  ← la home. ⭐ LOS TEXTOS EN ESPAÑOL VAN AQUÍ
-├── weekend.html                ← landing del Weekend Hack. DESPUBLICADA: existe
+├── weekend.html                ← landing del Weekend. DESPUBLICADA: existe
 │                                  pero no se enlaza ni se indexa. Ver sección 13.
-├── partners.html               ← ⭐ DOSSIER COMERCIAL. Privado, no se indexa.
+├── patrocinio.html             ← página pública de patrocinio. SIN importes.
+├── partners.html               ← ⭐ DOSSIER COMERCIAL. Privado, con importes.
 ├── robots.txt                  ← permisos de rastreo (buscadores e IAs)
 ├── sitemap.xml                 ← ⚠️ actualiza las fechas al publicar
 ├── llms.txt                    ← resumen del proyecto para modelos de IA
 ├── tools/
-│   └── fotos.py                ← script para preparar las fotos de un evento
+│   ├── fotos.py                ← script para preparar las fotos de un evento
+│   └── logos.py                ← script para preparar los logos de partners
 ├── assets/
 │   ├── css/app.css             ← todo el diseño
 │   ├── js/data.js              ← ⭐ EVENTOS, SPONSORS, FOTOS, TESTIMONIOS
@@ -69,8 +71,36 @@ Cuando `registered` llega a `capacity`, el botón pasa a rojo y dice "Aforo comp
 
 ## 3. Cómo añadir partners
 
-1. Guarda el logo en `assets/img/sponsors/` (PNG o SVG con fondo transparente, ~200 px de alto).
-2. Añádelo al array `sponsors` de `data.js`, con su `tier`:
+### Pasa el logo por el script, no lo subas tal cual
+
+```
+python3 tools/logos.py ~/Downloads/logos-nuevos
+```
+
+Te deja en `assets/img/sponsors/` un PNG por marca, todos del mismo lienzo
+(1200×400 transparente) y equilibrados entre sí, y te imprime el bloque para
+`data.js`. Acepta PNG, SVG, WEBP y JPG. Necesita `pip install pillow cairosvg`.
+
+**Por qué no vale subirlos a pelo.** Un muro de logos se ve mal por tres
+motivos, y los tres los arregla el script:
+
+- **Tamaño.** Ponerlos todos a la misma altura no funciona: un logotipo
+  largo de una línea parece gigante y uno cuadrado parece diminuto aunque
+  midan lo mismo. El script iguala la *masa visual*, no la altura.
+- **Color.** El muro va sobre verde oscuro. Un logo negro desaparece y uno
+  gris medio se queda apagado. El script detecta los oscuros y los repinta
+  en crema, y aclara los que se quedan a medias.
+- **Márgenes.** Muchos archivos traen aire transparente alrededor. Sin
+  recortarlo, ese logo se dibuja más pequeño que los de al lado.
+
+Lo que no puede arreglar: un sello circular o un escudo vertical con texto
+diminuto dentro no se lee a 56 px de alto. Para esos, pide a la marca su
+versión horizontal, que casi siempre existe. El script te avisa cuando
+detecta uno así.
+
+### Luego, en data.js
+
+Añádelo al array `sponsors` de `data.js`, con su `tier`:
 
 ```js
 sponsors: [
@@ -104,6 +134,22 @@ como *"con ACME Revenue"*, con el logo al lado.
 Los huecos que sobren hasta `sponsorSlots` se rellenan con "Tu logo aquí" —
 que también funciona como reclamo para que alguien pregunte.
 Los logos salen en gris y se colorean al pasar el ratón.
+
+### Dos documentos distintos, y es a propósito
+
+| | `patrocinio.html` | `partners.html` |
+|---|---|---|
+| Quién la ve | Cualquiera. Está indexada. | Solo quien pide el dossier. |
+| Qué cuenta | El porqué, los dos formatos comparados, qué recibes, qué no se vende | Todo eso **más los importes**, los complementos y los packs |
+| Lleva precios | **No** | Sí |
+| Para qué sirve | Un enlace que mandar por LinkedIn, y el texto que leen Google y las IA | El PDF que una marca reenvía a su jefe o a finanzas |
+
+El reparto es el habitual en el sector: la página argumenta, el documento
+cotiza. Si pones los precios en la web, anclas la conversación antes de que
+la marca sepa lo que recibe, y además te impides adaptar la propuesta.
+
+Si algún día quieres fundirlos, el contenido ya está escrito: basta con
+copiar las tablas de precios de `partners.html` dentro de `patrocinio.html`.
 
 ### La sección de Empresas es deliberadamente corta
 
@@ -198,7 +244,7 @@ cambiarlas, sustituye el archivo respetando la proporción:
 |---|---|---|
 | `hero.jpg` | 1200×1500 (4:5) | La foto grande de la portada |
 | `manifiesto.jpg` | 1200×900 (4:3) | Dentro del bloque del manifiesto |
-| `weekend.jpg` | 900×1200 (3:4) | El bloque del Weekend Hack |
+| `weekend.jpg` | 900×1200 (3:4) | El bloque del Weekend |
 | `og.jpg` | 1200×630 | La miniatura al compartir en WhatsApp y LinkedIn |
 
 ### Antes de publicar fotos de gente
@@ -313,7 +359,7 @@ haría falta duplicar las páginas en `/en/` y añadir etiquetas `hreflang`.
 ## 9. Publicar
 
 **Opción rápida:** arrastra la carpeta a [app.netlify.com/drop](https://app.netlify.com/drop).
-Online en 20 segundos, gratis, HTTPS incluido. Luego apuntas el dominio `revchill.club`.
+Online en 20 segundos, gratis, HTTPS incluido. Luego apuntas el dominio `revchill.co`.
 
 **Con Git + Vercel/Netlify:** sube la carpeta a un repo de GitHub y conéctalo.
 Cada `git push` despliega solo. No hay comando de build: el directorio raíz es el sitio.
@@ -373,7 +419,7 @@ Mejor nada que tres huecos vacíos delante de un patrocinador.
 Pídelas en caliente, al día siguiente del encuentro. Pasada una semana ya no
 te contestan.
 
-## 13. El Weekend Hack está despublicado
+## 13. El Weekend está despublicado
 
 `weekend.html` sigue en el proyecto, entera y funcionando, pero ahora mismo
 no se puede llegar a ella: no está en el menú, ni en el pie, ni en el

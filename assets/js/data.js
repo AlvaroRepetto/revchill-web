@@ -187,16 +187,53 @@ window.REVCHILL = {
                     del muro, y sale nombrado en el pie y en llms.txt.
        "anfitrion"  Anfitrión de uno o varios encuentros. Logo normal.
        "partner"    Partner de encuentro. Logo normal.
-       "weekend"    Patrocinador del Weekend Hack. Sale en weekend.html.
+       "weekend"    Patrocinador del Weekend. Sale en weekend.html.
                     (Puedes poner varios: tier: ["temporada", "weekend"])
 
      Para que una marca salga en la ficha de un encuentro concreto, añade su
      id al array "sponsors" de ese evento, arriba.
      --------------------------------------------------------------------- */
-  sponsorSlots: 12, // nº de huecos del muro (3 filas de 4 en escritorio)
+  sponsorSlots: 16, // nº de huecos del muro (4 filas de 4 en escritorio)
   sponsors: [
-    // { id: "sponsor-1", name: "Nombre S.L.", tier: "anfitrion",
-    //   logo: "assets/img/sponsors/ejemplo.svg", url: "https://ejemplo.com" }
+    { id: "tripresale", name: "tripResale", tier: "anfitrion",
+      logo: "assets/img/sponsors/tripresale.png",
+      url: "https://tripresale.com" },
+    { id: "turneo", name: "Turneo", tier: "anfitrion",
+      logo: "assets/img/sponsors/turneo.png",
+      url: "https://turneo.com" },
+    { id: "duetto", name: "Duetto", tier: "anfitrion",
+      logo: "assets/img/sponsors/duetto.png",
+      url: "https://duettocloud.com" },
+    { id: "pricepoint", name: "Pricepoint", tier: "anfitrion",
+      logo: "assets/img/sponsors/pricepoint.png",
+      url: "https://pricepoint.io" },
+    { id: "the-net-revenue", name: "The Net Revenue", tier: "anfitrion",
+      logo: "assets/img/sponsors/the-net-revenue.png",
+      url: "https://www.thenetrevenue.com/" },
+    { id: "grupo-batuta", name: "Grupo Batuta", tier: "anfitrion",
+      logo: "assets/img/sponsors/grupo-batuta.png",
+      url: "https://grupobatuta.com/" },
+    { id: "radisson", name: "Radisson Hotel Group", tier: "anfitrion",
+      logo: "assets/img/sponsors/radisson.png",
+      url: "https://www.radissonhotels.com" },
+    { id: "yurbban", name: "Yurbban Hotels", tier: "anfitrion",
+      logo: "assets/img/sponsors/yurbban.png",
+      url: "https://yurbban.com" },
+    { id: "malaga-premium", name: "Hotel Málaga Premium", tier: "anfitrion",
+      logo: "assets/img/sponsors/malaga-premium.png",
+      url: "https://www.hotelmalagapremium.com" },
+    { id: "beonx-spark", name: "BEONx Spark", tier: "anfitrion",
+      logo: "assets/img/sponsors/beonx-spark.png",
+      url: "https://beonx.com" },
+    { id: "dataria", name: "Dataria", tier: "anfitrion",
+      logo: "assets/img/sponsors/dataria.png",
+      url: "https://www.dataria.com/es/" },
+    { id: "habyt", name: "Habyt", tier: "anfitrion",
+      logo: "assets/img/sponsors/habyt.png",
+      url: "https://www.habyt.com" },
+    { id: "global-revenue-forum", name: "Global Revenue Forum", tier: "anfitrion",
+      logo: "assets/img/sponsors/global-revenue-forum.png",
+      url: "https://www.globalrevenueforum.com" },
   ],
 
   /* ---------------------------------------------------------------------
@@ -302,9 +339,9 @@ window.REVCHILL = {
   links: {
     whatsapp: "https://chat.whatsapp.com/DxFWFO7E0ou4b3jA0Odzch",
     linkedin: "https://www.linkedin.com/company/revchill/",
-    instagram: "https://www.instagram.com/revchill.club/",
-    email: "hola@revchill.club",
-    emailSponsors: "sponsors@revchill.club"
+    instagram: "https://www.instagram.com/revchill.co/",
+    email: "hola@revchill.co",
+    emailSponsors: "sponsors@revchill.co"
   },
 
   /* ---------------------------------------------------------------------

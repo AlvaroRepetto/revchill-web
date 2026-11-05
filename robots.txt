@@ -1,4 +1,4 @@
-# RevChill — https://revchill.club/
+# RevChill — https://revchill.co/
 
 # Buscadores
 # partners.html es el dossier comercial: documento privado, no se indexa.
@@ -78,4 +78,4 @@ Allow: /
 Disallow: /partners.html
 Disallow: /weekend.html
 
-Sitemap: https://revchill.club/sitemap.xml
+Sitemap: https://revchill.co/sitemap.xml

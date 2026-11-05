@@ -384,7 +384,10 @@ p{text-wrap:pretty}
 .wall__c{background:var(--bg);aspect-ratio:5/2.6;display:grid;place-items:center;padding:1rem;
   transition:background-color .3s var(--ease)}
 .wall__c:hover{background:var(--surface)}
-.wall__c img{max-height:40px;width:auto;filter:grayscale(1);opacity:.8;transition:filter .3s,opacity .3s}
+/* 40px dejaba ilegible cualquier logo que no fuera de una sola línea.
+   Se sube a 56 en escritorio y baja solo en pantallas estrechas. */
+.wall__c img{max-height:clamp(40px,6.5vw,56px);width:auto;
+  filter:grayscale(1);opacity:.82;transition:filter .3s,opacity .3s}
 .wall__c:hover img{filter:none;opacity:1}
 .wall__slot{text-align:center;font-size:.76rem;color:var(--fg-dim);line-height:1.4}
 .wall__slot b{display:block;color:var(--fg);font-weight:600;font-size:.84rem}
@@ -392,7 +395,7 @@ p{text-wrap:pretty}
    Ocupar la fila completa (y no dos huecos) evita que queden celdas
    huérfanas al cambiar el nº de columnas en cada breakpoint. */
 .wall__c--big{grid-column:1 / -1;aspect-ratio:auto;min-height:clamp(96px,11vw,132px)}
-.wall__c--big img{max-height:clamp(44px,5vw,64px);filter:none;opacity:1}
+.wall__c--big img{max-height:clamp(56px,6.5vw,84px);filter:none;opacity:1}
 @media (max-width:860px){.wall{grid-template-columns:repeat(3,1fr)}}
 @media (max-width:520px){.wall{grid-template-columns:repeat(2,1fr)}}
 
@@ -627,3 +630,161 @@ p{text-wrap:pretty}
   .lnav__back span:not([aria-hidden]){position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
   .lnav__back{font-size:1.1rem;padding-inline:.5rem}
 }
+
+
+/* =========================================================================
+   11. PÁGINA DE PATROCINIO
+   ========================================================================= */
+/* Comparación de los dos formatos. En escritorio son tres columnas con la
+   etiqueta a la izquierda; en móvil cada fila se convierte en un bloque con
+   las dos respuestas una encima de otra, que es lo único que se lee bien. */
+.cmp{margin-top:clamp(2.2rem,4vw,3rem);border-top:1px solid var(--line-2)}
+.cmp__head,.cmp__row{display:grid;gap:1rem clamp(1rem,3vw,2.4rem);
+  grid-template-columns:minmax(0,.9fr) minmax(0,1fr) minmax(0,1fr);
+  padding:1rem 0;border-bottom:1px solid var(--line);align-items:baseline}
+.cmp__head{border-bottom:1px solid var(--line-2);padding-bottom:.9rem}
+.cmp__head b{font-family:var(--display);font-weight:700;font-size:1.02rem;letter-spacing:-.02em}
+.cmp__row span{color:var(--fg-dim);font-size:.88rem}
+.cmp__row b{font-weight:500;font-size:.98rem}
+.cmp__row b:last-child{color:var(--accent)}
+.cmp__note{margin-top:1.4rem;font-size:.9rem;color:var(--fg-dim);max-width:62ch}
+@media (max-width:720px){
+  .cmp__head{display:none}
+  .cmp__row{grid-template-columns:1fr;gap:.25rem;padding:1.1rem 0}
+  .cmp__row span{font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+  .cmp__row b::before{content:attr(data-eq) " ";color:var(--fg-dim);font-weight:400}
+  .cmp__row b:nth-of-type(1)::before{content:"Afterwork · "}
+  .cmp__row b:nth-of-type(2)::before{content:"Weekend · "}
+}
+
+/* Rejilla de tarjetas de texto, para "lo que te llevas" y "lo que no" */
+.cards{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);
+  border-radius:var(--r);overflow:hidden;margin-top:clamp(2.2rem,4vw,3rem)}
+@media (min-width:640px){.cards{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1000px){.cards{grid-template-columns:repeat(3,1fr)}}
+.cards > div{background:var(--bg);padding:clamp(1.3rem,2.4vw,1.8rem)}
+.sec--tint .cards > div{background:var(--surface)}
+.cards b{display:block;font-family:var(--display);font-weight:700;font-size:1rem;
+  letter-spacing:-.015em;margin-bottom:.45rem}
+.cards span{display:block;color:var(--fg-dim);font-size:.93rem}
+
+/* En esta página el muro va dentro de una sección teñida */
+#wall{margin-top:clamp(2.2rem,4vw,3rem)}
+
+/* ======================================================================
+   12. PÁGINAS LEGALES
+   Texto largo y sin adornos: lo que importa aquí es que se lea de un
+   tirón y que cada apartado se pueda citar. Columna estrecha, jerarquía
+   clara y nada de columnas ni cajas de color que compitan con el texto.
+   ====================================================================== */
+.lgl{padding-block:calc(72px + clamp(3rem,7vw,5.5rem)) var(--sec-y)}
+.lgl .wrap{max-width:46rem}
+.lgl h1{font-family:var(--ff-head);font-weight:800;letter-spacing:-.03em;
+  font-size:clamp(2.1rem,5vw,3.1rem);line-height:1.05;text-wrap:balance}
+.lgl__date{color:var(--fg-dim);font-size:.93rem;margin-top:1rem}
+.lgl__intro{margin-top:1.6rem;font-size:clamp(1.02rem,1.4vw,1.15rem);color:var(--fg-dim);line-height:1.6}
+
+/* El índice: en un texto legal la gente casi nunca lee de arriba abajo,
+   viene buscando un apartado concreto. */
+.lgl__toc{margin-top:2.4rem;padding:1.2rem 1.4rem;border:1px solid var(--line);border-radius:var(--r);
+  background:color-mix(in srgb,var(--fg) 3%,transparent)}
+.lgl__toc h2{font-family:var(--ff-head);font-size:.82rem;text-transform:uppercase;letter-spacing:.12em;
+  color:var(--fg-dim);font-weight:600;margin-bottom:.8rem}
+.lgl__toc ol{list-style:none;counter-reset:t;display:grid;gap:.45rem}
+.lgl__toc li{counter-increment:t;display:flex;gap:.6rem;font-size:.97rem}
+.lgl__toc li::before{content:counter(t) ".";color:var(--fg-dim);font-variant-numeric:tabular-nums;min-width:1.4em}
+.lgl__toc a{color:var(--fg);text-decoration:none;border-bottom:1px solid transparent}
+.lgl__toc a:hover{border-bottom-color:var(--accent)}
+
+.lgl section{margin-top:clamp(2.6rem,5vw,3.6rem);scroll-margin-top:90px}
+.lgl h2.lgl__h{font-family:var(--ff-head);font-weight:700;letter-spacing:-.02em;
+  font-size:clamp(1.3rem,2.4vw,1.65rem);line-height:1.2;padding-top:1.4rem;border-top:1px solid var(--line)}
+.lgl h3{font-family:var(--ff-head);font-weight:600;font-size:1.03rem;margin-top:1.8rem;letter-spacing:-.01em}
+.lgl p,.lgl li{line-height:1.65;color:var(--fg-dim)}
+.lgl p{margin-top:1rem;text-wrap:pretty}
+.lgl ul{margin-top:1rem;padding-left:1.1rem;display:grid;gap:.6rem}
+.lgl li::marker{color:var(--accent)}
+.lgl a{color:var(--fg);text-underline-offset:3px;text-decoration-color:color-mix(in srgb,var(--accent) 60%,transparent)}
+.lgl b,.lgl strong{color:var(--fg);font-weight:600}
+
+/* Ficha de datos identificativos: pares etiqueta/valor, no una tabla. */
+.lgl__id{margin-top:1.4rem;display:grid;gap:.1rem;border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.lgl__id div{display:grid;grid-template-columns:1fr;gap:.15rem;padding:.85rem 1.1rem;
+  background:color-mix(in srgb,var(--fg) 3%,transparent)}
+.lgl__id dt{font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;color:var(--fg-dim);font-weight:600}
+.lgl__id dd{color:var(--fg)}
+@media(min-width:560px){.lgl__id div{grid-template-columns:11rem 1fr;align-items:baseline;gap:1rem}}
+
+/* Hueco pendiente de rellenar. Se ve a propósito: más vale que cante
+   en la página que publicar un dato legal inventado. */
+.fill{display:inline-block;padding:.08em .45em;border-radius:.3em;font-weight:600;
+  background:#F2B33D;color:#1A1203;font-size:.92em}
+
+/* Aviso de cabecera (por ejemplo, que el texto solo está en español). */
+.lgl__note{margin-top:2rem;padding:.9rem 1.1rem;border-left:2px solid var(--accent);
+  background:color-mix(in srgb,var(--fg) 3%,transparent);border-radius:0 var(--r) var(--r) 0}
+.lgl__note p{margin-top:0;font-size:.93rem}
+
+.lgl__end{margin-top:clamp(3rem,6vw,4rem);padding-top:1.6rem;border-top:1px solid var(--line);
+  display:flex;flex-wrap:wrap;gap:.8rem 1.6rem;align-items:center}
+
+/* ======================================================================
+   13. LOS TRES PLANES DEL WEEKEND
+   Tríptico, no carrusel: en un carrusel la gente no pasa de la primera
+   diapositiva, así que esconderíamos dos de los tres planes que queremos
+   enseñar. Aquí se ven los tres de golpe. En móvil se convierte en una
+   tira que se arrastra con el dedo, con scroll-snap del navegador: sin
+   JavaScript, sin librería y con la inercia nativa del sistema.
+   ====================================================================== */
+.promo--solo{grid-template-columns:1fr}
+.promo--solo .promo__line{max-width:58ch}
+.promo--solo::before{inset:-60% auto auto -10%;width:70%}
+
+.plans{list-style:none;margin:clamp(1.8rem,3.5vw,2.6rem) 0 0;padding:0;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1rem,2vw,1.6rem)}
+.plan{display:flex;flex-direction:column}
+.plan b{display:block;font-family:var(--display);font-weight:700;font-size:1.05rem;
+  letter-spacing:-.015em;margin-top:.9rem}
+.plan span{display:block;color:var(--fg-dim);font-size:.9rem;line-height:1.5;margin-top:.3rem}
+
+/* El hueco de la foto. Mientras no haya imagen, un degradado del propio
+   verde con un punto de acento: se lee como una superficie, no como un
+   error de carga. */
+.plan__shot{aspect-ratio:4/3;border-radius:calc(var(--r) * .8);overflow:hidden;position:relative;
+  background:
+    radial-gradient(70% 60% at 30% 25%,color-mix(in srgb,var(--accent) 13%,transparent),transparent 70%),
+    linear-gradient(160deg,color-mix(in srgb,var(--fg) 9%,transparent),color-mix(in srgb,var(--fg) 3%,transparent));
+  border:1px solid var(--line)}
+.plan__shot img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* Tira deslizable en pantallas estrechas. El padding lateral negativo deja
+   que las tarjetas lleguen al borde al arrastrar, que es lo que el dedo
+   espera, sin que el texto del resto del bloque se desalinee. */
+@media (max-width:760px){
+  .plans{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:minmax(14rem,72%);
+    overflow-x:auto;overscroll-behavior-inline:contain;
+    scroll-snap-type:x mandatory;scroll-padding-left:var(--gut);
+    margin-inline:calc(var(--gut) * -1);padding-inline:var(--gut);
+    scrollbar-width:none}
+  .plans::-webkit-scrollbar{display:none}
+  .plan{scroll-snap-align:start}
+}
+
+/* Sin esto la tira no desliza: .promo__body es un hijo de grid y su
+   min-width:auto implícito lo obliga a crecer hasta lo que mida su
+   contenido, así que las tres tarjetas lo estiraban por detrás del
+   overflow:hidden de la tarjeta en vez de generar su propio scroll. */
+.promo__body{min-width:0}
+
+/* Mientras un plan no tenga foto, su hueco no se dibuja: tres rectángulos
+   vacíos parecen un error de carga, y el texto ya cuenta el plan. En cuanto
+   se mete el <img> dentro, el hueco aparece solo. */
+.plan__shot:empty{display:none}
+.plan__shot:empty + b{margin-top:0}
+
+/* En cuanto uno de los tres planes tiene foto, los otros recuperan su hueco
+   aunque estén vacíos: si no, el del medio subiría el texto y las tres
+   tarjetas quedarían descuadradas entre sí. Solo desaparecen los tres a la
+   vez, cuando no hay ninguna imagen todavía. */
+.plans:has(img) .plan__shot:empty{display:block}
+.plans:has(img) .plan__shot:empty + b{margin-top:.9rem}

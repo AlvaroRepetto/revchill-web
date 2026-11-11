@@ -1,0 +1,934 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RevChill · Partner dossier 2027</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Private document. Partnership options with RevChill for the 2027 season.">
+<meta name="theme-color" content="#F2F4EA">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/fonts.css">
+<style>
+:root{
+  --ink:#0E3334; --ink-2:#15403E; --dim:#55706C; --faint:#7B918D;
+  --paper:#FDFDF8; --paper-2:#F2F4EA; --paper-3:#E7EBDC;
+  --rule:rgba(14,51,52,.14); --rule-2:rgba(14,51,52,.28);
+  --accent:#C0441A; --accent-soft:#FBEDE6; --lima:#5F6F17;
+  --display:"Outfit",system-ui,sans-serif; --body:"Hanken Grotesk",system-ui,sans-serif;
+  --maxw:1240px; --gut:clamp(1.25rem,5vw,3rem);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);
+  font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--gut)}
+h1,h2,h3,h4{font-family:var(--display);margin:0;line-height:1.08;letter-spacing:-.02em}
+p{margin:0 0 1em}
+a{color:var(--accent)}
+strong,b{font-weight:600}
+small{font-size:.82rem}
+
+/* ---------- portada ---------- */
+.cover{background:var(--ink);color:var(--paper-2);padding:clamp(3rem,9vw,6.5rem) 0 clamp(2.5rem,7vw,4.5rem)}
+.cover .wrap{display:grid;gap:clamp(1.6rem,4vw,2.6rem)}
+.cover__mark{width:clamp(170px,26vw,250px);color:var(--paper-2)}
+.cover__mark svg{width:100%;height:auto;display:block}
+.cover h1{font-size:clamp(2.1rem,6vw,3.6rem);font-weight:800;max-width:17ch}
+.cover h1 em{font-style:normal;color:#FF7A4D}
+.cover__lede{font-size:clamp(1.02rem,1.9vw,1.2rem);color:#B9CCC7;max-width:56ch;margin:0}
+.cover__meta{display:flex;flex-wrap:wrap;gap:.6rem 1.6rem;font-size:.76rem;letter-spacing:.14em;
+  text-transform:uppercase;color:#8FA9A4;border-top:1px solid rgba(242,244,234,.2);padding-top:1.3rem}
+
+/* ---------- estructura ---------- */
+.sec{padding:clamp(3rem,7vw,5rem) 0;border-bottom:1px solid var(--rule)}
+.sec:last-of-type{border-bottom:0}
+.sec--tint{background:var(--paper-2)}
+.sec--ink{background:var(--ink);color:var(--paper-2);border-bottom:0}
+.sec--ink h2,.sec--ink h3{color:var(--paper-2)}
+.sec--ink .eyebrow{color:#8FA9A4}
+.sec--ink a{color:#FF9D78}
+.eyebrow{font-family:var(--display);font-size:.72rem;font-weight:700;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--accent);margin:0 0 1rem}
+h2{font-size:clamp(1.55rem,3.6vw,2.3rem);font-weight:800;max-width:22ch}
+h2+.lede{margin-top:1rem}
+.lede{font-size:clamp(1rem,1.7vw,1.1rem);color:var(--dim);max-width:62ch}
+h3{font-size:1.06rem;font-weight:700;margin:0 0 .35rem}
+.note{font-size:.86rem;color:var(--faint);max-width:62ch}
+
+/* ---------- cifras ---------- */
+.figs{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--rule);
+  border:1px solid var(--rule);margin:2rem 0 0}
+@media(min-width:720px){.figs{grid-template-columns:repeat(4,1fr)}}
+.figs div{background:var(--paper);padding:1.35rem 1.2rem}
+.sec--tint .figs div{background:var(--paper-2)}
+.figs b{display:block;font-family:var(--display);font-size:clamp(1.7rem,4vw,2.3rem);
+  font-weight:800;line-height:1;letter-spacing:-.03em}
+.figs span{display:block;font-size:.8rem;color:var(--dim);margin-top:.4rem}
+/* Sobre fondo oscuro las celdas heredaban el fondo claro y el texto claro:
+   números casi invisibles. Aquí van en oscuro, con la cifra en naranja. */
+.sec--ink .figs{background:rgba(242,244,234,.2);border-color:rgba(242,244,234,.2)}
+.sec--ink .figs div{background:var(--ink-2)}
+.sec--ink .figs b{color:#FF7A4D}
+.sec--ink .figs span{color:#A8BEBA}
+
+/* ---------- dos columnas ---------- */
+.two{display:grid;gap:2rem;margin-top:2.2rem}
+@media(min-width:760px){.two{grid-template-columns:1fr 1fr;gap:2.6rem}}
+.card{border:1px solid var(--rule);padding:1.5rem;background:var(--paper)}
+.sec--tint .card{background:var(--paper)}
+.card__tag{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);
+  font-weight:600;margin:0 0 .5rem}
+
+/* ---------- listas ---------- */
+ul.ticks{list-style:none;padding:0;margin:1rem 0 0}
+ul.ticks li{position:relative;padding:0 0 0 1.5rem;margin:0 0 .5rem;font-size:.95rem}
+ul.ticks li::before{content:"";position:absolute;left:0;top:.62em;width:.5rem;height:.5rem;
+  background:var(--accent);border-radius:50%}
+ul.plain{list-style:none;padding:0;margin:1rem 0 0}
+ul.plain li{padding:.65rem 0;border-bottom:1px solid var(--rule);font-size:.95rem}
+ul.plain li:last-child{border-bottom:0}
+ul.plain b{font-family:var(--display)}
+
+/* ---------- precios ---------- */
+.tiers{display:grid;gap:1px;background:var(--rule);border:1px solid var(--rule);margin-top:2.2rem}
+@media(min-width:780px){.tiers--3{grid-template-columns:repeat(3,1fr)}.tiers--2{grid-template-columns:repeat(2,1fr)}}
+.tier{background:var(--paper);padding:1.6rem 1.4rem;display:flex;flex-direction:column}
+.sec--tint .tier{background:var(--paper-2)}
+.tier--hero{background:var(--accent-soft)}
+.sec--tint .tier--hero{background:var(--accent-soft)}
+.tier__flag{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;
+  color:var(--accent);margin:0 0 .5rem}
+.tier__name{font-size:1.12rem;font-weight:800;margin:0 0 .15rem}
+.tier__slots{font-size:.78rem;color:var(--faint);margin:0 0 .9rem}
+.tier__price{font-family:var(--display);font-size:clamp(1.8rem,4.2vw,2.35rem);font-weight:800;
+  letter-spacing:-.03em;line-height:1;margin:0 0 .2rem}
+.tier__unit{font-size:.78rem;color:var(--dim);margin:0 0 1rem}
+.tier__for{font-size:.9rem;color:var(--dim);margin:0}
+
+/* ---------- tabla matriz ---------- */
+.tablewrap{margin-top:2.2rem;overflow-x:auto;border:1px solid var(--rule)}
+table{border-collapse:collapse;width:100%;min-width:620px;font-size:.88rem;background:var(--paper)}
+.sec--tint table{background:var(--paper-2)}
+th,td{text-align:left;padding:.72rem .9rem;border-bottom:1px solid var(--rule);vertical-align:top}
+thead th{font-family:var(--display);font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;
+  background:var(--ink);color:var(--paper-2);border-bottom:0;position:sticky;top:0}
+thead th:first-child{width:38%}
+tbody tr:last-child td{border-bottom:0}
+td.c,th.c{text-align:center;width:17%}
+tbody tr:hover td{background:rgba(192,68,26,.04)}
+.y{color:var(--accent);font-weight:700}
+.n{color:#B5C0BD}
+.num{font-family:var(--display);font-weight:700}
+caption{caption-side:top;text-align:left;padding:.9rem;font-size:.8rem;color:var(--faint);
+  background:var(--paper-3)}
+
+/* ---------- packs ---------- */
+.packs{display:grid;gap:1px;background:var(--rule);border:1px solid var(--rule);margin-top:2.2rem}
+.pack{background:var(--paper);display:grid;gap:.3rem 1.2rem;padding:1.2rem 1.4rem;align-items:baseline}
+.sec--tint .pack{background:var(--paper-2)}
+@media(min-width:720px){.pack{grid-template-columns:minmax(0,13rem) minmax(0,1fr) auto}}
+.pack b{font-family:var(--display);font-size:1.02rem;font-weight:700}
+.pack span{font-size:.9rem;color:var(--dim)}
+.pack i{font-style:normal;font-family:var(--display);font-size:1.3rem;font-weight:800;
+  letter-spacing:-.02em;white-space:nowrap}
+.pack em{font-style:normal;display:block;font-size:.74rem;color:var(--faint);font-family:var(--body);
+  font-weight:400;letter-spacing:0}
+
+/* ---------- zonas web ---------- */
+.zones{counter-reset:z;margin-top:2.2rem;border-top:1px solid var(--rule)}
+.zone{display:grid;gap:.2rem 1.4rem;padding:1.25rem 0;border-bottom:1px solid var(--rule)}
+@media(min-width:720px){.zone{grid-template-columns:2.5rem minmax(0,15rem) minmax(0,1fr)}}
+.zone::before{counter-increment:z;content:counter(z,decimal-leading-zero);
+  font-family:var(--display);font-weight:800;color:var(--accent);font-size:.92rem;padding-top:.15rem}
+.zone b{font-family:var(--display);font-size:1rem}
+.zone span{font-size:.92rem;color:var(--dim)}
+
+/* ---------- no vendemos ---------- */
+.nots{display:grid;gap:1px;background:rgba(242,244,234,.18);border:1px solid rgba(242,244,234,.18);margin-top:2.2rem}
+@media(min-width:720px){.nots{grid-template-columns:repeat(2,1fr)}}
+.nots div{background:var(--ink);padding:1.3rem 1.4rem}
+.nots b{display:block;font-family:var(--display);font-size:.98rem;margin-bottom:.25rem}
+.nots span{font-size:.9rem;color:#9FB5B1}
+
+/* ---------- calendario ---------- */
+.cal{margin-top:2.2rem;border-top:1px solid var(--rule)}
+.cal__row{display:grid;gap:.2rem 1.4rem;padding:1.05rem 0;border-bottom:1px solid var(--rule)}
+@media(min-width:720px){.cal__row{grid-template-columns:minmax(0,9rem) minmax(0,1fr)}}
+.cal__when{font-family:var(--display);font-weight:700;font-size:.88rem;letter-spacing:.04em;
+  text-transform:uppercase;color:var(--accent)}
+.cal__what{font-size:.95rem}
+.cal__what b{font-family:var(--display)}
+
+/* ---------- cierre ---------- */
+.end{padding:clamp(3rem,8vw,5.5rem) 0;background:var(--ink);color:var(--paper-2)}
+.end h2{color:var(--paper-2);max-width:20ch}
+.end p{color:#B9CCC7;max-width:54ch}
+.btn{display:inline-block;background:#FF7A4D;color:#07211F;text-decoration:none;
+  font-family:var(--display);font-weight:700;font-size:.95rem;padding:.85rem 1.5rem;border-radius:999px;
+  margin-top:1.4rem}
+.end__foot{margin-top:2.6rem;padding-top:1.4rem;border-top:1px solid rgba(242,244,234,.2);
+  font-size:.78rem;color:#8FA9A4;display:flex;flex-wrap:wrap;gap:.5rem 1.6rem}
+
+/* ---------- impresión / PDF ----------
+   A4 apaisado. Un dossier no se imprime: se lee en un portátil y se pasa
+   en una reunión, y ahí 297×210 gana a 210×297. El ancho extra no se gasta
+   en líneas de texto más largas —que se leen peor— sino en poner la foto
+   al lado del párrafo y en que las tablas respiren.
+   ------------------------------------- */
+@page{size:A4 landscape;margin:0}
+@media print{
+  body{font-size:10pt;line-height:1.5}
+  .cover{padding:0;min-height:210mm;display:flex;align-items:center;break-after:page}
+  .cover .wrap{width:100%;gap:1.4rem}
+  .sec{padding:10mm 0;break-inside:auto}
+  .end{padding:14mm 0}
+  .wrap{max-width:none;padding:0 16mm}
+  h2{font-size:16pt}
+  .cover h1{font-size:25pt}
+  .cover__mark{width:150px}
+  .tablewrap{overflow:visible}
+  table{min-width:0;font-size:8.4pt}
+  th,td{padding:.28rem .5rem}
+  thead th{position:static;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .sec,.cover,.end,.sec--ink,.sec--tint,.tier--hero,.nots div,.figs div{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .tier,.card,.pack,.zone,.cal__row,.nots div,.figs,tr,.shot,.strip figure{break-inside:avoid}
+  .tiers,.packs,.two,.nots,.strip{break-inside:auto}
+  h2,h3{break-after:avoid}
+  /* Nada de texto partido entre dos páginas: ni un párrafo, ni una viñeta,
+     ni un pie de foto. Y cada sección intenta caber entera en su hoja; las
+     que llevan una tabla larga se marcan .sec--long para que puedan partir
+     por una fila y no se desborden fuera del papel. */
+  /* Nada de texto partido: ni un párrafo, ni una viñeta, ni un pie de foto,
+     ni una tarjeta de precio. Lo que sí puede partir es la sección entera,
+     y debe: obligarla a caber en una hoja dejaba cuatro páginas a medias,
+     que molesta más a quien lo lee que un bloque que continúe abajo. */
+  p,li,figure,figcaption,dt,dd,.note,.recrea,.lede,h2,h3{break-inside:avoid}
+  .sec{break-inside:auto}
+  .pagebreak{break-before:page}
+  .noprint{display:none}
+  img{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+
+  /* Las rejillas se declaran aquí a mano y no por ancho de pantalla: al
+     imprimir, el ancho que ve la hoja de estilos no coincide con el de la
+     página, y las consultas @media de pantalla se quedan a medias. Esto es
+     lo que hacía que la foto cayera debajo del texto en vez de al lado. */
+  .intro{grid-template-columns:minmax(0,1fr) minmax(0,.8fr);gap:10mm}
+  .two{grid-template-columns:1fr 1fr;gap:8mm}
+  .strip--2{grid-template-columns:repeat(2,1fr)}
+  .strip--3{grid-template-columns:repeat(3,1fr)}
+  .tiers--2{grid-template-columns:repeat(2,1fr)}
+  .tiers--3{grid-template-columns:repeat(3,1fr)}
+  .exs{grid-template-columns:repeat(3,1fr)}
+  .figs{grid-template-columns:repeat(4,1fr)}
+  .nots{grid-template-columns:repeat(2,1fr)}
+  .logos{grid-template-columns:repeat(5,1fr)}
+  .packs .pack{grid-template-columns:minmax(0,13rem) minmax(0,1fr) auto}
+  .cal__row{grid-template-columns:minmax(0,9rem) minmax(0,1fr)}
+  .zone{grid-template-columns:2.5rem minmax(0,15rem) minmax(0,1fr)}
+
+  /* Las bandas ya vienen recortadas a 3:1, así que no hace falta forzarlas;
+     las de columna sí se limitan para que no empujen el texto de al lado. */
+  .shot img{max-height:62mm;object-fit:cover;object-position:center 60%}
+  .strip--3 img{max-height:46mm;object-fit:cover;object-position:center 55%}
+  /* La tira de dos va con fotos ya recortadas a 16:9 en origen: si
+     además se recortan por alto aquí, se quedan sin caras. */
+  .strip--2 img{max-height:none}
+  .logos div{aspect-ratio:auto;min-height:0;height:24mm}
+  .logos img{max-height:11mm}
+  .logos div:last-child{height:24mm}
+  .sec{padding:7mm 0}
+  h2{margin-bottom:.2rem}
+  .lede{font-size:10pt}
+  .figs div{padding:.8rem .9rem}
+  .card{padding:1.1rem}
+  .tier{padding:1.1rem 1rem}
+  ul.ticks li,ul.plain li{font-size:9.2pt}
+  ul.plain li{padding:.42rem 0}
+  .cal__row{padding:.72rem 0}
+  .zone{padding:.9rem 0}
+}
+
+/* ---------- filas de grupo dentro de una tabla ---------- */
+td.grp{background:var(--paper-3);font-family:var(--display);font-weight:700;
+  font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);
+  padding-top:.85rem;padding-bottom:.5rem}
+table small{display:block;color:var(--faint);font-size:.78rem;margin-top:.15rem}
+
+/* ---------- ejemplos de factura ---------- */
+.exs{display:grid;gap:1px;background:var(--rule);border:1px solid var(--rule);margin-top:2.2rem}
+@media(min-width:820px){.exs{grid-template-columns:repeat(3,1fr)}}
+.ex{background:var(--paper);padding:1.5rem 1.4rem;display:flex;flex-direction:column}
+.sec--tint .ex{background:var(--paper-2)}
+.ex--mid{background:var(--accent-soft)!important}
+.ex__who{font-family:var(--display);font-weight:700;font-size:1rem;margin:0 0 1rem;min-height:2.6em}
+.ex__list{list-style:none;padding:0;margin:0 0 1rem;border-top:1px solid var(--rule)}
+.ex__list li{display:flex;justify-content:space-between;gap:1rem;padding:.5rem 0;
+  border-bottom:1px solid var(--rule);font-size:.9rem}
+.ex__list span{font-family:var(--display);font-weight:600;white-space:nowrap}
+.ex__total{font-family:var(--display);font-size:1.9rem;font-weight:800;letter-spacing:-.03em;
+  margin:0 0 .6rem;color:var(--accent)}
+.ex__note{font-size:.88rem;color:var(--dim);margin:0 0 .2rem}
+
+/* ---------- muro de logos del dossier ---------- */
+.logos{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;
+  background:rgba(242,244,234,.16);border:1px solid rgba(242,244,234,.16);margin-top:2.2rem}
+@media(min-width:620px){.logos{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:900px){.logos{grid-template-columns:repeat(4,1fr)}}
+.logos div{background:var(--ink);aspect-ratio:5/2.4;display:grid;place-items:center;padding:1rem}
+.logos img{max-height:46px;width:auto;max-width:100%}
+/* Son trece: el último siempre deja la fila a medias, así que la ocupa entera. */
+.logos div:last-child{grid-column:1/-1;aspect-ratio:auto;min-height:96px}
+
+@media print{
+  /* Las rejillas enteras deben poder partirse: si no, una que no cabe
+     salta de página y deja medio folio en blanco. Solo se protegen las
+     celdas sueltas. */
+  .exs,.logos{break-inside:auto}
+  .ex,.logos div{break-inside:avoid}
+  td.grp{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+
+/* ---------- fotografías ----------
+   Tres formas de meter imagen, según lo que tenga que hacer:
+   .intro  -> texto a la izquierda y foto a la derecha. Es la que aprovecha
+              de verdad el formato apaisado: el párrafo mantiene su medida
+              legible y la foto ocupa el ancho que sobraba.
+   .band   -> una foto a todo el ancho, para abrir o cerrar un bloque.
+   .strip  -> dos o tres fotos en fila.
+   ---------------------------------- */
+.intro{display:grid;gap:1.8rem;align-items:start}
+@media(min-width:900px){.intro{grid-template-columns:minmax(0,1fr) minmax(0,.82fr);gap:2.6rem}}
+.intro__txt > :last-child{margin-bottom:0}
+
+figure{margin:0}
+.shot img,.band img,.strip img{display:block;width:100%;height:auto}
+.shot figcaption,.band figcaption,.strip figcaption{font-size:.78rem;color:var(--faint);
+  margin-top:.5rem;line-height:1.45}
+.sec--ink .shot figcaption,.sec--ink .band figcaption,.sec--ink .strip figcaption{color:#8FA9A4}
+
+.band{margin-top:2.2rem}
+.strip{display:grid;gap:1rem;margin-top:2.2rem}
+@media(min-width:760px){.strip--2{grid-template-columns:repeat(2,1fr)}
+                        .strip--3{grid-template-columns:repeat(3,1fr)}}
+
+/* Aviso sobre imágenes de algo que todavía no ha ocurrido. Va en rojo de
+   marca y no en gris: tiene que leerse, no disimularse. */
+.recrea{font-size:.78rem;color:var(--accent);margin-top:.6rem;font-weight:600}
+.sec--ink .recrea{color:#FF9D78}
+
+/* ---------- barra de pantalla ----------
+   Solo existe al leerlo en el navegador: en el PDF sobra, porque ahí ni se
+   cambia de idioma ni se descarga nada. De ahí el .noprint. */
+.topbar{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--paper) 88%,transparent);
+  backdrop-filter:blur(14px) saturate(160%);border-bottom:1px solid var(--rule)}
+.topbar__in{max-width:var(--maxw);margin:0 auto;padding:.7rem var(--gut);
+  display:flex;align-items:center;gap:1rem}
+.topbar__mark{width:118px;color:var(--ink);flex:0 0 auto}
+.topbar__mark svg{width:100%;height:auto;display:block}
+.topbar__tag{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);
+  border-left:1px solid var(--rule-2);padding-left:1rem;margin-left:.2rem}
+@media(max-width:620px){.topbar__tag{display:none}}
+.topbar__sp{margin-left:auto}
+.topbar__lang{display:inline-flex;border:1px solid var(--rule-2);border-radius:999px;overflow:hidden;
+  font-family:var(--display);font-size:.78rem;font-weight:700}
+.topbar__lang a{padding:.3rem .7rem;text-decoration:none;color:var(--dim)}
+.topbar__lang a[aria-current]{background:var(--ink);color:var(--paper-2)}
+.topbar__pdf{font-family:var(--display);font-weight:700;font-size:.8rem;text-decoration:none;
+  color:var(--ink);border:1px solid var(--rule-2);border-radius:999px;padding:.35rem .9rem;
+  margin-left:.6rem;white-space:nowrap}
+.topbar__pdf:hover{background:var(--ink);color:var(--paper-2);border-color:var(--ink)}
+@media print{.topbar{display:none}}
+
+/* ---------- maquetación de pantalla ----------
+   Una sola medida para todo. El documento se compuso para una hoja de
+   980 px y al leerlo en un monitor ancho el texto se quedaba pegado a la
+   izquierda con media pantalla vacía al lado, mientras las tablas y las
+   fotos sí cruzaban entera. Dos bordes izquierdos distintos y dos anchos
+   distintos: eso es lo que se veía descuadrado.
+
+   Aquí todo —titulares, párrafos, tablas, tarjetas de precio, fotos y
+   muro de logos— comparte exactamente el mismo ancho y el mismo borde.
+   Solo afecta a la pantalla; al imprimir manda el bloque @media print. */
+@media screen{
+  .wrap{max-width:52rem}
+  .lede{max-width:none}
+  h2{max-width:24ch}
+  .cover__lede{max-width:none}
+  .note,.recrea{max-width:none}
+  .end p{max-width:none}
+  .card p,.nots span{max-width:none}
+  /* Las tarjetas se ajustan a su contenido: estiradas a la misma altura,
+     la más corta se quedaba con un socavón de aire dentro. */
+  .two{align-items:start}
+  .topbar__in{max-width:52rem}
+
+  /* A esta medida, partir en dos lo que ya está dentro de una columna deja
+     renglones de cinco palabras. Texto y foto se apilan, y la foto ocupa
+     el ancho completo: en un documento largo eso se agradece más que una
+     imagen pequeña peleando con el párrafo de al lado. */
+  .intro{grid-template-columns:1fr;gap:1.6rem}
+  .two .nots{grid-template-columns:1fr}
+}
+
+/* ---------- compromisos (antes .packs) ----------
+   La versión anterior era una fila de tres columnas con la ventaja escrita
+   en tipografía de titular a la derecha: heredaba el sitio donde antes iba
+   el porcentaje de descuento, y sin un número ahí dentro gritaba sin decir
+   nada. Cuatro fichas de dos en dos se leen mejor y no fingen ser precios. */
+.perks{display:grid;grid-template-columns:1fr;gap:1px;background:var(--rule);
+  border:1px solid var(--rule);margin-top:2.2rem}
+@media(min-width:640px){.perks{grid-template-columns:repeat(2,1fr)}}
+.perk{background:var(--paper);padding:1.3rem 1.4rem}
+.sec--tint .perk{background:var(--paper-2)}
+.perk b{display:block;font-family:var(--display);font-size:1.05rem;font-weight:700;
+  letter-spacing:-.015em}
+.perk i{display:block;font-style:normal;font-family:var(--display);font-weight:700;
+  font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);
+  margin:.45rem 0 .55rem}
+.perk span{display:block;font-size:.92rem;color:var(--dim);line-height:1.5}
+
+/* ---------- tabla de presupuesto, más limpia ----------
+   Tres arreglos: la columna de importes se alinea con su encabezado en vez
+   de ir cada uno por su lado; la fila de total deja de parecer una más; y
+   el pie explicativo baja debajo de la tabla en lugar de meter una segunda
+   barra gris encima de la cabecera oscura. */
+/* Solo la tabla de presupuesto lleva los importes a la derecha; en la
+   comparativa de formatos las dos columnas van centradas, que es lo suyo
+   cuando lo que se compara son frases y no cifras. */
+table.cost th.c,table.cost td.c{text-align:right;width:22%}
+table.cmpt th:first-child{width:34%}
+table.cmpt th.c,table.cmpt td.c{width:33%}
+table .num,table b.num{white-space:nowrap}
+tbody tr.tot td{background:var(--paper-3);font-weight:600}
+.sec--tint tbody tr.tot td{background:var(--paper-3)}
+tbody tr.tot td:first-child{font-family:var(--display)}
+caption{display:none}
+.tablenote{font-size:.84rem;color:var(--faint);margin:.7rem 0 0}
+
+/* ---------- muro de logos ----------
+   Son trece, y trece es primo: con cuatro columnas, cinco o las que sean,
+   la última fila siempre queda coja. Antes se estiraba el último logo a lo
+   ancho para disimularlo y el resultado era peor. La solución es quitar la
+   cuadrícula: sin celdas ni líneas no hay nada que descuadrar, la última
+   fila se centra sola y parece lo que es, una lista de marcas. */
+.logos{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;
+  gap:clamp(1.6rem,2.8vw,2.2rem) var(--g);
+  margin-top:2.2rem;padding:2rem .5rem;background:none;border:0;
+  border-top:1px solid rgba(242,244,234,.16);border-bottom:1px solid rgba(242,244,234,.16)}
+/* Cinco por fila: trece reparte en 5 + 5 + 3, y una última fila de tres
+   centrada se lee como parte del conjunto. Con cuatro por fila quedaba uno
+   solo abajo, que es lo que cantaba. */
+.logos{--g:clamp(1.8rem,3.4vw,2.8rem)}
+.logos div{background:none;aspect-ratio:auto;min-height:0;padding:0;
+  display:grid;place-items:center;grid-column:auto;
+  flex:0 0 calc((100% - var(--g)) / 2)}
+@media(min-width:560px){.logos div{flex-basis:calc((100% - var(--g) * 2) / 3)}}
+@media(min-width:860px){.logos div{flex-basis:calc((100% - var(--g) * 4) / 5)}}
+.logos img{max-height:38px;max-width:100%;width:auto}
+@media print{
+  /* Al imprimir, el ancho que ve la hoja de estilos no llega a 860 px y la
+     regla de cinco por fila no entraba: salían tres por fila, trece volvía
+     a dejar uno suelto y encima partía de página. Aquí se fija a mano. */
+  .logos{gap:5mm 7mm;padding:5mm 0;margin-top:5mm;break-inside:avoid}
+  .logos div{flex-basis:calc((100% - var(--g) * 4) / 5)}
+  .logos img{max-height:10mm;max-width:100%}
+}
+</style>
+
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="rc-logo" viewBox="-4 -4 454.9 154.0"><g transform="translate(0,100.0)"><g transform="translate(0.000,0.000) scale(0.13514,-0.13514)" fill="currentColor"><path transform="translate(0.00,0)" d="M51 0V489H225V458Q273 499 349 499Q384 499 409.5 490.0Q435 481 453 462L352 327Q344 336 329.5 341.5Q315 347 297 347Q263 347 244.0 326.5Q225 306 225 266V0Z"/><path transform="translate(431.00,0)" d="M298 -11Q216 -11 153.0 21.5Q90 54 54.0 112.0Q18 170 18 245Q18 319 53.0 376.5Q88 434 148.5 467.5Q209 501 285 501Q359 501 416.5 469.5Q474 438 506.5 382.5Q539 327 539 256Q539 241 537.5 225.5Q536 210 531 190L188 188Q191 181 194 174Q208 144 234.0 129.0Q260 114 298 114Q334 114 361.5 126.0Q389 138 411 163L502 72Q466 31 414.5 10.0Q363 -11 298 -11ZM188 301 378 302Q376 313 372 322Q361 348 340.0 362.0Q319 376 287 376Q254 376 230.0 360.0Q206 344 193 315Q190 308 188 301Z"/><path transform="translate(963.00,0)" d="M198 0 -1 489H185L276 193L367 489H551L352 0Z"/><path transform="translate(1491.00,0)" d="M293 -11Q215 -11 152.5 22.0Q90 55 54.0 113.0Q18 171 18 244Q18 318 54.5 376.0Q91 434 153.5 467.5Q216 501 295 501Q352 501 399.0 482.0Q446 463 485 425L375 315Q360 330 340.5 337.5Q321 345 295 345Q267 345 244.5 332.5Q222 320 208.5 298.0Q195 276 195 245Q195 215 208.5 192.5Q222 170 244.5 157.0Q267 144 295 144Q323 144 343.0 153.0Q363 162 378 179L489 69Q448 29 400.5 9.0Q353 -11 293 -11Z"/><path transform="translate(1970.00,0)" d="M368 0V276Q368 310 348.0 329.5Q328 349 297 349Q276 349 259.5 340.0Q243 331 234.0 315.0Q225 299 225 276V0H51V729H225V460Q236 468 249 476Q292 499 349 499Q408 499 451.5 475.5Q495 452 518.5 411.0Q542 370 542 316V0Z"/><path transform="translate(2531.00,0)" d="M50 0V489H225V0ZM137 546Q98 546 72.0 572.5Q46 599 46 639Q46 678 72.0 705.0Q98 732 137 732Q178 732 203.5 705.0Q229 678 229 639Q229 599 203.5 572.5Q178 546 137 546Z"/><path transform="translate(2784.00,0)" d="M51 0V729H225V0Z"/><path transform="translate(3038.00,0)" d="M51 0V729H225V0Z"/></g></g><path d="M 6.7 20.0 C 97.9 24.5 177.9 22.5 249.1 15.5 C 329.2 8.0 391.5 -7.0 438.2 -30.0" fill="none" stroke="var(--accent)" stroke-width="10.50" stroke-linecap="round" transform="translate(0,114.0)"/></symbol></svg>
+
+
+
+<!-- ================= COVER ================= -->
+<div class="topbar noprint">
+  <div class="topbar__in">
+    <div class="topbar__mark"><svg viewBox="-4 -4 454.9 154.0"><use href="#rc-logo"/></svg></div>
+    <span class="topbar__tag">Partner dossier · 2027</span>
+    <span class="topbar__sp"></span>
+    <span class="topbar__lang">
+      <a href="partners.html">ES</a><a href="partners-en.html" aria-current="page">EN</a>
+    </span>
+    <a class="topbar__pdf" href="revchill-partner-dossier-2027-en.pdf" target="_blank" rel="noopener">Download PDF</a>
+  </div>
+</div>
+
+<header class="cover">
+  <div class="wrap">
+    <div class="cover__mark"><svg viewBox="-4 -4 454.9 154.0"><use href="#rc-logo"/></svg></div>
+    <h1>We're small. <em>That is precisely the offer.</em></h1>
+    <p class="cover__lede">Partnership dossier 2027. Inside you'll find the real numbers, where every euro goes and what it costs to be there. Nothing inflated: if what you're after is mass reach, we'll tell you up front and save you the meeting.</p>
+    <div class="cover__meta">
+      <span>Private document</span>
+      <span>2027 season</span>
+      <span>November 2026</span>
+      <span>revchill.co</span>
+    </div>
+  </div>
+</header>
+
+<!-- ================= WHAT THIS IS ================= -->
+<section class="sec">
+  <div class="wrap">
+    <div class="intro">
+      <div class="intro__txt">
+        <p class="eyebrow">What this is</p>
+        <h2>Revenue management afterworks, with no talks and no stands.</h2>
+        <p class="lede">RevChill started from a simple idea: the best insights in this industry don't happen in the plenary room, they happen over a drink afterwards. So we got rid of the room. These are evening meet-ups, free to attend and capped in size, on rooftops and in bars across five cities. No panel, no printed agenda and nobody trying to sell you anything.</p>
+        <p class="lede">Nine meet-ups, five cities and thirteen brands that have already been through them. In 2027 we're turning it into a proper season, and adding a long-form format that doesn't exist anywhere else in this industry: the <b>RevChill Weekend</b>.</p>
+      </div>
+      <figure class="shot">
+        <img src="assets/img/dossier/malaga-terraza.jpg" alt="Attendees talking on a rooftop terrace at dusk during a RevChill meet-up in Málaga">
+        <figcaption>Málaga, April 2026. La terraza de San Juan, at Hotel Málaga Premium.</figcaption>
+      </figure>
+    </div>
+
+    <div class="two">
+      <div class="card">
+        <p class="card__tag">What it is</p>
+        <ul class="ticks">
+          <li>Forty professionals on their feet, beer in hand, talking about pricing.</li>
+          <li>Free entry for whoever comes, always.</li>
+          <li>Three brands per meet-up maximum, never two from the same niche.</li>
+          <li>Every piece of material produced that night, yours to use wherever you want.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <p class="card__tag">What it isn't</p>
+        <ul class="ticks">
+          <li>A conference. There's no stage and no programme.</li>
+          <li>A trade fair. No booth and no aisle for people to walk past: your brand sits inside the conversation, not next to it.</li>
+          <li>A channel with mass reach. That one deserves the next page.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="strip strip--2">
+      <figure>
+        <img src="assets/img/dossier/rollup-tripresale.jpg" alt="Attendees talking in front of a tripResale roll-up banner at a RevChill meet-up">
+        <figcaption><b>Roll-ups, yes.</b> Your brand can be there in the room with its own stand-up banner. What there isn't is a separate space for people to walk past.</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/img/dossier/partner-marca.jpg" alt="Attendees talking beside the brand panel of the evening's sponsor">
+        <figcaption><b>This is what a brand looks like at a RevChill.</b> Present, visible and interrupting nobody. Pictured: Turneo in Málaga.</figcaption>
+      </figure>
+    </div>
+
+    <figure class="band">
+      <img src="assets/img/dossier/sevilla-grupo.jpg" alt="Large group of attendees on a Seville rooftop with the Giralda tower behind them">
+      <figcaption>Seville. The rooftop where all of this started, with the Giralda behind.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ================= THE NUMBERS ================= -->
+<section class="sec sec--ink">
+  <div class="wrap">
+    <p class="eyebrow">The numbers, unretouched</p>
+    <h2>These are the real figures. They are small.</h2>
+    <p class="lede" style="color:#B9CCC7">We'd rather you saw them here than found them out later. Everything on the pages that follow rests on this, and on nothing else.</p>
+
+    <div class="figs">
+      <div><b>700</b><span>followers on LinkedIn</span></div>
+      <div><b>150</b><span>across the WhatsApp communities</span></div>
+      <div><b>~1,000</b><span>impressions per post</span></div>
+      <div><b>~40</b><span>attendees per meet-up</span></div>
+    </div>
+
+    <div class="two" style="margin-top:2.4rem">
+      <div>
+        <h3>If you want reach, there are better places</h3>
+        <p style="color:#B9CCC7">We'll say it plainly: put one meet-up's budget into LinkedIn advertising and you'll reach far more people than everything RevChill publishes in a quarter. If impressions are your goal this year, close this dossier and spend it there. No hard feelings.</p>
+        <p style="color:#B9CCC7;margin-bottom:0">What that budget doesn't buy you anywhere else is two hours on your feet, beer in hand, talking unhurriedly with forty people who are overwhelmingly revenue managers. People who decide, or advise whoever decides, which tool gets bought next year. That conversation doesn't come with impressions. It comes with names.</p>
+      </div>
+      <div>
+        <div class="nots" style="margin-top:0">
+          <div><b>A meet-up costs €1,000</b><span>That's €25 for each person who walks through the door, and the vast majority of them are exactly your audience.</span></div>
+          <div><b>A booth at an industry fair</b><span>Costs several times that, and most of the people walking past aren't your customer and never will be.</span></div>
+        </div>
+        <p class="note" style="color:#8FA9A4;margin-top:1.4rem">The figures above are from November 2026 and are refreshed in every version of this dossier. If they've moved by the time you read this, ask us for the latest one.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHO COMES ================= -->
+<section class="sec">
+  <div class="wrap">
+    <div class="intro">
+      <div class="intro__txt">
+        <p class="eyebrow">Who comes</p>
+        <h2>Revenue managers, mostly. Senior and junior at the same table.</h2>
+        <p class="lede">The profiles vary —there's hotel management, distribution, consulting, product and students— but the core is clear and consistent: revenue people. Having seniors and juniors in the same room is part of why the conversation works: some ask the question nobody dares ask inside their own company, and others answer without the plenary-room posture.</p>
+      </div>
+      <figure class="shot">
+        <img src="assets/img/dossier/madrid-azotea.jpg" alt="Attendees talking on a Madrid rooftop at blue hour">
+        <figcaption>Madrid, November 2025. Terraza Martini, at the Radisson RED.</figcaption>
+      </figure>
+    </div>
+
+    <div class="two">
+      <div class="card">
+        <p class="card__tag">Where the community is</p>
+        <ul class="plain">
+          <li><b>Seville</b> <span>— home base. It's where the organiser lives and where most meet-ups happen.</span></li>
+          <li><b>Madrid</b> <span>— the big one. It lines up with the industry's trade fairs.</span></li>
+          <li><b>Barcelona</b> <span>— active since 2026.</span></li>
+          <li><b>Málaga</b> <span>— active since 2026.</span></li>
+          <li><b>Levante</b> <span>— Valencia and Benidorm, growing.</span></li>
+        </ul>
+      </div>
+      <div class="card">
+        <p class="card__tag">Why the size matters</p>
+        <p style="font-size:.95rem">Forty is the number at which you can still talk to anyone you want. Past a hundred and fifty, closed huddles form and you end the night having spoken to three people — the same three you already talked to.</p>
+        <p style="font-size:.95rem;margin-bottom:0">At the Weekend we drop to fifteen or twenty on purpose, and there you don't talk to everyone: you live with everyone.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= THE TWO FORMATS ================= -->
+<section class="sec sec--tint">
+  <div class="wrap">
+    <p class="eyebrow">The two formats</p>
+    <h2>One puts you in the conversation. The other puts you in the group.</h2>
+    <p class="lede">This is the difference that explains everything else, including the price gap. Both gather the same kind of person, but the relationship you build in each is nothing alike.</p>
+
+    <div class="tablewrap">
+      <table class="cmpt">
+        <thead>
+          <tr><th>&nbsp;</th><th class="c">RevChill Afterwork</th><th class="c">RevChill Weekend</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>How long it lasts</td><td class="c">Two or three hours</td><td class="c">Forty-eight</td></tr>
+          <tr><td>How many people</td><td class="c">Around 40, open to whoever comes</td><td class="c">15 to 20, hand-picked</td></tr>
+          <tr><td>Where</td><td class="c">A city rooftop</td><td class="c">A house out in the countryside</td></tr>
+          <tr><td>Your team</td><td class="c">Attends for the evening</td><td class="c">Lives there the whole weekend</td></tr>
+          <tr><td>Real contact time</td><td class="c">Minutes per person</td><td class="c">Hours per person</td></tr>
+          <tr><td>What you're actually buying</td><td class="c"><b>Presence</b></td><td class="c"><b>Access</b></td></tr>
+          <tr><td>Brands at the same event</td><td class="c">Up to 3</td><td class="c">Up to 3</td></tr>
+          <tr><td>What content comes out</td><td class="c">Photos and a short video</td><td class="c">Photos, long-form video and interviews</td></tr>
+          <tr><td>How many per year</td><td class="c">10 to 12</td><td class="c">1 pilot, and up to 4 or 5 if it works</td></tr>
+          <tr><td>Indicative contribution</td><td class="c"><span class="num">€1,000 – €1,200</span><small>split between 1 and 3 brands</small></td><td class="c"><span class="num">€3,000 – €3,500</span><small>split between 1 and 3 brands</small></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note" style="margin-top:1.2rem">The three-brand rule is the same in both and isn't up for negotiation. An event with eight logos stops being a meet-up and becomes a small trade fair, and at that point it's no longer worth what it's worth.</p>
+  </div>
+</section>
+
+<!-- ================= AFTERWORK ================= -->
+<section class="sec">
+  <div class="wrap">
+    <p class="eyebrow">RevChill Afterwork</p>
+    <h2>Three ways to be there.</h2>
+    <p class="lede">The same meet-up, split three ways. The fewer brands there are, the more room you take up.</p>
+
+    <div class="tiers tiers--3">
+      <div class="tier">
+        <p class="tier__flag">Three brands</p>
+        <p class="tier__name">Shared</p>
+        <p class="tier__slots">Up to 3 brands, from different niches</p>
+        <p class="tier__price">€400</p>
+        <p class="tier__unit">per brand, per meet-up</p>
+        </div>
+      <div class="tier tier--hero">
+        <p class="tier__flag">Two brands</p>
+        <p class="tier__name">Shared with one</p>
+        <p class="tier__slots">Only 2 brands in the room</p>
+        <p class="tier__price">€600</p>
+        <p class="tier__unit">per brand, per meet-up</p>
+        </div>
+      <div class="tier">
+        <p class="tier__flag">One brand</p>
+        <p class="tier__name">Exclusive</p>
+        <p class="tier__slots">You're the only brand of the night</p>
+        <p class="tier__price">€1,200</p>
+        <p class="tier__unit">the whole meet-up</p>
+        <p class="tier__for">Your logo alone, your five minutes alone and all of the night's material tied to your brand only. It's the format attendees remember most.</p>
+      </div>
+    </div>
+    <p class="note" style="margin-top:1.2rem">You pay less per brand when you share, and more in total when there are several of you: each added brand means more coordination and less room for the others. What never changes is the cap of three.</p>
+
+    <div class="intro" style="margin-top:2.8rem">
+      <div class="intro__txt">
+        <h3>What's included, whichever way you come in</h3>
+        <ul class="plain">
+          <li><b>Five minutes to introduce yourself</b> <span>— standing up, drink in hand, no projector. It's the only moment of the night when a brand speaks.</span></li>
+          <li><b>Your logo on the website</b> <span>— on the company wall on the home page and on the partnership page, linked to your site, permanently.</span></li>
+          <li><b>Icebreaker activity</b> <span>— be part of a 15 to 20 minute icebreaker activity to boost networking.</span></li>
+          <li><b>All of the night's material</b> <span>— photos and a short video, yours to use, with no expiry.</span></li>
+          <li><b>A mention in the meet-up's posts</b> <span>— before, during and after, on LinkedIn and in the WhatsApp communities.</span></li>
+          <li><b>A report on the night</b> <span>— how many people came and what profiles were there. Plus the contact details of anyone who agreed to share them with you.</span></li>
+        </ul>
+      </div>
+      <figure class="shot">
+        <img src="assets/img/dossier/afterwork-risas.jpg" alt="Attendees talking on a rooftop during a RevChill meet-up">
+        <figcaption>Barcelona, May 2026. This is what you're buying: people from your industry talking, unhurried.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WEEKEND: WHAT IT IS ================= -->
+<section class="sec">
+  <div class="wrap">
+    <div class="intro">
+      <div class="intro__txt">
+        <p class="eyebrow">RevChill Weekend · New for 2027</p>
+    <h2>Forty-eight hours with fifteen people chosen one by one.</h2>
+    <p class="lede">This is the bet of the year and it's a format that doesn't exist in this industry. A house out in nature, one weekend, and between fifteen and twenty people selected from the applicants with one goal: that the group works. A mix of profiles, of property types and of seniority.</p>
+    <p class="lede"><b>The first edition is a pilot, and it happens in Andalusia.</b> If it goes well —and above all if it proves useful to the brands that back it— the intention is to take it to another four or five locations across 2027. Whoever comes into the pilot comes into the edition that decides whether the rest exist.</p>
+      </div>
+      <div class="card" style="margin-top:0">
+      <p class="card__tag">Why the welcome pack matters</p>
+      <p style="font-size:.95rem;max-width:92ch">It's the piece that turns a private weekend into content. People photograph what they're wearing and what they take home. A good t-shirt, a wristband, something that doesn't go in the bin: that circulates on social media for weeks, and they post it, not us. And it's what creates the <b>FOMO</b> for the next edition, which is the real asset being built here.</p>
+    </div>
+  </div>
+    </div>
+
+    <div class="strip strip--3">
+      <figure>
+        <img src="assets/img/dossier/wk-ruta.jpg" alt="Group walking single file along a trail beside a river">
+        <figcaption><b>There'll be the outdoors.</b> Sierra trails in the morning. You talk while you walk, which is when the good stuff comes out.</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/img/dossier/wk-porche.jpg" alt="Group listening to someone explaining something on the porch of a country house">
+        <figcaption><b>There'll be learning.</b> No talks and no printed agenda: whatever each of us knows, told out on the porch.</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/img/dossier/wk-brasa.jpg" alt="Group around a barbecue at dusk in the courtyard of a stone house">
+        <figcaption><b>There'll be a long table.</b> Dinner cooked over coals, and the talk that comes after. Nobody heads up to their room at eleven.</figcaption>
+      </figure>
+    </div>
+    <p class="recrea">These three images are a recreation: the Weekend hasn't happened yet. The afterwork photographs elsewhere in this dossier are real.</p>
+  </section>
+
+<!-- ================= WEEKEND: BUDGET ================= -->
+<section class="sec sec--tint">
+  <div class="wrap">
+    <p class="eyebrow">RevChill Weekend · Where the money goes</p>
+    <h2>What sponsorship actually pays for.</h2>
+    <p class="lede">Attendees pay a ticket, and for a full weekend with accommodation and meals included it doesn't come close to covering half of what it costs. That gap is, quite literally, what sponsorship covers. Without it the ticket would double, and at that point the group would be selected by wallet rather than by profile — the exact opposite of what we want.</p>
+
+    <div class="two">
+      <div class="card">
+        <p class="card__tag">What it's spent on</p>
+        <ul class="ticks">
+          <li><b>The house.</b> Rented in full for the whole weekend. It's the biggest line and it's fixed: it doesn't drop if fewer people come.</li>
+          <li><b>The meals.</b> Welcome dinner, two breakfasts, one lunch out coming down from the hike, the Saturday barbecue and whatever gets carried up the hill.</li>
+          <li><b>The content creator.</b> Spends the whole weekend with the group, expenses covered.</li>
+          <li><b>The welcome pack.</b> RevChill and brand merchandise, designed not to end up in a drawer.</li>
+          <li><b>A contingency buffer.</b> For a first edition it should be generous: there's no previous year to go on.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <p class="card__tag">What that actually buys</p>
+        <p style="font-size:.95rem">Keeping the ticket affordable is what lets us pick the fifteen or twenty attendees on merit rather than on who can afford it. It's the piece that makes the group worth being part of, and it's the first thing your brand is paying for.</p>
+        <p style="font-size:.95rem">The second is the content. Without someone documenting the weekend, this is a private getaway nobody hears about. With them, it's the asset that sells the editions that follow — and your brand is in it.</p>
+        <p style="font-size:.95rem;margin-bottom:0">The third is the keepsake: what people wear and photograph for weeks afterwards.</p>
+      </div>
+    </div>
+    <p class="note" style="margin-top:1.2rem">The hike costs nothing beyond snacks. Travel to the house is on each person, attendees and brands alike: it's the one thing nobody covers. The line-by-line budget is something we walk you through in conversation; here we'd rather not fill a page with figures.</p>
+
+    <h3 style="margin-top:2.6rem">Three ways into the Weekend</h3>
+    <div class="tiers tiers--3">
+      <div class="tier">
+        <p class="tier__flag">Three brands</p>
+        <p class="tier__name">Shared</p>
+        <p class="tier__slots">Up to 3 brands, from different niches</p>
+        <p class="tier__price">€1,150</p>
+        <p class="tier__unit">per brand</p>
+        </div>
+      <div class="tier tier--hero">
+        <p class="tier__flag">Two brands</p>
+        <p class="tier__name">Shared with one</p>
+        <p class="tier__slots">Only 2 brands in the house</p>
+        <p class="tier__price">€1,750</p>
+        <p class="tier__unit">per brand</p>
+        </div>
+      <div class="tier">
+        <p class="tier__flag">One brand</p>
+        <p class="tier__name">Exclusive</p>
+        <p class="tier__slots">You're the only brand of the weekend</p>
+        <p class="tier__price">€3,500</p>
+        <p class="tier__unit">the whole Weekend</p>
+        <p class="tier__for">The entire first edition tied to your brand, with the full photo report and documentary video going out under your name. There's only one.</p>
+      </div>
+    </div>
+    <p class="note" style="margin-top:1.2rem">Each brand brings one representative at most, and their place is included: they sleep, eat and walk with the group. That's why three brands contribute a little more in total than one does — every added representative is another person to house and feed for two days.</p>
+  </div>
+</section>
+
+<!-- ================= WEEKEND: WHAT YOU BUY ================= -->
+<section class="sec sec--ink">
+  <div class="wrap">
+    <p class="eyebrow">RevChill Weekend · What you're buying</p>
+    <h2>Your salesperson stops being a salesperson for two days.</h2>
+    <p class="lede" style="color:#B9CCC7">This is the whole reason the format exists, and the reason it costs three times what an afterwork does. At an evening meet-up your team talks to each person for a few minutes and leaves. Here they have breakfast with them, climb a hill with them and have dinner with them two nights running.</p>
+    <p class="lede" style="color:#B9CCC7">What gets built in those forty-eight hours isn't a lead. It's a relationship that isn't entirely professional any more, with people who either are your customers or could be. Anyone who has sold into this industry knows what that's worth and how hard it is to buy.</p>
+
+    <div class="two">
+      <div class="card" style="background:var(--ink-2);border-color:rgba(242,244,234,.18)">
+        <p class="card__tag" style="color:#FF9D78">What you get</p>
+        <ul class="ticks" style="color:#D8E3E0">
+          <li>A place for your representative, everything covered except travel.</li>
+          <li>Presence in the welcome pack: your product, your merchandise or both.</li>
+          <li>Photo report, long-form video and interviews, yours to use.</li>
+          </ul>
+      </div>
+      <div class="card" style="background:var(--ink-2);border-color:rgba(242,244,234,.18)">
+        <p class="card__tag" style="color:#FF9D78">What we ask of you</p>
+        <ul class="ticks" style="color:#D8E3E0">
+          <li>That your representative comes to join in, not to work the room.</li>
+          <li>That there's no sales presentation. No projector, no pitch, no brochure in the bedroom.</li>
+          <li>That you understand this is a first edition and something will go differently than planned.</li>
+          <li>That you decide early: the welcome pack and the house have to be locked months ahead.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= IN KIND ================= -->
+<section class="sec">
+  <div class="wrap">
+    <p class="eyebrow">In-kind contributions</p>
+    <h2>It doesn't all have to be money.</h2>
+    <p class="lede">We're mainly looking for companies from the hotel sector, usually tech, because that's what the community does. But it isn't a requirement: if you think your product or service fits a gathering of industry professionals, let's talk. Several of the collaborations that worked best weren't a bank transfer.</p>
+
+    <div class="two">
+      <div class="card">
+        <p class="card__tag">What we accept</p>
+        <ul class="plain">
+          <li><b>Physical product</b> <span>— drinks, samples, anything that can be handed out or put in the welcome pack.</span></li>
+          <li><b>Merchandise</b> <span>— t-shirts, wristbands, backpacks. At the Weekend this is worth its weight in gold.</span></li>
+          <li><b>The venue</b> <span>— if you have a hotel, a rooftop or a house that fits, that's the most valuable contribution there is.</span></li>
+          <li><b>Services</b> <span>— photography, video, transport, catering.</span></li>
+        </ul>
+      </div>
+      <div class="card">
+        <p class="card__tag">How it's valued</p>
+        <p style="font-size:.95rem">What you contribute is valued at <b>what it saves us</b>, not at your list price. Give us a hundred t-shirts that cost you €600 and they count as €600, because that's what we were going to spend. It's the only way the books still balance at the end of the year.</p>
+        <p style="font-size:.95rem;margin-bottom:0">That's why <b>licences and discount codes</b> don't replace a contribution: they don't pay for dinner or for the photographer. They're very welcome as an extra inside the welcome pack, and as an extra they're genuinely appreciated.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BESPOKE ================= -->
+<section class="sec sec--tint">
+  <div class="wrap">
+    <p class="eyebrow">Bespoke</p>
+    <h2>If you can think of a better way to be seen, we're listening.</h2>
+    <p class="lede">Everything you've read so far is what we know how to do, not a closed menu. We're a small operation, and that has one concrete advantage: we can put together something that isn't in this document without asking anyone's permission or waiting on anyone's marketing committee.</p>
+
+    <ul class="plain">
+      <li><b>A format that doesn't exist yet</b> <span>— a themed meet-up, a small roundtable, something at a trade fair. If it makes sense for the community, we'll do it.</span></li>
+      <li><b>Joint content</b> <span>— a series of posts, a video, a recorded conversation with someone from your team. This is, in fact, where we want to grow.</span></li>
+      <li><b>Presence in the material, not just the logo</b> <span>— your brand appearing inside what gets told, rather than stuck in a corner of it.</span></li>
+      <li><b>A deal that mixes formats</b> <span>— afterworks and the Weekend in the same agreement, with the numbers worked out to fit.</span></li>
+      <li><b>Whatever you come up with</b> <span>— genuinely. Bring it and we'll look at it.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= WHAT WE DON'T SELL ================= -->
+<section class="sec sec--ink">
+  <div class="wrap">
+    <p class="eyebrow">The limits</p>
+    <h2>What we don't sell, however hard we're asked.</h2>
+    <p class="lede" style="color:#B9CCC7">This is here because it's what protects the value of everything else. The day we sell the attendee list, people stop coming — and then there's nothing left to sponsor.</p>
+
+    <div class="nots">
+      <div><b>Details from anyone who didn't give them</b><span>We do share the contact details of attendees who agree at registration, by ticking a box that names your company. From anyone who doesn't tick it you get nothing, and that box is never pre-ticked.</span></div>
+      <div><b>Early access to registrations</b><span>Nobody knows who's coming before the night starts. Not you either.</span></div>
+      <div><b>More than three brands per event</b><span>Not at the afterworks and not at the Weekend. And never two from the same niche or talking to the same buyer.</span></div>
+      <div><b>The microphone</b><span>Five minutes to introduce yourself at an afterwork, none at the Weekend. Nobody comes to have a product presented to them.</span></div>
+      <div><b>Control over the content</b><span>You review what concerns you before it's published, but the community doesn't get edited to make a brand look better.</span></div>
+      <div><b>Category exclusivity in perpetuity</b><span>It can be agreed for a season. Forever, no: it would shut the door on half the industry.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHERE THIS IS GOING ================= -->
+<section class="sec">
+  <div class="wrap">
+    <p class="eyebrow">Where this is going</p>
+    <h2>Coming in now costs what it costs now.</h2>
+    <p class="lede">The figures at the start are small, but the direction is clear. The 2027 plan isn't to fill bigger rooms: it's for the content to be closer and more personal, to show the people rather than the logo, and for brands to carry more weight inside what gets told without this stopping to feel like RevChill.</p>
+
+    <div class="two">
+      <div class="card">
+        <p class="card__tag">Where we are</p>
+        <ul class="plain">
+          <li><b>700</b> <span>— followers on LinkedIn</span></li>
+          <li><b>150</b> <span>— across the WhatsApp communities</span></li>
+          <li><b>9</b> <span>— meet-ups held</span></li>
+          <li><b>0</b> <span>— Weekend editions. The first one is the pilot.</span></li>
+        </ul>
+      </div>
+      <div class="card">
+        <p class="card__tag">Where we're going in 2027</p>
+        <ul class="plain">
+          <li><b>10 to 12</b> <span>— meet-ups, two per major city</span></li>
+          <li><b>Up to 5</b> <span>— Weekends: the Andalusian pilot and four more if it lands</span></li>
+          <li><b>Portugal</b> <span>— under consideration for the end of the season</span></li>
+          <li><b>More video</b> <span>— that's where the growth is</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="lede" style="margin-top:2rem">Whoever comes in during 2027 does so at the prices from when we were small, and with the treatment given to whoever arrives first: picking cities before anyone else, shaping the format with us, and renewing before it's offered outside. <b>For founding partners we freeze the price for 2028</b>, however much this grows.</p>
+  </div>
+</section>
+
+<!-- ================= WHO'S BEEN HERE ================= -->
+<section class="sec sec--ink">
+  <div class="wrap">
+    <p class="eyebrow">Who's been here</p>
+    <h2>Thirteen brands have already been through a RevChill.</h2>
+    <p class="lede" style="color:#B9CCC7">Revenue tech companies, hotel groups, consultancies and the venues that opened their doors to us. No two from the same niche on the same night.</p>
+
+    <figure class="band">
+      <img src="assets/img/dossier/madrid-grupo.jpg" alt="Group photo from a RevChill meet-up in Madrid with the sponsor brands behind">
+      <figcaption>Madrid, November 2025. The group photo at the end, which is the one everybody shares the next day.</figcaption>
+    </figure>
+
+    <div class="logos">
+      <div><img src="assets/img/sponsors/tripresale.png" alt="tripResale"></div>
+      <div><img src="assets/img/sponsors/turneo.png" alt="Turneo"></div>
+      <div><img src="assets/img/sponsors/duetto.png" alt="Duetto"></div>
+      <div><img src="assets/img/sponsors/pricepoint.png" alt="Pricepoint"></div>
+      <div><img src="assets/img/sponsors/the-net-revenue.png" alt="The Net Revenue"></div>
+      <div><img src="assets/img/sponsors/grupo-batuta.png" alt="Grupo Batuta"></div>
+      <div><img src="assets/img/sponsors/radisson.png" alt="Radisson Hotel Group"></div>
+      <div><img src="assets/img/sponsors/yurbban.png" alt="Yurbban Hotels"></div>
+      <div><img src="assets/img/sponsors/malaga-premium.png" alt="Hotel Málaga Premium"></div>
+      <div><img src="assets/img/sponsors/beonx-spark.png" alt="BEONx Spark"></div>
+      <div><img src="assets/img/sponsors/dataria.png" alt="Dataria"></div>
+      <div><img src="assets/img/sponsors/habyt.png" alt="Habyt"></div>
+      <div><img src="assets/img/sponsors/global-revenue-forum.png" alt="Global Revenue Forum"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CLOSE ================= -->
+<section class="end">
+  <div class="wrap">
+    <h2>Half an hour of conversation is enough to know whether this makes sense.</h2>
+    <p>You don't have to decide anything over email. Tell me what you do and what you'd expect to get out of this, and I'll tell you frankly whether I think you fit. If you don't, I'll say so: it's cheaper for both of us than finding out after the first meet-up.</p>
+    <a class="btn" href="mailto:hola@revchill.co?subject=RevChill%20partnership%202027">hola@revchill.co</a>
+    <div class="end__foot">
+      <span>Alvaro Repetto</span>
+      <span>hola@revchill.co</span>
+      <span>revchill.co</span>
+      <span>Private document · November 2026</span>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

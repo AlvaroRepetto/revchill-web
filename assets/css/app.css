@@ -788,3 +788,66 @@ p{text-wrap:pretty}
    vez, cuando no hay ninguna imagen todavía. */
 .plans:has(img) .plan__shot:empty{display:block}
 .plans:has(img) .plan__shot:empty + b{margin-top:.9rem}
+
+/* =========================================================================
+   EN NARANJA
+   El naranja de marca ocupando una sección entera. No es un tema aparte:
+   es el mismo sistema con los tokens cambiados, así que todo lo que hay
+   dentro (botones, logotipo, enlaces, cenefas) se recoloca solo.
+
+   El terracota va un punto por debajo del de la muestra (#B34822) para que
+   el texto secundario llegue a 4.9:1 sobre el fondo. El acento pasa a ser
+   la crema: sobre naranja, el naranja ya no puede destacar nada.
+   ========================================================================= */
+.fuego{
+  --bg:        #A8401D;
+  --surface:   #8E3416;
+  --surface-2: #7C2C11;
+  --fg:        #FFF6F0;
+  --fg-dim:    #F6E3DA;
+  --line:      rgba(255,246,240,.26);
+  --line-2:    rgba(255,246,240,.48);
+  --accent:    #FFF6F0;
+  --accent-fg: #5E1E0A;
+  --lima:      #FFF6F0;
+  background:var(--bg);color:var(--fg);
+  position:relative;overflow:hidden;
+}
+.fuego::before{content:"";position:absolute;inset:-40% -12% auto 48%;height:150%;pointer-events:none;
+  background:radial-gradient(45% 45% at 50% 50%,rgba(255,246,240,.15),transparent 70%)}
+.fuego > *{position:relative}
+.fuego.band{border-block-color:rgba(255,246,240,.32)}
+.fuego .btn--ghost:hover{background:rgba(255,246,240,.14);border-color:var(--fg)}
+
+/* En naranja, la cita del manifiesto se lleva la crema: dentro de una
+   sección de color, el bloque claro es lo que destaca, no el acento. */
+.fuego .ratio{background:rgba(255,246,240,.2);border-color:transparent}
+
+/* -------------------------------------------------------------------------
+   EN PAPEL
+   El otro extremo del mismo sistema: fondo crema y tinta verde, como el
+   dossier impreso. Sirve para los bloques que se leen despacio —una tabla,
+   unas citas—, donde el verde oscuro cansa. El acento aquí no puede ser el
+   naranja encendido de la marca, que sobre crema no contrasta: entra el
+   terracota, el mismo de .fuego, y así los dos registros riman.
+   ------------------------------------------------------------------------- */
+.papel{
+  --bg:        #F2F4EA;
+  --surface:   #FDFDF8;
+  --surface-2: #E6EADB;
+  --fg:        #0E3334;
+  --fg-dim:    #44635F;
+  --line:      rgba(14,51,52,.16);
+  --line-2:    rgba(14,51,52,.34);
+  --accent:    #A8401D;
+  --accent-fg: #FFF6F0;
+  --lima:      #6E7F18;
+  --shadow:    0 20px 44px rgba(14,51,52,.12);
+  background:var(--bg);color:var(--fg);
+}
+.papel .q,.papel .cards > div{background:var(--surface)}
+.papel .btn--ghost{color:var(--fg)}
+.papel .btn--ghost:hover{background:var(--surface);border-color:var(--fg)}
+.papel ::selection{background:var(--accent);color:var(--accent-fg)}
+
+.band__in > .band__label:first-child{margin-top:0}

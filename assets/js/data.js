@@ -341,7 +341,7 @@ window.REVCHILL = {
     linkedin: "https://www.linkedin.com/company/revchill/",
     instagram: "https://www.instagram.com/revchill.co/",
     email: "hola@revchill.co",
-    emailSponsors: "sponsors@revchill.co"
+    emailSponsors: "hola@revchill.co"   /* de momento el mismo buzón que el general */
   },
 
   /* ---------------------------------------------------------------------

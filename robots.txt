@@ -1,12 +1,16 @@
 # RevChill — https://revchill.co/
 
 # Buscadores
-# partners.html es el dossier comercial: documento privado, no se indexa.
+# partners.html y partners-en.html son el dossier comercial, en español e
+# inglés: documento privado, no se indexa ni se sigue.
 # weekend.html está despublicada hasta que se anuncie el formato.
 # (Lleva además <meta name="robots" content="noindex, nofollow"> en la página.)
 User-agent: *
 Allow: /
 Disallow: /partners.html
+Disallow: /partners-en.html
+Disallow: /dossier-revchill-partners-2027.pdf
+Disallow: /revchill-partner-dossier-2027-en.pdf
 Disallow: /weekend.html
 
 # Rastreadores de IA. Se permiten a propósito: queremos que ChatGPT,
@@ -16,66 +20,105 @@ Disallow: /weekend.html
 User-agent: GPTBot
 Allow: /
 Disallow: /partners.html
+Disallow: /partners-en.html
+Disallow: /dossier-revchill-partners-2027.pdf
+Disallow: /revchill-partner-dossier-2027-en.pdf
 Disallow: /weekend.html
 
 User-agent: OAI-SearchBot
 Allow: /
 Disallow: /partners.html
+Disallow: /partners-en.html
+Disallow: /dossier-revchill-partners-2027.pdf
+Disallow: /revchill-partner-dossier-2027-en.pdf
 Disallow: /weekend.html
 
 User-agent: ChatGPT-User
 Allow: /
 Disallow: /partners.html
+Disallow: /partners-en.html
+Disallow: /dossier-revchill-partners-2027.pdf
+Disallow: /revchill-partner-dossier-2027-en.pdf
 Disallow: /weekend.html
 
 User-agent: ClaudeBot
 Allow: /
 Disallow: /partners.html
+Disallow: /partners-en.html
+Disallow: /dossier-revchill-partners-2027.pdf
+Disallow: /revchill-partner-dossier-2027-en.pdf
 Disallow: /weekend.html
 
 User-agent: Claude-SearchBot
 Allow: /
 Disallow: /partners.html
+Disallow: /partners-en.html
+Disallow: /dossier-revchill-partners-2027.pdf
+Disallow: /revchill-partner-dossier-2027-en.pdf
 Disallow: /weekend.html
 
 User-agent: Claude-User
 Allow: /
 Disallow: /partners.html
+Disallow: /partners-en.html
+Disallow: /dossier-revchill-partners-2027.pdf
+Disallow: /revchill-partner-dossier-2027-en.pdf
 Disallow: /weekend.html
 
 User-agent: PerplexityBot
 Allow: /
 Disallow: /partners.html
+Disallow: /partners-en.html
+Disallow: /dossier-revchill-partners-2027.pdf
+Disallow: /revchill-partner-dossier-2027-en.pdf
 Disallow: /weekend.html
 
 User-agent: Perplexity-User
 Allow: /
 Disallow: /partners.html
+Disallow: /partners-en.html
+Disallow: /dossier-revchill-partners-2027.pdf
+Disallow: /revchill-partner-dossier-2027-en.pdf
 Disallow: /weekend.html
 
 User-agent: Google-Extended
 Allow: /
 Disallow: /partners.html
+Disallow: /partners-en.html
+Disallow: /dossier-revchill-partners-2027.pdf
+Disallow: /revchill-partner-dossier-2027-en.pdf
 Disallow: /weekend.html
 
 User-agent: Applebot-Extended
 Allow: /
 Disallow: /partners.html
+Disallow: /partners-en.html
+Disallow: /dossier-revchill-partners-2027.pdf
+Disallow: /revchill-partner-dossier-2027-en.pdf
 Disallow: /weekend.html
 
 User-agent: Bingbot
 Allow: /
 Disallow: /partners.html
+Disallow: /partners-en.html
+Disallow: /dossier-revchill-partners-2027.pdf
+Disallow: /revchill-partner-dossier-2027-en.pdf
 Disallow: /weekend.html
 
 User-agent: Amazonbot
 Allow: /
 Disallow: /partners.html
+Disallow: /partners-en.html
+Disallow: /dossier-revchill-partners-2027.pdf
+Disallow: /revchill-partner-dossier-2027-en.pdf
 Disallow: /weekend.html
 
 User-agent: meta-externalagent
 Allow: /
 Disallow: /partners.html
+Disallow: /partners-en.html
+Disallow: /dossier-revchill-partners-2027.pdf
+Disallow: /revchill-partner-dossier-2027-en.pdf
 Disallow: /weekend.html
 
 Sitemap: https://revchill.co/sitemap.xml

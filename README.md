@@ -359,7 +359,7 @@ haría falta duplicar las páginas en `/en/` y añadir etiquetas `hreflang`.
 ## 9. Publicar
 
 **Opción rápida:** arrastra la carpeta a [app.netlify.com/drop](https://app.netlify.com/drop).
-Online en 20 segundos, gratis, HTTPS incluido. Luego apuntas el dominio `revchill.co`.
+Online en 20 segundos, gratis, HTTPS incluido. Luego apuntas el dominio `revchill.org`.
 
 **Con Git + Vercel/Netlify:** sube la carpeta a un repo de GitHub y conéctalo.
 Cada `git push` despliega solo. No hay comando de build: el directorio raíz es el sitio.

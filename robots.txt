@@ -1,4 +1,4 @@
-# RevChill — https://revchill.co/
+# RevChill — https://revchill.org/
 
 # Buscadores
 # partners.html y partners-en.html son el dossier comercial, en español e
@@ -121,4 +121,4 @@ Disallow: /dossier-revchill-partners-2027.pdf
 Disallow: /revchill-partner-dossier-2027-en.pdf
 Disallow: /weekend.html
 
-Sitemap: https://revchill.co/sitemap.xml
+Sitemap: https://revchill.org/sitemap.xml

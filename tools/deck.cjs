@@ -53,7 +53,7 @@ const T = {
     portadaA: 'Somos pequeños.',
     portadaB: 'Esa es exactamente la propuesta.',
     portadaSub: 'Dossier de colaboración 2027. Dentro están las cifras reales, en qué se gasta cada euro y cuánto cuesta estar.',
-    portadaPie: 'Documento privado   ·   Temporada 2027   ·   revchill.co',
+    portadaPie: 'Documento privado   ·   Temporada 2027   ·   revchill.org',
 
     s2eye: 'Qué es esto', s2tit: 'Afterworks de revenue management,\nsin ponencias y sin stands',
     s2p: 'Los mejores aprendizajes del sector no pasan en la sala de plenaria, pasan tomando algo después. Así que quitamos la sala. Encuentros de tarde, gratuitos y con aforo limitado, en terrazas de cinco ciudades.',
@@ -214,7 +214,7 @@ const T = {
     s21eye: 'Quién ha estado', s21tit: 'Trece marcas han pasado\nya por un RevChill',
     s22tit: 'Media hora de conversación basta\npara saber si tiene sentido',
     s22p: 'Cuéntame a qué te dedicas y qué esperarías sacar de esto, y te digo con franqueza si creo que encajas. Si no encajas, te lo diré: es más barato para los dos que descubrirlo después del primer encuentro.',
-    s22pie: 'Alvaro Repetto   ·   hola@revchill.co   ·   revchill.co'
+    s22pie: 'Alvaro Repetto   ·   hola@revchill.org   ·   revchill.org'
   },
 
   en: {
@@ -224,7 +224,7 @@ const T = {
     portadaA: "We're small.",
     portadaB: 'That is precisely the offer.',
     portadaSub: "Partnership dossier 2027. Inside you'll find the real numbers, where every euro goes and what it costs to be there.",
-    portadaPie: 'Private document   ·   2027 season   ·   revchill.co',
+    portadaPie: 'Private document   ·   2027 season   ·   revchill.org',
 
     s2eye: 'What this is', s2tit: 'Revenue management afterworks,\nno talks and no stands',
     s2p: "The best insights in this industry don't happen in the plenary room, they happen over a drink afterwards. So we got rid of the room. Evening meet-ups, free to attend and capped in size, on rooftops across five cities.",
@@ -385,7 +385,7 @@ const T = {
     s21eye: "Who's been here", s21tit: 'Thirteen brands have already\nbeen through a RevChill',
     s22tit: 'Half an hour of conversation is enough\nto know whether this makes sense',
     s22p: "Tell me what you do and what you'd expect to get out of this, and I'll tell you frankly whether I think you fit. If you don't, I'll say so: it's cheaper for both of us than finding out after the first meet-up.",
-    s22pie: 'Alvaro Repetto   ·   hola@revchill.co   ·   revchill.co'
+    s22pie: 'Alvaro Repetto   ·   hola@revchill.org   ·   revchill.org'
   }
 };
 
@@ -445,13 +445,13 @@ async function construye(L) {
 
   pres.defineSlideMaster({
     title: 'CLARO', background: { color: K.lt1 },
-    objects: [{ text: { text: 'RevChill · revchill.co',
+    objects: [{ text: { text: 'RevChill · revchill.org',
       options: { x: M, y: H - 0.52, w: 5, h: 0.28, fontSize: 9, color: K.accent4, isTextBox: true, margin: 0 } } }],
     slideNumber: { x: W - M - 0.6, y: H - 0.52, w: 0.6, h: 0.28, fontSize: 9, color: K.accent4, align: 'right' }
   });
   pres.defineSlideMaster({
     title: 'OSCURO', background: { color: K.dk1 },
-    objects: [{ text: { text: 'RevChill · revchill.co',
+    objects: [{ text: { text: 'RevChill · revchill.org',
       options: { x: M, y: H - 0.52, w: 5, h: 0.28, fontSize: 9, color: K.accent4, isTextBox: true, margin: 0 } } }],
     slideNumber: { x: W - M - 0.6, y: H - 0.52, w: 0.6, h: 0.28, fontSize: 9, color: K.accent4, align: 'right' }
   });
@@ -832,7 +832,7 @@ async function construye(L) {
     s.addText(t.s22p, { x: M, y: 3.9, w: 8.4, h: 1.3, isTextBox: true, margin: 0,
       fontSize: 14, lineSpacing: 21, color: K.accent3 });
     s.addShape('roundRect', { x: M, y: 5.35, w: 3.1, h: 0.6, rectRadius: 0.3, fill: { color: K.accent1 }, line: { color: K.accent1, width: 0 } });
-    s.addText('hola@revchill.co', { x: M, y: 5.35, w: 3.1, h: 0.6, isTextBox: true, margin: 0,
+    s.addText('hola@revchill.org', { x: M, y: 5.35, w: 3.1, h: 0.6, isTextBox: true, margin: 0,
       fontFace: 'Outfit', fontSize: 13.5, bold: true, color: '07211F', align: 'center', valign: 'middle' });
     s.addText(t.s22pie, { x: M, y: H - 0.95, w: 9, h: 0.3, isTextBox: true, margin: 0,
       fontFace: 'Outfit', fontSize: 10.5, bold: true, charSpacing: 1.4, color: K.accent4 });

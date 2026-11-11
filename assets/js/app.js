@@ -487,10 +487,10 @@
         eventStatus: "https://schema.org/EventScheduled",
         location: { "@type": "Place", name: e.venue,
           address: { "@type": "PostalAddress", addressLocality: e.address || e.city, addressCountry: "ES" } },
-        organizer: { "@type": "Organization", name: "RevChill", url: "https://revchill.co/" },
+        organizer: { "@type": "Organization", name: "RevChill", url: "https://revchill.org/" },
         offers: { "@type": "Offer", price: "0", priceCurrency: "EUR",
           availability: "https://schema.org/InStock",
-          url: e.eventbrite || "https://revchill.co/#agenda" }
+          url: e.eventbrite || "https://revchill.org/#agenda" }
       };
     });
     var s = document.createElement("script");

@@ -338,8 +338,8 @@ window.REVCHILL = {
      --------------------------------------------------------------------- */
   links: {
     whatsapp: "https://chat.whatsapp.com/DxFWFO7E0ou4b3jA0Odzch",
-    linkedin: "https://www.linkedin.com/company/revchill/",
-    instagram: "https://www.instagram.com/revchill.co/",
+    linkedin: "https://www.linkedin.com/company/revchill-revenue-club",
+    instagram: "https://www.instagram.com/revchill.revenueclub",
     email: "hola@revchill.co",
     emailSponsors: "hola@revchill.co"   /* de momento el mismo buzón que el general */
   },

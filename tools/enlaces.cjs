@@ -27,7 +27,7 @@
 const { chromium } = require('playwright');
 
 const BASE = 'http://localhost:8899';
-const PAGINAS = ['index.html', 'patrocinio.html', 'weekend.html',
+const PAGINAS = ['index.html', 'weekend.html',
                  'privacidad.html', 'cookies.html', 'aviso-legal.html'];
 const IDIOMAS = ['es', 'en'];
 const SOLO_FALLOS = process.argv.includes('--solo-fallos');

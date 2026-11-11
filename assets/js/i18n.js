@@ -199,7 +199,6 @@ window.I18N_EN = {
   "ft.privacy":      "Privacy",
   "ft.cookies":      "Cookies",
   "ft.terms":        "Legal notice",
-  "biz.more":        "How sponsorship works",
   /* --- página de patrocinio --- */
   "pt.badge":          "For companies",
   "pt.hero":           "Three brands, maximum.<br>And none of them competes with you.",
